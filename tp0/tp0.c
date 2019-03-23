@@ -20,55 +20,62 @@ int mostrarMensajeErrorParametrosInvalidos() {
 
 
 void windowsToLinux(FILE* input_file, FILE* output_file) {
-  
-  char c, d;
-  while (!feof(input_file))
-  {
-    c = fgetc(input_file);
-    // printf("Este valor %c \n", c);
-	if ( c == CR ) {
-      printf("Tengo un CR\n");
-      if(feof(input_file))
-      {
-      	printf("Entre al break \n");
-        fputc(CR, output_file);
-        break;
-      }
-      else {
-        d = fgetc(input_file);
-        if( d == LF ) { 
-        	printf("Modifico el CRLF\n");
-          	fputc(LF, output_file);
-        }
-        else
-        {
-          	fputc(CR, output_file);
-          	fputc(d, output_file);
-        }      
-      }
-    }
-    else {
-    	printf("No tengo CR \n");
-      	fputc(c, output_file);
-    }
-  }
+	printf("ESTO ES: '%02hhx'\n", (unsigned char) 0x0A);
+  	char c, d;
+
+	while((c = fgetc(input_file)) != -1)
+	{
+    	printf(" Valor: '%02hhx' \n", (unsigned char) c);
+		if ( c == CR ) 
+		{
+      	//printf("Tengo un CR\n");
+      		if((d = fgetc(input_file)) == -1)
+      		{
+      		//printf("Entre al break \n");
+        		fputc(CR, output_file);
+        		break;
+      		}
+      		else 
+      		{
+        		printf(" Valor: '%02hhx' \n", (unsigned char) d);
+        		if( d == LF ) 
+        		{ 
+        			//printf("Modifico el CRLF\n");
+          			fputc(LF, output_file);
+        		}
+		        else
+		        {
+		          	fputc(CR, output_file);
+		          	fputc(d, output_file);
+		        }      
+      		}
+    	}
+    	else 
+    	{
+    		//printf("No tengo CR \n");
+      		fputc(c, output_file);
+    	}
+    
+	}
 }
 
 void linuxToWindows(FILE* input_file, FILE* output_file) {
 
-  char c;
-  while (!feof(input_file))
-  {
-    c = fgetc(input_file);
-	if ( c == LF ) {
-		printf("Modifico el LF\n");
-      fputc(CR, output_file);
-      fputc(LF, output_file);
-    }
-    else {
-      fputc(c, output_file);
-    }
-  }
+	char c;
+  	while((c = fgetc(input_file)) != -1)
+  	{
+  		printf(" Valor: '%02hhx' \n", (unsigned char) c);
+		if ( c == LF ) 
+		{
+			//printf("Modifico el LF\n");
+      		fputc(CR, output_file);
+      		fputc(LF, output_file);
+    	}
+    	else 
+    	{
+      		fputc(c, output_file);
+    	}
+  	}
 }
 
 
