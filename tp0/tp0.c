@@ -112,7 +112,6 @@ int main(int argc, char** argv) {
     linuxToWindows(input_file, output_file);
   }
   else {
-    // especializar el error
     return showErrorMesssageInputFile();
   }
 
