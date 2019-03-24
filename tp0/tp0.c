@@ -18,6 +18,12 @@ int mostrarMensajeErrorParametrosInvalidos() {
   return -1;
 }
 
+int showErrorMesssageInputFile()
+{
+  fprintf(stderr, "Primer parametro invalido. Se debe ingresar -l (linux) o -w(windows).\n");
+  return -1;
+}
+
 
 void windowsToLinux(FILE* input_file, FILE* output_file) {
 	printf("ESTO ES: '%02hhx'\n", (unsigned char) 0x0A);
@@ -26,7 +32,7 @@ void windowsToLinux(FILE* input_file, FILE* output_file) {
 	while((c = fgetc(input_file)) != -1)
 	{
     	printf(" Valor: '%02hhx' \n", (unsigned char) c);
-		if ( c == CR ) 
+		if ( c == CR )
 		{
       	//printf("Tengo un CR\n");
       		if((d = fgetc(input_file)) == -1)
@@ -35,11 +41,11 @@ void windowsToLinux(FILE* input_file, FILE* output_file) {
         		fputc(CR, output_file);
         		break;
       		}
-      		else 
+      		else
       		{
         		printf(" Valor: '%02hhx' \n", (unsigned char) d);
-        		if( d == LF ) 
-        		{ 
+        		if( d == LF )
+        		{
         			//printf("Modifico el CRLF\n");
           			fputc(LF, output_file);
         		}
@@ -47,15 +53,15 @@ void windowsToLinux(FILE* input_file, FILE* output_file) {
 		        {
 		          	fputc(CR, output_file);
 		          	fputc(d, output_file);
-		        }      
+		        }
       		}
     	}
-    	else 
+    	else
     	{
     		//printf("No tengo CR \n");
       		fputc(c, output_file);
     	}
-    
+
 	}
 }
 
@@ -65,13 +71,13 @@ void linuxToWindows(FILE* input_file, FILE* output_file) {
   	while((c = fgetc(input_file)) != -1)
   	{
   		printf(" Valor: '%02hhx' \n", (unsigned char) c);
-		if ( c == LF ) 
+		if ( c == LF )
 		{
 			//printf("Modifico el LF\n");
       		fputc(CR, output_file);
       		fputc(LF, output_file);
     	}
-    	else 
+    	else
     	{
       		fputc(c, output_file);
     	}
@@ -96,7 +102,7 @@ int main(int argc, char** argv) {
   // char output_name[MAX_NAME] = "";
   // strcat(output_name, input_name);
   // strcat(output_name, "_v2");
-  
+
   FILE* output_file = fopen("archivoSalida.txt", "wb");
 
   if (strcmp(argv[1], "-w") == 0) {
@@ -107,7 +113,7 @@ int main(int argc, char** argv) {
   }
   else {
     // especializar el error
-    return mostrarMensajeErrorParametrosInvalidos();
+    return showErrorMesssageInputFile();
   }
 
   fclose(input_file);
