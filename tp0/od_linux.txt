@@ -1,0 +1,9 @@
+0000000   A   r   c   h   i   v   o       d   e       l   i   n   u   x
+0000020  \n   Q   u   e       t   i   e   n   e  \n   M   u   c   h   o
+0000040   s       e   n   t   e   r   s  \n   F   a   l   o   p   a   s
+0000060  \n   H  \n   O  \n   L  \n   A  \n  \n   P   R   O   H   I   B
+0000100   I   D   O       T   I   R   A   R       E   N   T   E   R   S
+0000120       D   E       M   I   E   R   D   A  \n  \n   f   i   n    
+0000140   d   e   l      \n   a   r   c   h   i   v   o  \n  \n   a   h
+0000160   o   r   a       s   i
+0000166
