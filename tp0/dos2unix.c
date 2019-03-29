@@ -21,27 +21,21 @@ int mostrarMensajeErrorParametrosInvalidos()
 
 void windowsToLinux(FILE* input_file, FILE* output_file)
 {
-	printf("ESTO ES: '%02hhx'\n", (unsigned char) 0x0A);
-  	char c, d;
+	char c, d;
 
 	while((c = fgetc(input_file)) != -1)
 	{
-    	printf(" Valor: '%02hhx' \n", (unsigned char) c);
 		if ( c == CR )
 		{
-      	//printf("Tengo un CR\n");
       		if((d = fgetc(input_file)) == -1)
       		{
-      		//printf("Entre al break \n");
         		fputc(CR, output_file);
         		break;
       		}
       		else
       		{
-        		printf(" Valor: '%02hhx' \n", (unsigned char) d);
         		if( d == LF )
         		{
-        			//printf("Modifico el CRLF\n");
           			fputc(LF, output_file);
         		}
 		        else
@@ -53,7 +47,6 @@ void windowsToLinux(FILE* input_file, FILE* output_file)
     	}
     	else
     	{
-    		//printf("No tengo CR \n");
       		fputc(c, output_file);
     	}
 
@@ -63,31 +56,83 @@ void windowsToLinux(FILE* input_file, FILE* output_file)
 
 int main(int argc, char** argv)
 {
-  char *input_name = NULL;
-  char *output_name = NULL;
+  // Inicializo los valores por defecto. No se ingresaron archivos y estos son stdin y stdout
+  int seIngresoArchivoDeEntrada = 0;
+  int seIngresoArchivoDeSalida = 0;
+  char *input_fileName = NULL;
+  char *output_fileName = NULL;
 
-  if (argc != 3)
-  {
+/* No puedo recibir más de 5 parámetros. Este es el máximo esperado. Por otro lado, puedo
+   recibir 1 parámetro (el nombre del programa), 3 parámetros (se especifica archivo de 
+   entrada o de salida) y 5 parámetros (se especifican ambos). Además argc siempre es mayor
+   o igual a 1          */
+
+  if (argc > 5 || argc == 4 || argc == 2) {
     return mostrarMensajeErrorParametrosInvalidos();
   }
 
-  input_name = argv[1];
-  output_name = argv[2];
-
-  FILE* input_file;
-  if( (input_file = fopen(input_name, "rt")) == NULL)
-  {
-      fprintf(stderr,"No se pudo abrir el archivo de entrada\n");
-      return -1;
+  // Caso de recepción de al menos un archivo por parametro
+  if (argc >= 3) {
+    if (strcmp(argv[1], "-i") == 0) {
+      input_fileName = argv[2];
+      seIngresoArchivoDeEntrada = 1;
+    }
+    else if (strcmp(argv[1], "-o") == 0) {
+      output_fileName = argv[2];
+      seIngresoArchivoDeSalida = 1;
+    }
+    else {
+      // Parámetro invalido
+      return mostrarMensajeErrorParametrosInvalidos();
+    }
+    // Caso de recepción de dos archivos por parámetro
+    if (argc > 4) {
+      if (seIngresoArchivoDeEntrada) {
+        if (strcmp(argv[3], "-o") == 0) {
+          output_fileName = argv[4];
+          seIngresoArchivoDeSalida = 1;
+        }
+        else {
+          // Si ya se ingreso el parametro "-i" el único válido que queda es "-o"
+          return mostrarMensajeErrorParametrosInvalidos();
+        }
+      }
+      else if (seIngresoArchivoDeSalida) {
+        if (strcmp(argv[3], "-i") == 0) {
+          input_fileName = argv[4];
+          seIngresoArchivoDeEntrada = 1;
+        }
+        else {
+          // Si ya se ingreso el parametro "-o" el único válido que queda es "-i"
+          return mostrarMensajeErrorParametrosInvalidos();
+        }
+      }
+    }
   }
 
-  //Te dejo esta gadorcha
-  // armar un output_name piola
-  // char output_name[MAX_NAME] = "";
-  // strcat(output_name, input_name);
-  // strcat(output_name, "_v2");
+  FILE* input_file;
+  if (input_fileName != NULL)
+  {
+    if( (input_file = fopen(input_fileName, "rt")) == NULL)
+    {
+        fprintf(stderr,"No se pudo abrir el archivo de entrada\n");
+        return -1;
+    }
+  }
+  else
+    input_file = stdin;
 
-  FILE* output_file = fopen(output_name, "wb");
+  FILE* output_file;
+  if(output_fileName != NULL)
+  {
+    if( (output_file = fopen(output_fileName, "wt")) == NULL)
+    {
+        fprintf(stderr,"No se pudo abrir el archivo de salida\n");
+        return -1;
+    }
+  }
+  else
+    output_file = stdout;
 
   windowsToLinux(input_file, output_file);
 
