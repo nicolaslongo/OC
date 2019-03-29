@@ -1,0 +1,17 @@
+\documentclass[11pt]{article}
+
+\begin{document}
+Implementacion
+Se implementaron dos funciones para poder convertir un archivo de windows a linux y viceversa. La implementaci\'on se baso en un ciclo while que recorre el archivo caracter por caracter mientras consulta si esta parado sobre un '$\backslash$r' o '$\backslash$n'. En caso de ser alguno de estos caracteres, se hac\'ian las validaciones correspondientes y sino, simplemente se escribía el mismo caracter en el  nuevo documento.
+
+Errores que surgieron 
+Una de las complicaciones que surgieron durante la implementaci\'on fue la aparaci\'on de un caracter de mas en la conversi\'on del archivo. Esto era ocacionado debido a que nuestra implementacion se basaba en verificar si estabamos en el EOF como condicion del while para una vez dentro del mismo poder leer un caracter. Lo que pasaba era que al leer el ultimo caracter, c sigue apuntan a este, entonces el while corria una vez mas debido a que no estabamos en el EOF y se producia una lectura mas lo que implicaba leer un EOF y escribir un caracter vacio en el archivo. Esto se soluciono moviendo la lectura del caracter adentro de la condicion del while, lo que implico que se lea el EOF y luego realize la verificacion el while.
+
+
+Validacion
+Las primeras pruebas basicas que se hicieron, fueron convertir archivos de texto de un formato a otro chequeando que el archivo de salida tuviese el mismo aspecto que el archivo de entrada. Luego, se hicieron comparaciones entre los archivos de entrada y salida usando el programa OD, para tener una vista mas detallada de los documentos y sus caracteres. Por ultimo se generaron algunas pruebas en codigo que comprobasen el correcto funcionamiento de los programas desarrollados.
+\end{document}
+
+
+Utilizacion
+La utilizacion es a traves de una consola, donde se corre el ejecutable correspondiente creado previamente. Dependiendo de que tipo de conversion de archivo se quiera hacer se usara alguno de los dos ejecutables. La ejecucion de cualquiera de los dos programas requieren de dos parametros que son el archivo de entrada y el archivo de salida. Antes del parametro del archivo de entrada se debe ingresar "'-i" y antes del parametro del archivo de salida se debe ingresar "-o". Por ejemplo, para convertir un archivo de windows a linux se ejecuta: ./windows2dos -i archivo_windows.txt -o archivo_linux.txt
