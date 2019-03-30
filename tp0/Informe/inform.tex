@@ -1,18 +1,193 @@
-\documentclass[11pt]{article}
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage[ansinew]{inputenc}
+\usepackage[utf8]{inputenx}
+
+\title{		\textbf{Informe TP1}}
+
+\author{	Cotarelo Rodrigo, \textit{Padrón Nro. XXXXX}                     \\
+            \texttt{ cotarelorodrigo@gmail.com }                                              \\[2.5ex]
+            Echegaray Rodrigo, \textit{Padrón Nro. XXXXX}                     \\
+            \texttt{ XXXXXXX }                                              \\[2.5ex]
+			Longo Nicolás, \textit{Padrón Nro. 98271}                    
+\\
+            \texttt{ longo.gnr@hotmail.com }                                              \\[2.5ex]
+            \normalsize{1er. Cuatrimestre de 2019}                                      \\
+            \normalsize{66.20 Organización de Computadoras  $-$ Práctica Martes}  s\\
+            \normalsize{Facultad de Ingeniería, Universidad de Buenos Aires}            \\
+       }
+\date{poner la fecha correspondiente}
+
 
 \begin{document}
-Implementacion
-Se implementaron dos funciones para poder convertir un archivo de windows a linux y viceversa. La implementaci\'on se baso en un ciclo while que recorre el archivo caracter por caracter mientras consulta si esta parado sobre un '$\backslash$r' o '$\backslash$n'. En caso de ser alguno de estos caracteres, se hac\'ian las validaciones correspondientes y sino, simplemente se escribía el mismo caracter en el  nuevo documento.
 
-Errores que surgieron 
-Una de las complicaciones que surgieron durante la implementaci\'on fue la aparaci\'on de un caracter de mas en la conversi\'on del archivo. Esto era ocacionado debido a que nuestra implementacion se basaba en verificar si estabamos en el EOF como condicion del while para una vez dentro del mismo poder leer un caracter. Lo que pasaba era que al leer el ultimo caracter, c sigue apuntan a este, entonces el while corria una vez mas debido a que no estabamos en el EOF y se producia una lectura mas lo que implicaba leer un EOF y escribir un caracter vacio en el archivo. Esto se soluciono moviendo la lectura del caracter adentro de la condicion del while, lo que implico que se lea el EOF y luego realize la verificacion el while.
+\maketitle
+\thispagestyle{empty}   % quita el número en la primer página
+\newpage
+
+\section{Enunciado}
+
+\begin{enumerate}
+\item Objetivos \\
+Familiarizarse con las herramientas de software que usaremos en los siguien-
+tes trabajos, implementando un programa (y su correspondiente documenta-
+ción) que resuelva el problema piloto que presentaremos más abajo.
+
+\item Alcance \\
+Este trabajo práctico es de elaboración grupal, evaluación individual, y de
+carácter obligatorio para todos alumnos del curso.
+
+\item Requisitos \\
+El trabajo deberá ser entregado personalmente, en la fecha estipulada, con
+una carátula que contenga los datos completos de todos los integrantes.
+Además, es necesario que el trabajo práctico incluya (entre otras cosas, ver
+sección 7), la presentación de los resultados obtenidos, explicando, cuando co-
+rresponda, con fundamentos reales, las razones de cada resultado obtenido.
+
+\item Recursos \\
+Usaremos el programa GXemul [1] para simular el entorno de desarrollo que
+utilizaremos en este y otros trabajos prácticos, una máquina MIPS corriendo
+una versión reciente del sistema operativo NetBSD [2].
+En la clase del 12/3 hemos repasado, brevemente, los pasos necesarios para
+la instalación y configuración del entorno de desarrollo.
+
+\item Programa \\
+Se trata de escribir en lenguaje C dos programas que permitan convertir
+archivos de texto desde y hacia plataformas UNIX como las que usamos en los
+trabajos prácticos. 
 
 
-Validacion
-Las primeras pruebas basicas que se hicieron, fueron convertir archivos de texto de un formato a otro chequeando que el archivo de salida tuviese el mismo aspecto que el archivo de entrada. Luego, se hicieron comparaciones entre los archivos de entrada y salida usando el programa OD, para tener una vista mas detallada de los documentos y sus caracteres. Por ultimo se generaron algunas pruebas en codigo que comprobasen el correcto funcionamiento de los programas desarrollados.
+\indent
+En particular, buscamos generar dos programas: unix2dos para transformar archivs de texto de UNIX a Windows y dos2unix para hacer la operación inversa.
 
-Utilizacion
-La utilizacion es a traves de una consola, donde se corre el ejecutable correspondiente creado previamente. Dependiendo de que tipo de conversion de archivo se quiera hacer se usara alguno de los dos ejecutables. La ejecucion de cualquiera de los dos programas requieren de dos parametros que son el archivo de entrada y el archivo de salida. Antes del parametro del archivo de entrada se debe ingresar "'-i" y antes del parametro del archivo de salida se debe ingresar "-o". Por ejemplo, para convertir un archivo de windows a linux se ejecuta: ./windows2dos -i archivoWindows.txt -o archivoLinux.txt
+
+\indent
+Por defecto, en ambos casos, tomaremos la entrada estándar stdin y salida por stdout. Las opciones -i y -o nos permiten además indicar explícitamente los archivos de entrada y salida usando - para indicar los flujos estándar que ya mencionmos.
+
+
+\indent
+A continuación se presenta un ejemplo de codificación:
+
+\$	 (echo Uno; echo Dos; echo Tres) \textbar	 unix2dos \textbar	 od -t c
+
+0000000
+U
+n
+o $\backslash$r $\backslash$n
+D
+o
+s $\backslash$r $\backslash$n
+T
+r
+e
+s
+$\backslash$r
+$\backslash$n
+
+0000020
+
+\newpage
+\indent Podemos ver, entonces, que por defecto unix2dos opera usando los streams
+estandar de entrada/salida, generando los newlines con la convencion adoptada por Windows. Notar ademas el uso del programa od, que nos permite ver caracteres que de otra forma no podrían ser observados.
+
+\indent A continuación, usamos dos2unix para hacer una conversión en el sentido inverso:
+
+\$	od -t c /tmp/dos.txt
+
+0000000
+U
+n
+o $\backslash$r $\backslash$n
+D
+o
+s $\backslash$r
+$\backslash$n T r e s $\backslash$r $\backslash$n
+
+0000020
+
+\$ dos2unix -i /tmp/dos.txt -o - \textbar od -t c
+
+0000000
+U
+n
+o $\backslash$n
+D
+o
+s $\backslash$n
+T
+r
+e
+s $\backslash$n
+
+0000015
+
+Aqui /tmp/dos.txt contiene un archivo de texto usando la convención
+CR+LF para los caracteres newline, y hemos usado el programa dos2unix para
+transformarlo a la convensión LF adoptada en sistemas UNIX.
+
+\item Casos de prueba \\
+Se deberá verificar el correcto comportamiento del programa, por lo que los
+alumnos deberán proponer casos de prueba que crean convenientes, indicando el
+motivo de la elección de cada caso, indicando el método utilizado para verificar
+que el programa responde correctamente en cada caso.
+
+\item Portabilidad \\
+Como es usual, es necesario que la implementación desarrollada provea un
+grado minímo de portabilidad. Para satisfacer esto, el programa deberá funcio-
+nar al menos en NetBSD/pmax (usando el simulador GXemul [1]) y la versión
+de Linux usada para correr el simulador.
+
+\item Informe \\
+El informe deberá incluir:
+
+\begin{itemize}
+\item Documentación relevante al diseño, implementación, validación y utiliza-
+ción del programa.
+
+\item La documentación necesaria para generar los binarios a partir del código
+fuente suministrado.
+
+\item Las corridas de prueba, con los comentarios pertinentes.
+
+\item El código fuente, el cual también deberá entregarse en formato digital compilable (incluyendo archivos de entrada y salida de pruebas).
+
+\item Este enunciado.
+\end{itemize}
+
+\item Fechas
+Fecha de vencimiento: martes 16/4 de 2019.
+
+\end{enumerate}
+
+\newpage
+
+\section{Implementacion}
+Se implementaron dos funciones para poder convertir un archivo de DOS a UNIX y viceversa. La implementaci\'on se basó en un ciclo while que recorre el archivo caracter por caracter mientras consulta si está parado sobre un '$\backslash$r' o '$\backslash$n'. En caso de ser alguno de estos caracteres, se efectua la modificación correspondiente en el archivo resultado o salida y sino, simplemente se escribía el mismo caracter en el documento de salida.
+
+
+\section{Errores que surgieron}
+Una de las complicaciones que surgieron durante la implementación fue la aparación de un caracter de más en la conversi\'on del archivo. Esto sucedía porque nuestra implementación verificaba si estábamos en el End Of File (EOF) como condición de corte del while para una vez dentro del mismo efectuar la lectura de un nuevo caracter. Entonces pasaba que al leer el último caracter, c sigue apuntando a este, entonces el while corria una vez mas debido a que no estabamos en el EOF y se producia una lectura mas lo que implicaba leer un EOF y escribir un caracter vacio en el archivo. Esto se soluciono moviendo la lectura del caracter adentro de la condicion del while, lo que implico que se lea el EOF y luego realize la verificacion el while. !!!!!Esto no se entiende bien. Pero no supe parafrasearlo!!!!
+
+
+\section{Validacion}
+Las primeras pruebas básicas que se hicieron, fueron convertir archivos de texto de un formato a otro chequeando que el archivo de salida tuviese el mismo aspecto que el archivo de entrada. Luego, se hicieron comparaciones entre los archivos de entrada y salida usando el programa OD, para tener una vista más detallada de los documentos y sus caracteres. Por ultimo se generaron algunas pruebas en codigo que comprobasen el correcto funcionamiento de los programas desarrollados.???? Qué dice????
+
+
+\section{Utilizacion}
+Para ejecutar los programas se utiliza la consola o shell (convencionalmente), donde se corren ambos ejecutables. Dependiendo de qué tipo de conversión de archivo se desee, se usará alguno de los dos programas. La ejecución de cualquiera de estos puede recibir dos parámetros: el archivo de entrada y el archivo de salida. Si no recibe el primero, entonces se setea por defecto la entrada estándar (stdin); si no recibe el segundo, se setea por defecto la salida estándar (stdout).
+
+\indent	
+Antes del nombre del archivo de entrada se debe especificar el flag '-i' y antes del nombre del archivo de salida, el flag '-o'.
+
+\indent	
+Por ejemplo, para convertir un archivo de DOS a UNIX se ejecuta: 
+
+\begin{verbatim}
+./dos2unix -i archivoDeEntradaWindows.txt -o archivoDeSalidaUnix.txt
+\end{verbatim}
+
 \end{document}
 
 
