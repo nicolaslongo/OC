@@ -171,11 +171,21 @@ Se implementaron dos funciones para poder convertir un archivo de DOS a UNIX y v
 Una de las complicaciones que surgieron durante la implementación fue la aparación de un caracter de más en la conversi\'on del archivo. Esto sucedía porque nuestra implementación verificaba si estábamos en el End Of File (EOF) como condición de corte del while para una vez dentro del mismo efectuar la lectura de un nuevo caracter. Lo que suced\'ia, era que en C al leer el \'ultimo caracter se segu\'ia apuntando a este y no al EOF. Por lo tanto, esto implicaba hacer una lectura adicional para llegar al EOF y esto produc\'ia que se escribiese un caracter vac\'io en el documento de salida. Esto se solucion\'o utilizando para la lectura la funci\'on fgetc que lee caracer por caracter. fgetc lee el final del archivo y devuelve el EOF a trav\'es del c\'odigo -1. Por lo tanto, cambiamos nuestra condici\'on de corte del while a esperar que la funci\'on fgetc devolviese el c\'odigo -1.
 
 
-\section{Validacion}
-Las primeras pruebas básicas que se hicieron, fueron convertir archivos de texto de un formato a otro chequeando que el archivo de salida tuviese el mismo aspecto que el archivo de entrada. Luego, se hicieron comparaciones entre los archivos de entrada y salida usando el programa OD, para tener una vista más detallada de los documentos y sus caracteres. Por ultimo se generaron algunas pruebas en codigo que comprobasen el correcto funcionamiento de los programas desarrollados.???? Qué dice????
+\section{Validación}
+Las primeras pruebas básicas que se hicieron, fueron convertir archivos de texto de un formato a otro chequeando que el archivo de salida tuviese el mismo aspecto que el archivo de entrada. También se hicieron comparaciones entre los archivos de entrada y salida usando el programa object dump (od), para tener una vista un poco más detallada de los documentos y sus caracteres.
+
+\indent Como esto no era suficiente, y las pruebas que deseábamos hacer debían ser más exhaustivas se decidió generar archivos de salida esperados. Es decir, para cada archivo con saltos de línea del tipo LF se generó uno exactamente igual pero con saltos de línea del tipo CR+LF y viceversa. De ésta manera, pudimos comprobar que los archivos generados por el programa son exactamente iguales a aquellos esperados utilizando la directiva cmp de la siguiente manera:
+
+\begin{verbatim}
+cmp archivoDePrueba01_salidaReal.txt archivoDePrueba02_salidaEsperada.txt
+\end{verbatim}
+
+\indent El resultado es el esperado si al ejecutar esa sentencia en la shell la salida es, literalmente, ninguna. De lo contrario, el programa habrá encontrado una diferencia entre los caracteres y eso evidenciaría un problema en la salida de nuestro programa conversor.
+
+¿¿¿¿¿¿¿¿¿ Por último se generaron algunas pruebas en código que comprobasen el correcto funcionamiento de los programas desarrollados.???? Qué dice????
 
 
-\section{Utilizacion}
+\section{Utilización}
 Para ejecutar los programas se utiliza la consola o shell (convencionalmente), donde se corren ambos ejecutables. Dependiendo de qué tipo de conversión de archivo se desee, se usará alguno de los dos programas. La ejecución de cualquiera de estos puede recibir dos parámetros: el archivo de entrada y el archivo de salida. Si no recibe el primero, entonces se setea por defecto la entrada estándar (stdin); si no recibe el segundo, se setea por defecto la salida estándar (stdout).
 
 \indent	
