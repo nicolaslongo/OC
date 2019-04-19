@@ -5,17 +5,17 @@
 \usepackage[ansinew]{inputenc}
 \usepackage[utf8]{inputenx}
 
-\title{		\textbf{Informe TP1}}
+\title{		\textbf{Informe TP0}}
 
-\author{	Cotarelo Rodrigo, \textit{Padrón Nro. XXXXX}                     \\
+\author{	Cotarelo Rodrigo, \textit{Padrón Nro. 98577}                     \\
             \texttt{ cotarelorodrigo@gmail.com }                                              \\[2.5ex]
-            Echegaray Rodrigo, \textit{Padrón Nro. XXXXX}                     \\
-            \texttt{ XXXXXXX }                                              \\[2.5ex]
+            Etchegaray Rodrigo, \textit{Padrón Nro. 96856}                     \\
+            \texttt{ rorroeche@gmail.com }                                              \\[2.5ex]
 			Longo Nicolás, \textit{Padrón Nro. 98271}                    
 \\
             \texttt{ longo.gnr@hotmail.com }                                              \\[2.5ex]
             \normalsize{1er. Cuatrimestre de 2019}                                      \\
-            \normalsize{66.20 Organización de Computadoras  $-$ Práctica Martes}  s\\
+            \normalsize{66.20 Organización de Computadoras  $-$ Práctica Martes}  \\
             \normalsize{Facultad de Ingeniería, Universidad de Buenos Aires}            \\
        }
 \date{poner la fecha correspondiente}
@@ -156,7 +156,7 @@ fuente suministrado.
 \item Este enunciado.
 \end{itemize}
 
-\item Fechas
+\item Fechas \\
 Fecha de vencimiento: martes 16/4 de 2019.
 
 \end{enumerate}
@@ -164,19 +164,29 @@ Fecha de vencimiento: martes 16/4 de 2019.
 \newpage
 
 \section{Implementacion}
-Se implementaron dos funciones para poder convertir un archivo de DOS a UNIX y viceversa. La implementaci\'on se basó en un ciclo while que recorre el archivo caracter por caracter mientras consulta si está parado sobre un '$\backslash$r' o '$\backslash$n'. En caso de ser alguno de estos caracteres, se efectua la modificación correspondiente en el archivo resultado o salida y sino, simplemente se escribía el mismo caracter en el documento de salida.
+Se implementaron dos funciones para poder convertir un archivo de DOS a UNIX y viceversa. La implementaci\'on se basó en un ciclo while que recorre el archivo caracter por caracter mientras consulta si está parado sobre un '$\backslash$r' o '$\backslash$n'. En caso de ser alguno de estos caracteres, se efectua la modificación correspondiente en el archivo resultado o salida y sino, simplemente se escribe el mismo caracter en el documento de salida.
 
 
 \section{Errores que surgieron}
-Una de las complicaciones que surgieron durante la implementación fue la aparación de un caracter de más en la conversi\'on del archivo. Esto sucedía porque nuestra implementación verificaba si estábamos en el End Of File (EOF) como condición de corte del while para una vez dentro del mismo efectuar la lectura de un nuevo caracter. Entonces pasaba que al leer el último caracter, c sigue apuntando a este, entonces el while corria una vez mas debido a que no estabamos en el EOF y se producia una lectura mas lo que implicaba leer un EOF y escribir un caracter vacio en el archivo. Esto se soluciono moviendo la lectura del caracter adentro de la condicion del while, lo que implico que se lea el EOF y luego realize la verificacion el while. !!!!!Esto no se entiende bien. Pero no supe parafrasearlo!!!!
+Una de las complicaciones que surgieron durante la implementación fue la aparación de un caracter de más en la conversi\'on del archivo. Esto sucedía porque nuestra implementación verificaba si estábamos en el End Of File (EOF) como condición de corte del while para una vez dentro del mismo efectuar la lectura de un nuevo caracter. Lo que suced\'ia, era que en C al leer el \'ultimo caracter se segu\'ia apuntando a este y no al EOF. Por lo tanto, esto implicaba hacer una lectura adicional para llegar al EOF y esto produc\'ia que se escribiese un caracter vac\'io en el documento de salida. Esto se solucion\'o utilizando para la lectura la funci\'on fgetc que lee caracer por caracter. fgetc lee el final del archivo y devuelve el EOF a trav\'es del c\'odigo -1. Por lo tanto, cambiamos nuestra condici\'on de corte del while a esperar que la funci\'on fgetc devolviese el c\'odigo -1.
 
 
-\section{Validacion}
-Las primeras pruebas básicas que se hicieron, fueron convertir archivos de texto de un formato a otro chequeando que el archivo de salida tuviese el mismo aspecto que el archivo de entrada. Luego, se hicieron comparaciones entre los archivos de entrada y salida usando el programa OD, para tener una vista más detallada de los documentos y sus caracteres. Por ultimo se generaron algunas pruebas en codigo que comprobasen el correcto funcionamiento de los programas desarrollados.???? Qué dice????
+\section{Validación}
+Las primeras pruebas básicas que se hicieron, fueron convertir archivos de texto de un formato a otro chequeando que el archivo de salida tuviese el mismo aspecto que el archivo de entrada. También se hicieron comparaciones entre los archivos de entrada y salida usando el programa \textit{object dump (od)}, para tener una vista un poco más detallada de los documentos y sus caracteres.
+
+\indent Como esto no era suficiente, y las pruebas que deseábamos hacer debían ser más exhaustivas se decidió generar archivos de salida esperados. Es decir, para cada archivo con saltos de línea del tipo LF se generó uno exactamente igual pero con saltos de línea del tipo CR+LF y viceversa. De ésta manera, pudimos comprobar que los archivos generados por el programa son exactamente iguales a aquellos esperados utilizando la directiva \textit{cmp} de la siguiente manera:
+
+\begin{verbatim}
+cmp archivoDePrueba01_salidaReal.txt archivoDePrueba02_salidaEsperada.txt
+\end{verbatim}
+
+\indent El resultado es el esperado si al ejecutar esa sentencia en la shell la salida es, literalmente, ninguna. De lo contrario, el programa \textit{cmp} habrá encontrado una diferencia entre los caracteres y eso evidenciaría un problema en la salida de nuestro programa conversor.
+
+%¿¿¿¿¿¿¿¿¿ Por último se generaron algunas pruebas en código que comprobasen el correcto funcionamiento de los programas desarrollados.???? Qué dice????
 
 
-\section{Utilizacion}
-Para ejecutar los programas se utiliza la consola o shell (convencionalmente), donde se corren ambos ejecutables. Dependiendo de qué tipo de conversión de archivo se desee, se usará alguno de los dos programas. La ejecución de cualquiera de estos puede recibir dos parámetros: el archivo de entrada y el archivo de salida. Si no recibe el primero, entonces se setea por defecto la entrada estándar (stdin); si no recibe el segundo, se setea por defecto la salida estándar (stdout).
+\section{Utilización}
+Para ejecutar los programas se utiliza la consola o shell (convencionalmente), donde se corren ambos ejecutables. Dependiendo de qué tipo de conversión de archivo se desee, se usará alguno de los dos programas. La ejecución de cualquiera de estos puede recibir dos parámetros: el archivo de entrada y el archivo de salida. Si no recibe el primero, entonces se setea por defecto la entrada estándar (\textit{stdin}); si no recibe el segundo, se setea por defecto la salida estándar (\textit{stdout}).
 
 \indent	
 Antes del nombre del archivo de entrada se debe especificar el flag '-i' y antes del nombre del archivo de salida, el flag '-o'.
@@ -186,6 +196,952 @@ Por ejemplo, para convertir un archivo de DOS a UNIX se ejecuta:
 
 \begin{verbatim}
 ./dos2unix -i archivoDeEntradaWindows.txt -o archivoDeSalidaUnix.txt
+\end{verbatim}
+
+\section{Generaci\'on de binarios}
+Para la generaci\'on de los binarios a partir de los archivos con el c\'odigo fuente suministrado se deben seguir los siguientes pasos (usaremos de ejemplo el programa unix2dos, pero aplica para ambos programas):
+
+\begin{itemize}
+\item Posicionarse en el directorio donde se encuentren los archivos con el c\'odigo fuente.
+\item \begin{verbatim}
+gcc -Wall -O0 -o unix2dos unix2dos.c
+\end{verbatim} 
+\end{itemize}
+
+Para ejecutar los binarios creados, se deben seguir los pasos de la secci\'on de Utilizaci\'on.
+
+\section{C\'odigo fuente}
+\subsection{unix2dos}
+\begin{verbatim}
+/* Se explica el razonamiento a tratar para los parámetros:
+en argv[0] está el path del programa
+en argv[1] se espera que esté si el archivo de entrada es de windows o linux
+en argv[2] se espera que esté el archivo de entrada
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX_NAME 100
+
+const char CR = '\r';
+const char LF = '\n';
+
+int mostrarMensajeErrorParametrosInvalidos()
+{
+  fprintf(stderr, "Los parámetros ingresados no son válidos.\n");
+  return -1;
+}
+
+void linuxToWindows(FILE* input_file, FILE* output_file)
+{
+	char c;
+  	while((c = fgetc(input_file)) != -1)
+  	{
+  		if ( c == LF )
+  		{
+    		fputc(CR, output_file);
+    		fputc(LF, output_file);
+    	}
+    	else
+    	{
+    		fputc(c, output_file);
+    	}
+  	}
+}
+
+
+int main(int argc, char** argv)
+{
+  // Inicializo los valores por defecto. No se ingresaron archivos y estos son stdin y stdout
+  int seIngresoArchivoDeEntrada = 0;
+  int seIngresoArchivoDeSalida = 0;
+  char *input_fileName = NULL;
+  char *output_fileName = NULL;
+
+/* No puedo recibir más de 5 parámetros. Este es el máximo esperado. Por otro lado, puedo
+   recibir 1 parámetro (el nombre del programa), 3 parámetros (se especifica archivo de 
+   entrada o de salida) y 5 parámetros (se especifican ambos). Además argc siempre es mayor
+   o igual a 1          */
+
+  if (argc > 5 || argc == 4 || argc == 2) {
+    return mostrarMensajeErrorParametrosInvalidos();
+  }
+
+  // Caso de recepción de al menos un archivo por parametro
+  if (argc >= 3) {
+    if (strcmp(argv[1], "-i") == 0) {
+      input_fileName = argv[2];
+      seIngresoArchivoDeEntrada = 1;
+    }
+    else if (strcmp(argv[1], "-o") == 0) {
+      output_fileName = argv[2];
+      seIngresoArchivoDeSalida = 1;
+    }
+    else {
+      // Parámetro invalido
+      return mostrarMensajeErrorParametrosInvalidos();
+    }
+    // Caso de recepción de dos archivos por parámetro
+    if (argc > 4) {
+      if (seIngresoArchivoDeEntrada) {
+        if (strcmp(argv[3], "-o") == 0) {
+          output_fileName = argv[4];
+          seIngresoArchivoDeSalida = 1;
+        }
+        else {
+          // Si ya se ingreso el parametro "-i" el único válido que queda es "-o"
+          return mostrarMensajeErrorParametrosInvalidos();
+        }
+      }
+      else if (seIngresoArchivoDeSalida) {
+        if (strcmp(argv[3], "-i") == 0) {
+          input_fileName = argv[4];
+          seIngresoArchivoDeEntrada = 1;
+        }
+        else {
+          // Si ya se ingreso el parametro "-o" el único válido que queda es "-i"
+          return mostrarMensajeErrorParametrosInvalidos();
+        }
+      }
+    }
+  }
+
+  FILE* input_file;
+  if (input_fileName != NULL)
+  {
+    if( (input_file = fopen(input_fileName, "rt")) == NULL)
+    {
+        fprintf(stderr,"No se pudo abrir el archivo de entrada\n");
+        return -1;
+    }
+  }
+  else
+    input_file = stdin;
+
+  FILE* output_file;
+  if(output_fileName != NULL)
+  {
+    if( (output_file = fopen(output_fileName, "wt")) == NULL)
+    {
+        fprintf(stderr,"No se pudo abrir el archivo de salida\n");
+        return -1;
+    }
+  }
+  else
+    output_file = stdout;
+
+  linuxToWindows(input_file, output_file);
+
+  fclose(input_file);
+  fclose(output_file);
+  return 0;
+}
+\end{verbatim}
+
+\subsection{dos2unix}
+\begin{verbatim}
+/* Se explica el razonamiento a tratar para los parámetros:
+en argv[0] está el path del programa
+en argv[1] se espera que esté si el archivo de entrada es de windows o linux
+en argv[2] se espera que esté el archivo de entrada
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX_NAME 100
+
+const char CR = '\r';
+const char LF = '\n';
+
+int mostrarMensajeErrorParametrosInvalidos()
+{
+  fprintf(stderr, "Los parámetros ingresados no son válidos.\n");
+  return -1;
+}
+
+void windowsToLinux(FILE* input_file, FILE* output_file)
+{
+	char c, d;
+
+	while((c = fgetc(input_file)) != -1)
+	{
+		if ( c == CR )
+		{
+      		if((d = fgetc(input_file)) == -1)
+      		{
+        		fputc(CR, output_file);
+        		break;
+      		}
+      		else
+      		{
+        		if( d == LF )
+        		{
+          			fputc(LF, output_file);
+        		}
+		        else
+		        {
+		          	fputc(CR, output_file);
+		          	fputc(d, output_file);
+		        }
+      		}
+    	}
+    	else
+    	{
+      		fputc(c, output_file);
+    	}
+
+	}
+}
+
+
+int main(int argc, char** argv)
+{
+  // Inicializo los valores por defecto. No se ingresaron archivos y estos son stdin y stdout
+  int seIngresoArchivoDeEntrada = 0;
+  int seIngresoArchivoDeSalida = 0;
+  char *input_fileName = NULL;
+  char *output_fileName = NULL;
+
+/* No puedo recibir más de 5 parámetros. Este es el máximo esperado. Por otro lado, puedo
+   recibir 1 parámetro (el nombre del programa), 3 parámetros (se especifica archivo de 
+   entrada o de salida) y 5 parámetros (se especifican ambos). Además argc siempre es mayor
+   o igual a 1          */
+
+  if (argc > 5 || argc == 4 || argc == 2) {
+    return mostrarMensajeErrorParametrosInvalidos();
+  }
+
+  // Caso de recepción de al menos un archivo por parametro
+  if (argc >= 3) {
+    if (strcmp(argv[1], "-i") == 0) {
+      input_fileName = argv[2];
+      seIngresoArchivoDeEntrada = 1;
+    }
+    else if (strcmp(argv[1], "-o") == 0) {
+      output_fileName = argv[2];
+      seIngresoArchivoDeSalida = 1;
+    }
+    else {
+      // Parámetro invalido
+      return mostrarMensajeErrorParametrosInvalidos();
+    }
+    // Caso de recepción de dos archivos por parámetro
+    if (argc > 4) {
+      if (seIngresoArchivoDeEntrada) {
+        if (strcmp(argv[3], "-o") == 0) {
+          output_fileName = argv[4];
+          seIngresoArchivoDeSalida = 1;
+        }
+        else {
+          // Si ya se ingreso el parametro "-i" el único válido que queda es "-o"
+          return mostrarMensajeErrorParametrosInvalidos();
+        }
+      }
+      else if (seIngresoArchivoDeSalida) {
+        if (strcmp(argv[3], "-i") == 0) {
+          input_fileName = argv[4];
+          seIngresoArchivoDeEntrada = 1;
+        }
+        else {
+          // Si ya se ingreso el parametro "-o" el único válido que queda es "-i"
+          return mostrarMensajeErrorParametrosInvalidos();
+        }
+      }
+    }
+  }
+
+  FILE* input_file;
+  if (input_fileName != NULL)
+  {
+    if( (input_file = fopen(input_fileName, "rt")) == NULL)
+    {
+        fprintf(stderr,"No se pudo abrir el archivo de entrada\n");
+        return -1;
+    }
+  }
+  else
+    input_file = stdin;
+
+  FILE* output_file;
+  if(output_fileName != NULL)
+  {
+    if( (output_file = fopen(output_fileName, "wt")) == NULL)
+    {
+        fprintf(stderr,"No se pudo abrir el archivo de salida\n");
+        return -1;
+    }
+  }
+  else
+    output_file = stdout;
+
+  windowsToLinux(input_file, output_file);
+
+  fclose(input_file);
+  fclose(output_file);
+  return 0;
+}
+\end{verbatim}
+
+
+\section{C\'odigo MIPS}
+\subsection{unix2dos}
+\begin{verbatim}
+	.file	1 "unix2dos.c"
+	.section .mdebug.abi32
+	.previous
+	.abicalls
+	.globl	CR
+	.rdata
+	.type	CR, @object
+	.size	CR, 1
+CR:
+	.byte	13
+	.globl	LF
+	.type	LF, @object
+	.size	LF, 1
+LF:
+	.byte	10
+	.align	2
+$LC0:
+	.ascii	"Los par\303\241metros ingresados no son v\303\241lidos.\n"
+	.ascii	"\000"
+	.text
+	.align	2
+	.globl	mostrarMensajeErrorParametrosInvalidos
+	.ent	mostrarMensajeErrorParametrosInvalidos
+mostrarMensajeErrorParametrosInvalidos:
+	.frame	$fp,40,$ra		# vars= 0, regs= 3/0, args= 16, extra= 8
+	.mask	0xd0000000,-8
+	.fmask	0x00000000,0
+	.set	noreorder
+	.cpload	$t9
+	.set	reorder
+	subu	$sp,$sp,40
+	.cprestore 16
+	sw	$ra,32($sp)
+	sw	$fp,28($sp)
+	sw	$gp,24($sp)
+	move	$fp,$sp
+	la	$a0,__sF+176
+	la	$a1,$LC0
+	la	$t9,fprintf
+	jal	$ra,$t9
+	li	$v0,-1			# 0xffffffffffffffff
+	move	$sp,$fp
+	lw	$ra,32($sp)
+	lw	$fp,28($sp)
+	addu	$sp,$sp,40
+	j	$ra
+	.end	mostrarMensajeErrorParametrosInvalidos
+	.size	mostrarMensajeErrorParametrosInvalidos, .-mostrarMensajeErrorParametrosInvalidos
+	.align	2
+	.globl	linuxToWindows
+	.ent	linuxToWindows
+linuxToWindows:
+	.frame	$fp,48,$ra		# vars= 8, regs= 3/0, args= 16, extra= 8
+	.mask	0xd0000000,-8
+	.fmask	0x00000000,0
+	.set	noreorder
+	.cpload	$t9
+	.set	reorder
+	subu	$sp,$sp,48
+	.cprestore 16
+	sw	$ra,40($sp)
+	sw	$fp,36($sp)
+	sw	$gp,32($sp)
+	move	$fp,$sp
+	sw	$a0,48($fp)
+	sw	$a1,52($fp)
+$L19:
+	lw	$a0,48($fp)
+	la	$t9,fgetc
+	jal	$ra,$t9
+	sb	$v0,24($fp)
+	lbu	$v0,24($fp)
+	sll	$v0,$v0,24
+	sra	$v1,$v0,24
+	li	$v0,-1			# 0xffffffffffffffff
+	bne	$v1,$v0,$L21
+	b	$L18
+$L21:
+	lb	$v1,24($fp)
+	lb	$v0,LF
+	bne	$v1,$v0,$L22
+	lb	$v0,CR
+	move	$a0,$v0
+	lw	$a1,52($fp)
+	la	$t9,fputc
+	jal	$ra,$t9
+	lb	$v0,LF
+	move	$a0,$v0
+	lw	$a1,52($fp)
+	la	$t9,fputc
+	jal	$ra,$t9
+	b	$L19
+$L22:
+	lb	$v0,24($fp)
+	move	$a0,$v0
+	lw	$a1,52($fp)
+	la	$t9,fputc
+	jal	$ra,$t9
+	b	$L19
+$L18:
+	move	$sp,$fp
+	lw	$ra,40($sp)
+	lw	$fp,36($sp)
+	addu	$sp,$sp,48
+	j	$ra
+	.end	linuxToWindows
+	.size	linuxToWindows, .-linuxToWindows
+	.rdata
+	.align	2
+$LC1:
+	.ascii	"-i\000"
+	.align	2
+$LC2:
+	.ascii	"-o\000"
+	.align	2
+$LC3:
+	.ascii	"rt\000"
+	.align	2
+$LC4:
+	.ascii	"No se pudo abrir el archivo de entrada\n\000"
+	.align	2
+$LC5:
+	.ascii	"wt\000"
+	.align	2
+$LC6:
+	.ascii	"No se pudo abrir el archivo de salida\n\000"
+	.text
+	.align	2
+	.globl	main
+	.ent	main
+main:
+	.frame	$fp,72,$ra		# vars= 32, regs= 3/0, args= 16, extra= 8
+	.mask	0xd0000000,-8
+	.fmask	0x00000000,0
+	.set	noreorder
+	.cpload	$t9
+	.set	reorder
+	subu	$sp,$sp,72
+	.cprestore 16
+	sw	$ra,64($sp)
+	sw	$fp,60($sp)
+	sw	$gp,56($sp)
+	move	$fp,$sp
+	sw	$a0,72($fp)
+	sw	$a1,76($fp)
+	sw	$zero,24($fp)
+	sw	$zero,28($fp)
+	sw	$zero,32($fp)
+	sw	$zero,36($fp)
+	lw	$v0,72($fp)
+	slt	$v0,$v0,6
+	beq	$v0,$zero,$L26
+	lw	$v1,72($fp)
+	li	$v0,4			# 0x4
+	beq	$v1,$v0,$L26
+	lw	$v1,72($fp)
+	li	$v0,2			# 0x2
+	beq	$v1,$v0,$L26
+	b	$L25
+$L26:
+	la	$t9,mostrarMensajeErrorParametrosInvalidos
+	jal	$ra,$t9
+	sw	$v0,48($fp)
+	b	$L24
+$L25:
+	lw	$v0,72($fp)
+	slt	$v0,$v0,3
+	bne	$v0,$zero,$L27
+	lw	$v0,76($fp)
+	addu	$v0,$v0,4
+	lw	$a0,0($v0)
+	la	$a1,$LC1
+	la	$t9,strcmp
+	jal	$ra,$t9
+	bne	$v0,$zero,$L28
+	lw	$v0,76($fp)
+	addu	$v0,$v0,8
+	lw	$v0,0($v0)
+	sw	$v0,32($fp)
+	li	$v0,1			# 0x1
+	sw	$v0,24($fp)
+	b	$L29
+$L28:
+	lw	$v0,76($fp)
+	addu	$v0,$v0,4
+	lw	$a0,0($v0)
+	la	$a1,$LC2
+	la	$t9,strcmp
+	jal	$ra,$t9
+	bne	$v0,$zero,$L30
+	lw	$v0,76($fp)
+	addu	$v0,$v0,8
+	lw	$v0,0($v0)
+	sw	$v0,36($fp)
+	li	$v0,1			# 0x1
+	sw	$v0,28($fp)
+	b	$L29
+$L30:
+	la	$t9,mostrarMensajeErrorParametrosInvalidos
+	jal	$ra,$t9
+	sw	$v0,48($fp)
+	b	$L24
+$L29:
+	lw	$v0,72($fp)
+	slt	$v0,$v0,5
+	bne	$v0,$zero,$L27
+	lw	$v0,24($fp)
+	beq	$v0,$zero,$L33
+	lw	$v0,76($fp)
+	addu	$v0,$v0,12
+	lw	$a0,0($v0)
+	la	$a1,$LC2
+	la	$t9,strcmp
+	jal	$ra,$t9
+	bne	$v0,$zero,$L34
+	lw	$v0,76($fp)
+	addu	$v0,$v0,16
+	lw	$v0,0($v0)
+	sw	$v0,36($fp)
+	li	$v0,1			# 0x1
+	sw	$v0,28($fp)
+	b	$L27
+$L34:
+	la	$t9,mostrarMensajeErrorParametrosInvalidos
+	jal	$ra,$t9
+	sw	$v0,48($fp)
+	b	$L24
+$L33:
+	lw	$v0,28($fp)
+	beq	$v0,$zero,$L27
+	lw	$v0,76($fp)
+	addu	$v0,$v0,12
+	lw	$a0,0($v0)
+	la	$a1,$LC1
+	la	$t9,strcmp
+	jal	$ra,$t9
+	bne	$v0,$zero,$L38
+	lw	$v0,76($fp)
+	addu	$v0,$v0,16
+	lw	$v0,0($v0)
+	sw	$v0,32($fp)
+	li	$v0,1			# 0x1
+	sw	$v0,24($fp)
+	b	$L27
+$L38:
+	la	$t9,mostrarMensajeErrorParametrosInvalidos
+	jal	$ra,$t9
+	sw	$v0,48($fp)
+	b	$L24
+$L27:
+	lw	$v0,32($fp)
+	beq	$v0,$zero,$L40
+	lw	$a0,32($fp)
+	la	$a1,$LC3
+	la	$t9,fopen
+	jal	$ra,$t9
+	sw	$v0,40($fp)
+	lw	$v0,40($fp)
+	bne	$v0,$zero,$L42
+	la	$a0,__sF+176
+	la	$a1,$LC4
+	la	$t9,fprintf
+	jal	$ra,$t9
+	li	$v0,-1			# 0xffffffffffffffff
+	sw	$v0,48($fp)
+	b	$L24
+$L40:
+	la	$v0,__sF
+	sw	$v0,40($fp)
+$L42:
+	lw	$v0,36($fp)
+	beq	$v0,$zero,$L43
+	lw	$a0,36($fp)
+	la	$a1,$LC5
+	la	$t9,fopen
+	jal	$ra,$t9
+	sw	$v0,44($fp)
+	lw	$v0,44($fp)
+	bne	$v0,$zero,$L45
+	la	$a0,__sF+176
+	la	$a1,$LC6
+	la	$t9,fprintf
+	jal	$ra,$t9
+	li	$v0,-1			# 0xffffffffffffffff
+	sw	$v0,48($fp)
+	b	$L24
+$L43:
+	la	$v0,__sF+88
+	sw	$v0,44($fp)
+$L45:
+	lw	$a0,40($fp)
+	lw	$a1,44($fp)
+	la	$t9,linuxToWindows
+	jal	$ra,$t9
+	lw	$a0,40($fp)
+	la	$t9,fclose
+	jal	$ra,$t9
+	lw	$a0,44($fp)
+	la	$t9,fclose
+	jal	$ra,$t9
+	sw	$zero,48($fp)
+$L24:
+	lw	$v0,48($fp)
+	move	$sp,$fp
+	lw	$ra,64($sp)
+	lw	$fp,60($sp)
+	addu	$sp,$sp,72
+	j	$ra
+	.end	main
+	.size	main, .-main
+	.ident	"GCC: (GNU) 3.3.3 (NetBSD nb3 20040520)"
+\end{verbatim}
+
+\subsection{dos2unix}
+\begin{verbatim}
+	.file	1 "dos2unix.c"
+	.section .mdebug.abi32
+	.previous
+	.abicalls
+	.globl	CR
+	.rdata
+	.type	CR, @object
+	.size	CR, 1
+CR:
+	.byte	13
+	.globl	LF
+	.type	LF, @object
+	.size	LF, 1
+LF:
+	.byte	10
+	.align	2
+$LC0:
+	.ascii	"Los par\303\241metros ingresados no son v\303\241lidos.\n"
+	.ascii	"\000"
+	.text
+	.align	2
+	.globl	mostrarMensajeErrorParametrosInvalidos
+	.ent	mostrarMensajeErrorParametrosInvalidos
+mostrarMensajeErrorParametrosInvalidos:
+	.frame	$fp,40,$ra		# vars= 0, regs= 3/0, args= 16, extra= 8
+	.mask	0xd0000000,-8
+	.fmask	0x00000000,0
+	.set	noreorder
+	.cpload	$t9
+	.set	reorder
+	subu	$sp,$sp,40
+	.cprestore 16
+	sw	$ra,32($sp)
+	sw	$fp,28($sp)
+	sw	$gp,24($sp)
+	move	$fp,$sp
+	la	$a0,__sF+176
+	la	$a1,$LC0
+	la	$t9,fprintf
+	jal	$ra,$t9
+	li	$v0,-1			# 0xffffffffffffffff
+	move	$sp,$fp
+	lw	$ra,32($sp)
+	lw	$fp,28($sp)
+	addu	$sp,$sp,40
+	j	$ra
+	.end	mostrarMensajeErrorParametrosInvalidos
+	.size	mostrarMensajeErrorParametrosInvalidos, .-mostrarMensajeErrorParametrosInvalidos
+	.align	2
+	.globl	windowsToLinux
+	.ent	windowsToLinux
+windowsToLinux:
+	.frame	$fp,48,$ra		# vars= 8, regs= 3/0, args= 16, extra= 8
+	.mask	0xd0000000,-8
+	.fmask	0x00000000,0
+	.set	noreorder
+	.cpload	$t9
+	.set	reorder
+	subu	$sp,$sp,48
+	.cprestore 16
+	sw	$ra,40($sp)
+	sw	$fp,36($sp)
+	sw	$gp,32($sp)
+	move	$fp,$sp
+	sw	$a0,48($fp)
+	sw	$a1,52($fp)
+$L19:
+	lw	$a0,48($fp)
+	la	$t9,fgetc
+	jal	$ra,$t9
+	sb	$v0,24($fp)
+	lbu	$v0,24($fp)
+	sll	$v0,$v0,24
+	sra	$v1,$v0,24
+	li	$v0,-1			# 0xffffffffffffffff
+	bne	$v1,$v0,$L21
+	b	$L18
+$L21:
+	lb	$v1,24($fp)
+	lb	$v0,CR
+	bne	$v1,$v0,$L22
+	lw	$a0,48($fp)
+	la	$t9,fgetc
+	jal	$ra,$t9
+	sb	$v0,25($fp)
+	lbu	$v0,25($fp)
+	sll	$v0,$v0,24
+	sra	$v1,$v0,24
+	li	$v0,-1			# 0xffffffffffffffff
+	bne	$v1,$v0,$L23
+	lb	$v0,CR
+	move	$a0,$v0
+	lw	$a1,52($fp)
+	la	$t9,fputc
+	jal	$ra,$t9
+	b	$L18
+$L23:
+	lb	$v1,25($fp)
+	lb	$v0,LF
+	bne	$v1,$v0,$L25
+	lb	$v0,LF
+	move	$a0,$v0
+	lw	$a1,52($fp)
+	la	$t9,fputc
+	jal	$ra,$t9
+	b	$L19
+$L25:
+	lb	$v0,CR
+	move	$a0,$v0
+	lw	$a1,52($fp)
+	la	$t9,fputc
+	jal	$ra,$t9
+	lb	$v0,25($fp)
+	move	$a0,$v0
+	lw	$a1,52($fp)
+	la	$t9,fputc
+	jal	$ra,$t9
+	b	$L19
+$L22:
+	lb	$v0,24($fp)
+	move	$a0,$v0
+	lw	$a1,52($fp)
+	la	$t9,fputc
+	jal	$ra,$t9
+	b	$L19
+$L18:
+	move	$sp,$fp
+	lw	$ra,40($sp)
+	lw	$fp,36($sp)
+	addu	$sp,$sp,48
+	j	$ra
+	.end	windowsToLinux
+	.size	windowsToLinux, .-windowsToLinux
+	.rdata
+	.align	2
+$LC1:
+	.ascii	"-i\000"
+	.align	2
+$LC2:
+	.ascii	"-o\000"
+	.align	2
+$LC3:
+	.ascii	"rt\000"
+	.align	2
+$LC4:
+	.ascii	"No se pudo abrir el archivo de entrada\n\000"
+	.align	2
+$LC5:
+	.ascii	"wt\000"
+	.align	2
+$LC6:
+	.ascii	"No se pudo abrir el archivo de salida\n\000"
+	.text
+	.align	2
+	.globl	main
+	.ent	main
+main:
+	.frame	$fp,72,$ra		# vars= 32, regs= 3/0, args= 16, extra= 8
+	.mask	0xd0000000,-8
+	.fmask	0x00000000,0
+	.set	noreorder
+	.cpload	$t9
+	.set	reorder
+	subu	$sp,$sp,72
+	.cprestore 16
+	sw	$ra,64($sp)
+	sw	$fp,60($sp)
+	sw	$gp,56($sp)
+	move	$fp,$sp
+	sw	$a0,72($fp)
+	sw	$a1,76($fp)
+	sw	$zero,24($fp)
+	sw	$zero,28($fp)
+	sw	$zero,32($fp)
+	sw	$zero,36($fp)
+	lw	$v0,72($fp)
+	slt	$v0,$v0,6
+	beq	$v0,$zero,$L30
+	lw	$v1,72($fp)
+	li	$v0,4			# 0x4
+	beq	$v1,$v0,$L30
+	lw	$v1,72($fp)
+	li	$v0,2			# 0x2
+	beq	$v1,$v0,$L30
+	b	$L29
+$L30:
+	la	$t9,mostrarMensajeErrorParametrosInvalidos
+	jal	$ra,$t9
+	sw	$v0,48($fp)
+	b	$L28
+$L29:
+	lw	$v0,72($fp)
+	slt	$v0,$v0,3
+	bne	$v0,$zero,$L31
+	lw	$v0,76($fp)
+	addu	$v0,$v0,4
+	lw	$a0,0($v0)
+	la	$a1,$LC1
+	la	$t9,strcmp
+	jal	$ra,$t9
+	bne	$v0,$zero,$L32
+	lw	$v0,76($fp)
+	addu	$v0,$v0,8
+	lw	$v0,0($v0)
+	sw	$v0,32($fp)
+	li	$v0,1			# 0x1
+	sw	$v0,24($fp)
+	b	$L33
+$L32:
+	lw	$v0,76($fp)
+	addu	$v0,$v0,4
+	lw	$a0,0($v0)
+	la	$a1,$LC2
+	la	$t9,strcmp
+	jal	$ra,$t9
+	bne	$v0,$zero,$L34
+	lw	$v0,76($fp)
+	addu	$v0,$v0,8
+	lw	$v0,0($v0)
+	sw	$v0,36($fp)
+	li	$v0,1			# 0x1
+	sw	$v0,28($fp)
+	b	$L33
+$L34:
+	la	$t9,mostrarMensajeErrorParametrosInvalidos
+	jal	$ra,$t9
+	sw	$v0,48($fp)
+	b	$L28
+$L33:
+	lw	$v0,72($fp)
+	slt	$v0,$v0,5
+	bne	$v0,$zero,$L31
+	lw	$v0,24($fp)
+	beq	$v0,$zero,$L37
+	lw	$v0,76($fp)
+	addu	$v0,$v0,12
+	lw	$a0,0($v0)
+	la	$a1,$LC2
+	la	$t9,strcmp
+	jal	$ra,$t9
+	bne	$v0,$zero,$L38
+	lw	$v0,76($fp)
+	addu	$v0,$v0,16
+	lw	$v0,0($v0)
+	sw	$v0,36($fp)
+	li	$v0,1			# 0x1
+	sw	$v0,28($fp)
+	b	$L31
+$L38:
+	la	$t9,mostrarMensajeErrorParametrosInvalidos
+	jal	$ra,$t9
+	sw	$v0,48($fp)
+	b	$L28
+$L37:
+	lw	$v0,28($fp)
+	beq	$v0,$zero,$L31
+	lw	$v0,76($fp)
+	addu	$v0,$v0,12
+	lw	$a0,0($v0)
+	la	$a1,$LC1
+	la	$t9,strcmp
+	jal	$ra,$t9
+	bne	$v0,$zero,$L42
+	lw	$v0,76($fp)
+	addu	$v0,$v0,16
+	lw	$v0,0($v0)
+	sw	$v0,32($fp)
+	li	$v0,1			# 0x1
+	sw	$v0,24($fp)
+	b	$L31
+$L42:
+	la	$t9,mostrarMensajeErrorParametrosInvalidos
+	jal	$ra,$t9
+	sw	$v0,48($fp)
+	b	$L28
+$L31:
+	lw	$v0,32($fp)
+	beq	$v0,$zero,$L44
+	lw	$a0,32($fp)
+	la	$a1,$LC3
+	la	$t9,fopen
+	jal	$ra,$t9
+	sw	$v0,40($fp)
+	lw	$v0,40($fp)
+	bne	$v0,$zero,$L46
+	la	$a0,__sF+176
+	la	$a1,$LC4
+	la	$t9,fprintf
+	jal	$ra,$t9
+	li	$v0,-1			# 0xffffffffffffffff
+	sw	$v0,48($fp)
+	b	$L28
+$L44:
+	la	$v0,__sF
+	sw	$v0,40($fp)
+$L46:
+	lw	$v0,36($fp)
+	beq	$v0,$zero,$L47
+	lw	$a0,36($fp)
+	la	$a1,$LC5
+	la	$t9,fopen
+	jal	$ra,$t9
+	sw	$v0,44($fp)
+	lw	$v0,44($fp)
+	bne	$v0,$zero,$L49
+	la	$a0,__sF+176
+	la	$a1,$LC6
+	la	$t9,fprintf
+	jal	$ra,$t9
+	li	$v0,-1			# 0xffffffffffffffff
+	sw	$v0,48($fp)
+	b	$L28
+$L47:
+	la	$v0,__sF+88
+	sw	$v0,44($fp)
+$L49:
+	lw	$a0,40($fp)
+	lw	$a1,44($fp)
+	la	$t9,windowsToLinux
+	jal	$ra,$t9
+	lw	$a0,40($fp)
+	la	$t9,fclose
+	jal	$ra,$t9
+	lw	$a0,44($fp)
+	la	$t9,fclose
+	jal	$ra,$t9
+	sw	$zero,48($fp)
+$L28:
+	lw	$v0,48($fp)
+	move	$sp,$fp
+	lw	$ra,64($sp)
+	lw	$fp,60($sp)
+	addu	$sp,$sp,72
+	j	$ra
+	.end	main
+	.size	main, .-main
+	.ident	"GCC: (GNU) 3.3.3 (NetBSD nb3 20040520)"
 \end{verbatim}
 
 \end{document}
