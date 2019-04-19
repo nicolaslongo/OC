@@ -1,9 +1,3 @@
-/* Se explica el razonamiento a tratar para los parámetros:
-en argv[0] está el path del programa
-en argv[1] se espera que esté si el archivo de entrada es de windows o linux
-en argv[2] se espera que esté el archivo de entrada
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

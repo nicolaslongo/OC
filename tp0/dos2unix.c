@@ -1,9 +1,3 @@
-/* Se explica el razonamiento a tratar para los parámetros:
-en argv[0] está el path del programa
-en argv[1] se espera que esté si el archivo de entrada es de windows o linux
-en argv[2] se espera que esté el archivo de entrada
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -21,7 +15,7 @@ int mostrarMensajeErrorParametrosInvalidos()
 
 void windowsToLinux(FILE* input_file, FILE* output_file)
 {
-	char c, d;
+	int c, d;
 
 	while((c = fgetc(input_file)) != -1)
 	{
@@ -63,7 +57,7 @@ int main(int argc, char** argv)
   char *output_fileName = NULL;
 
 /* No puedo recibir más de 5 parámetros. Este es el máximo esperado. Por otro lado, puedo
-   recibir 1 parámetro (el nombre del programa), 3 parámetros (se especifica archivo de 
+   recibir 1 parámetro (el nombre del programa), 3 parámetros (se especifica archivo de
    entrada o de salida) y 5 parámetros (se especifican ambos). Además argc siempre es mayor
    o igual a 1          */
 
