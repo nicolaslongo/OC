@@ -21,7 +21,7 @@ int mostrarMensajeErrorParametrosInvalidos()
 
 void linuxToWindows(FILE* input_file, FILE* output_file)
 {
-	char c;
+	int c;
   	while((c = fgetc(input_file)) != -1)
   	{
   		if ( c == LF )
@@ -46,7 +46,7 @@ int main(int argc, char** argv)
   char *output_fileName = NULL;
 
 /* No puedo recibir más de 5 parámetros. Este es el máximo esperado. Por otro lado, puedo
-   recibir 1 parámetro (el nombre del programa), 3 parámetros (se especifica archivo de 
+   recibir 1 parámetro (el nombre del programa), 3 parámetros (se especifica archivo de
    entrada o de salida) y 5 parámetros (se especifican ambos). Además argc siempre es mayor
    o igual a 1          */
 
