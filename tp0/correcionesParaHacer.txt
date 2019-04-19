@@ -1,0 +1,26 @@
+Entrega1: 9/4
+Nota: Reentregan
+Observaciones:
+ * Faltan conclusiones
+
+ * Error en el manejo de EOF y errores en linuxToWindows(). Probar con:
+   $ echo -e "\xffA" | ./unix2dos | od -t c
+
+   Veran que corta antes de "A", eso es porque 0xff lo están interpretando
+   como EOF. Hay que usar int en lugar de char para fgetc (ver man fgetc).
+
+ * Idem en windowsToLinux()
+
+ * No interpreta los nombres de archivo "-" como stdin y stdout:
+   $ echo a | ./unix2dos -i -
+   No se pudo abrir el archivo de entrada
+
+   El "-" representa stdin o stdout
+
+ * Falta documentar cómo se compila
+
+ * Falta documentación de las pruebas. Cómo se corren las pruebas?
+
+ * (optativo) Debería haber un script que corre las pruebas
+
+ * (optativo) El parsing de opciones se simplificaría con getopt_long()
