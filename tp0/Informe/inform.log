@@ -1,103 +1,114 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.4.3)  8 APR 2019 21:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6980) (preloaded format=pdflatex 2019.3.29)  20 APR 2019 12:09
 entering extended mode
- restricted \write18 enabled.
- %&-line parsing enabled.
-**inform.tex
-(./inform.tex
-LaTeX2e <2017-04-15>
-Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
-(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
-File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+**./inform.tex
+(inform.tex
+LaTeX2e <2018-12-01>
+(/home/eche/.miktex/texmfs/install/tex/latex/base/article.cls
+Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
+(/home/eche/.miktex/texmfs/install/tex/latex/base/size11.clo
+File: size11.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 )
-\c@part=\count79
-\c@section=\count80
-\c@subsection=\count81
-\c@subsubsection=\count82
-\c@paragraph=\count83
-\c@subparagraph=\count84
-\c@figure=\count85
-\c@table=\count86
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2018/02/14 3.18 The Babel package
+(/home/eche/.miktex/texmfs/install/tex/generic/babel/babel.sty
+Package: babel 2018/11/13 3.27 The Babel package
 
-(/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
-File: switch.def 2018/02/14 3.18 Babel switching mechanism
+(/home/eche/.miktex/texmfs/install/tex/generic/babel/switch.def
+File: switch.def 2018/11/13 3.27 Babel switching mechanism
 )
-(/usr/share/texlive/texmf-dist/tex/generic/babel-spanish/spanish.ldf
+*************************************
+* Local config file bblopts.cfg used
+*
+(/home/eche/.miktex/texmfs/install/tex/latex/arabi/bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+(/home/eche/.miktex/texmfs/install/tex/latex/babel-spanish/spanish.ldf
 Language: spanish.ldf 2016/03/03 v5.0p Spanish support from the babel system
 
-(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2018/02/14 3.18 Babel common definitions
-\babel@savecnt=\count87
+(/home/eche/.miktex/texmfs/install/tex/generic/babel/babel.def
+File: babel.def 2018/11/13 3.27 Babel common definitions
+\babel@savecnt=\count88
 \U@D=\dimen103
 
-(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
-\bbl@dirlevel=\count88
+(/home/eche/.miktex/texmfs/install/tex/generic/babel/txtbabel.def)
+\bbl@dirlevel=\count89
 )
+
+Package babel Warning: No hyphenation patterns were preloaded for
+(babel)                the language `Spanish' into the format.
+(babel)                Please, configure your TeX system to add them and
+(babel)                rebuild the format. Now I will use the patterns
+(babel)                preloaded for \language=0 instead on input line 51.
+
+\l@spanish = a dialect from \language0
 \es@quottoks=\toks14
-\es@quotdepth=\count89
+\es@quotdepth=\count90
 Package babel Info: Making " an active character on input line 561.
 Package babel Info: Making . an active character on input line 662.
 Package babel Info: Making < an active character on input line 707.
 Package babel Info: Making > an active character on input line 707.
-))
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+)) (/home/eche/.miktex/texmfs/install/tex/latex/graphics/graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+(/home/eche/.miktex/texmfs/install/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks15
 )
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/home/eche/.miktex/texmfs/install/tex/latex/graphics/graphics.sty
 Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+(/home/eche/.miktex/texmfs/install/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+(/home/eche/.miktex/texmfs/install/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+(/home/eche/.miktex/texmfs/install/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen104
 \Gin@req@width=\dimen105
 )
-(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2015/03/17 v1.2c Input encoding file
+(/home/eche/.miktex/texmfs/install/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks16
 \inpenc@posthook=\toks17
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/ansinew.def
-File: ansinew.def 2015/03/17 v1.2c Input encoding file
+(/home/eche/.miktex/texmfs/install/tex/latex/base/ansinew.def
+File: ansinew.def 2018/08/11 v1.3c Input encoding file
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/inputenx.sty
+(/home/eche/.miktex/texmfs/install/tex/latex/oberdiek/inputenx.sty
 Package: inputenx 2016/05/16 v1.11 Enhanced input encoding handling (HO)
 
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/ix-alias.def
+(/home/eche/.miktex/texmfs/install/tex/latex/oberdiek/ix-alias.def
 File: ix-alias.def 2016/05/16 v1.11 Alias list (inputenx)
 )
 Package inputenx Info: Encoding name: utf8
 (inputenx)             Encoding file: utf8.def
 (inputenx)              on input line 171.
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
-File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
+(/home/eche/.miktex/texmfs/install/tex/latex/base/utf8.def
+File: utf8.def 2018/10/05 v1.2f UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu
-File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
+(/home/eche/.miktex/texmfs/install/tex/latex/base/t1enc.dfu
+File: t1enc.dfu 2018/10/05 v1.2f UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -311,8 +322,12 @@ File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+021B (decimal 539)
    defining Unicode char U+0232 (decimal 562)
    defining Unicode char U+0233 (decimal 563)
+   defining Unicode char U+0237 (decimal 567)
+   defining Unicode char U+02D9 (decimal 729)
+   defining Unicode char U+02DB (decimal 731)
    defining Unicode char U+1E02 (decimal 7682)
    defining Unicode char U+1E03 (decimal 7683)
+   defining Unicode char U+1E9E (decimal 7838)
    defining Unicode char U+200C (decimal 8204)
    defining Unicode char U+2010 (decimal 8208)
    defining Unicode char U+2011 (decimal 8209)
@@ -337,8 +352,8 @@ File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
-File: ot1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
+(/home/eche/.miktex/texmfs/install/tex/latex/base/ot1enc.dfu
+File: ot1enc.dfu 2018/10/05 v1.2f UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -368,6 +383,7 @@ File: ot1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+0219 (decimal 537)
    defining Unicode char U+021A (decimal 538)
    defining Unicode char U+021B (decimal 539)
+   defining Unicode char U+0237 (decimal 567)
    defining Unicode char U+2013 (decimal 8211)
    defining Unicode char U+2014 (decimal 8212)
    defining Unicode char U+2018 (decimal 8216)
@@ -378,8 +394,8 @@ File: ot1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
-File: omsenc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
+(/home/eche/.miktex/texmfs/install/tex/latex/base/omsenc.dfu
+File: omsenc.dfu 2018/10/05 v1.2f UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
    defining Unicode char U+00B7 (decimal 183)
@@ -401,7 +417,8 @@ Now handling font encoding U ...
    defining Unicode char U+2026 (decimal 8230)
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
-)) (./inform.aux
+   defining Unicode char U+FEFF (decimal 65279)
+)) (inform.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 )
@@ -422,58 +439,53 @@ LaTeX Font Info:    ... okay on input line 24.
 LaTeX Info: Redefining \. on input line 24.
 LaTeX Info: Redefining \% on input line 24.
 
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+(/home/eche/.miktex/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count90
+\scratchcounter=\count91
 \scratchdimen=\dimen106
-\scratchbox=\box26
-\nofMPsegments=\count91
-\nofMParguments=\count92
+\scratchbox=\box27
+\nofMPsegments=\count92
+\nofMParguments=\count93
 \everyMPshowfont=\toks18
-\MPscratchCnt=\count93
+\MPscratchCnt=\count94
 \MPscratchDim=\dimen107
-\MPnumerator=\count94
-\makeMPintoPDFobject=\count95
+\MPnumerator=\count95
+\makeMPintoPDFobject=\count96
 \everyMPtoPDFconversion=\toks19
-) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+) (/home/eche/.miktex/texmfs/install/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+(/home/eche/.miktex/texmfs/install/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+(/home/eche/.miktex/texmfs/install/tex/latex/oberdiek/grfext.sty
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+(/home/eche/.miktex/texmfs/install/tex/generic/oberdiek/kvdefinekeys.sty
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+(/home/eche/.miktex/texmfs/install/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )))
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(/home/eche/.miktex/texmfs/install/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+(/home/eche/.miktex/texmfs/install/tex/generic/oberdiek/kvsetkeys.sty
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+(/home/eche/.miktex/texmfs/install/tex/generic/oberdiek/etexcmds.sty
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+(/home/eche/.miktex/texmfs/install/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
-)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO
+))))
+(/home/eche/.miktex/texmfs/install/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+(/home/eche/.miktex/texmfs/install/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
@@ -486,11 +498,7 @@ Package grfext Info: Graphics extension search list:
 (grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
-
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
+)
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 26.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -499,197 +507,243 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 26.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 26.
+ [1
 
-[1
+{/home/eche/.miktex/texmfs/data/pdftex/config/pdftex.map}]
+Overfull \hbox (5.7609pt too wide) in paragraph at lines 33--37
+\OT1/cmr/m/n/10.95 siguien- tes trabajos, implementando un programa (y su corre
+spondiente
+ []
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+
+Overfull \hbox (17.28877pt too wide) in paragraph at lines 42--48
+\OT1/cmr/m/n/10.95 con una caratula que contenga los datos completos de todos 
+los integrantes.
+ []
+
+
+Overfull \hbox (0.3923pt too wide) in paragraph at lines 49--55
+\OT1/cmr/m/n/10.95 Usaremos el programa GXemul [1] para simular el entorno de d
+esarrollo
+ []
+
+
+Overfull \hbox (1.77507pt too wide) in paragraph at lines 56--60
+\OT1/cmr/m/n/10.95 Se trata de escribir en lenguaje C dos programas que permita
+n convertir
+ []
+
+
+Overfull \hbox (20.42178pt too wide) in paragraph at lines 62--64
+[]\OT1/cmr/m/n/10.95 En particular, buscamos generar dos programas: unix2dos pa
+ra transformar
+ []
+
+
+Overfull \hbox (4.08678pt too wide) in paragraph at lines 62--64
+\OT1/cmr/m/n/10.95 archivs de texto de UNIX a Windows y dos2unix para hacer la 
+operacion
+ []
+
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 73.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+(/home/eche/.miktex/texmfs/install/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 73.
- [2] [3] [4]
+ [2]
+Overfull \hbox (9.86598pt too wide) in paragraph at lines 126--129
+\OT1/cmr/m/n/10.95 CR+LF para los caracteres newline, y hemos usado el programa
+ dos2unix
+ []
+
+
+Overfull \hbox (15.18999pt too wide) in paragraph at lines 130--135
+\OT1/cmr/m/n/10.95 que los alumnos deberan proponer casos de prueba que crean 
+convenientes,
+ []
+
+[3] [4]
 Overfull \hbox (59.6542pt too wide) in paragraph at lines 181--181
 []\OT1/cmtt/m/n/10.95 cmp archivoDePrueba01_salidaReal.txt archivoDePrueba02_sa
 lidaEsperada.txt[] 
  []
 
 [5]
+Overfull \hbox (14.66997pt too wide) in paragraph at lines 189--190
+[]\OT1/cmr/m/n/10.95 Para ejecutar los programas se utiliza la consola o shell 
+(convencionalmente),
+ []
+
+
 Overfull \hbox (30.91077pt too wide) in paragraph at lines 199--199
 []\OT1/cmtt/m/n/10.95 ./dos2unix -i archivoDeEntradaWindows.txt -o archivoDeSal
 idaUnix.txt[] 
  []
 
 
-Overfull \hbox (76.90027pt too wide) in paragraph at lines 341--341
-[]\OT1/cmtt/m/n/10.95 en argv[1] se espera que est^^Se si el archivo de entrada
- es de windows o linux[] 
+Overfull \hbox (1.19832pt too wide) in paragraph at lines 202--203
+\OT1/cmr/m/n/10.95 fuente suministrado se deben seguir los siguientes pasos (us
+aremos de ejemplo
  []
 
 [6]
-Overfull \hbox (13.6647pt too wide) in paragraph at lines 341--341
-[]  \OT1/cmtt/m/n/10.95 fprintf(stderr, "Los par^^Sametros ingresados no son v^
-^Salidos.\n");[] 
+Overfull \hbox (13.6647pt too wide) in paragraph at lines 347--347
+[]  \OT1/cmtt/m/n/10.95 fprintf(stderr, "Los parametros ingresados no son val
+idos.\n");[] 
  []
 
 
-Overfull \hbox (174.62796pt too wide) in paragraph at lines 341--341
+Overfull \hbox (174.62796pt too wide) in paragraph at lines 347--347
 []  \OT1/cmtt/m/n/10.95 // Inicializo los valores por defecto. No se ingresaron
  archivos y estos son stdin y stdout[] 
  []
 
 
-Overfull \hbox (151.63321pt too wide) in paragraph at lines 341--341
-[]\OT1/cmtt/m/n/10.95 /* No puedo recibir m^^Sas de 5 par^^Sametros. Este es el
- m^^Saximo esperado. Por otro lado, puedo[] 
+Overfull \hbox (151.63321pt too wide) in paragraph at lines 347--347
+[]\OT1/cmtt/m/n/10.95 /* No puedo recibir mas de 5 parametros. Este es el ma
+ximo esperado. Por otro lado, puedo[] 
  []
 
 
-Overfull \hbox (140.13583pt too wide) in paragraph at lines 341--341
-[]   \OT1/cmtt/m/n/10.95 recibir 1 par^^Sametro (el nombre del programa), 3 par
-^^Sametros (se especifica archivo de[] 
+Overfull \hbox (140.13583pt too wide) in paragraph at lines 347--347
+[]   \OT1/cmtt/m/n/10.95 recibir 1 parametro (el nombre del programa), 3 para
+metros (se especifica archivo de[] 
  []
 
 
-Overfull \hbox (163.13058pt too wide) in paragraph at lines 341--341
-[]   \OT1/cmtt/m/n/10.95 entrada o de salida) y 5 par^^Sametros (se especifican
- ambos). Adem^^Sas argc siempre es mayor[] 
+Overfull \hbox (163.13058pt too wide) in paragraph at lines 347--347
+[]   \OT1/cmtt/m/n/10.95 entrada o de salida) y 5 parametros (se especifican a
+mbos). Ademas argc siempre es mayor[] 
  []
 
 [7]
-Overfull \hbox (105.6437pt too wide) in paragraph at lines 341--341
-[]          \OT1/cmtt/m/n/10.95 // Si ya se ingreso el parametro "-i" el ^^Suni
-co v^^Salido que queda es "-o"[] 
+Overfull \hbox (105.6437pt too wide) in paragraph at lines 347--347
+[]          \OT1/cmtt/m/n/10.95 // Si ya se ingreso el parametro "-i" el unico
+ valido que queda es "-o"[] 
  []
 
 
-Overfull \hbox (105.6437pt too wide) in paragraph at lines 341--341
-[]          \OT1/cmtt/m/n/10.95 // Si ya se ingreso el parametro "-o" el ^^Suni
-co v^^Salido que queda es "-i"[] 
+Overfull \hbox (105.6437pt too wide) in paragraph at lines 347--347
+[]          \OT1/cmtt/m/n/10.95 // Si ya se ingreso el parametro "-o" el unico
+ valido que queda es "-i"[] 
  []
 
 [8]
-Overfull \hbox (25.16208pt too wide) in paragraph at lines 341--341
+Overfull \hbox (25.16208pt too wide) in paragraph at lines 347--347
 []        \OT1/cmtt/m/n/10.95 fprintf(stderr,"No se pudo abrir el archivo de en
 trada\n");[] 
  []
 
 
-Overfull \hbox (19.41339pt too wide) in paragraph at lines 341--341
+Overfull \hbox (19.41339pt too wide) in paragraph at lines 347--347
 []        \OT1/cmtt/m/n/10.95 fprintf(stderr,"No se pudo abrir el archivo de sa
 lida\n");[] 
  []
 
-
-Overfull \hbox (76.90027pt too wide) in paragraph at lines 487--487
-[]\OT1/cmtt/m/n/10.95 en argv[1] se espera que est^^Se si el archivo de entrada
- es de windows o linux[] 
- []
-
 [9]
-Overfull \hbox (13.6647pt too wide) in paragraph at lines 487--487
-[]  \OT1/cmtt/m/n/10.95 fprintf(stderr, "Los par^^Sametros ingresados no son v^
-^Salidos.\n");[] 
+Overfull \hbox (13.6647pt too wide) in paragraph at lines 499--499
+[]  \OT1/cmtt/m/n/10.95 fprintf(stderr, "Los parametros ingresados no son val
+idos.\n");[] 
  []
 
 [10]
-Overfull \hbox (174.62796pt too wide) in paragraph at lines 487--487
+Overfull \hbox (174.62796pt too wide) in paragraph at lines 499--499
 []  \OT1/cmtt/m/n/10.95 // Inicializo los valores por defecto. No se ingresaron
  archivos y estos son stdin y stdout[] 
  []
 
 
-Overfull \hbox (151.63321pt too wide) in paragraph at lines 487--487
-[]\OT1/cmtt/m/n/10.95 /* No puedo recibir m^^Sas de 5 par^^Sametros. Este es el
- m^^Saximo esperado. Por otro lado, puedo[] 
+Overfull \hbox (163.13058pt too wide) in paragraph at lines 499--499
+[]  \OT1/cmtt/m/n/10.95 /* No puedo recibir mas de 5 parametros. Este es el m
+aximo esperado. Por otro lado, puedo[] 
  []
 
 
-Overfull \hbox (140.13583pt too wide) in paragraph at lines 487--487
-[]   \OT1/cmtt/m/n/10.95 recibir 1 par^^Sametro (el nombre del programa), 3 par
-^^Sametros (se especifica archivo de[] 
+Overfull \hbox (140.13583pt too wide) in paragraph at lines 499--499
+[]   \OT1/cmtt/m/n/10.95 recibir 1 parametro (el nombre del programa), 3 para
+metros (se especifica archivo de[] 
  []
 
 
-Overfull \hbox (163.13058pt too wide) in paragraph at lines 487--487
-[]   \OT1/cmtt/m/n/10.95 entrada o de salida) y 5 par^^Sametros (se especifican
- ambos). Adem^^Sas argc siempre es mayor[] 
- []
-
-
-Overfull \hbox (105.6437pt too wide) in paragraph at lines 487--487
-[]          \OT1/cmtt/m/n/10.95 // Si ya se ingreso el parametro "-i" el ^^Suni
-co v^^Salido que queda es "-o"[] 
+Overfull \hbox (163.13058pt too wide) in paragraph at lines 499--499
+[]   \OT1/cmtt/m/n/10.95 entrada o de salida) y 5 parametros (se especifican a
+mbos). Ademas argc siempre es mayor[] 
  []
 
 [11]
-Overfull \hbox (105.6437pt too wide) in paragraph at lines 487--487
-[]          \OT1/cmtt/m/n/10.95 // Si ya se ingreso el parametro "-o" el ^^Suni
-co v^^Salido que queda es "-i"[] 
+Overfull \hbox (105.6437pt too wide) in paragraph at lines 499--499
+[]          \OT1/cmtt/m/n/10.95 // Si ya se ingreso el parametro "-i" el unico
+ valido que queda es "-o"[] 
  []
 
 
-Overfull \hbox (25.16208pt too wide) in paragraph at lines 487--487
+Overfull \hbox (105.6437pt too wide) in paragraph at lines 499--499
+[]          \OT1/cmtt/m/n/10.95 // Si ya se ingreso el parametro "-o" el unico
+ valido que queda es "-i"[] 
+ []
+
+
+Overfull \hbox (25.16208pt too wide) in paragraph at lines 499--499
 []        \OT1/cmtt/m/n/10.95 fprintf(stderr,"No se pudo abrir el archivo de en
 trada\n");[] 
  []
 
 
-Overfull \hbox (19.41339pt too wide) in paragraph at lines 487--487
+Overfull \hbox (19.41339pt too wide) in paragraph at lines 499--499
 []        \OT1/cmtt/m/n/10.95 fprintf(stderr,"No se pudo abrir el archivo de sa
 lida\n");[] 
  []
 
 [12]
-Overfull \hbox (19.41339pt too wide) in paragraph at lines 804--804
+Overfull \hbox (19.41339pt too wide) in paragraph at lines 844--844
 []\OT1/cmtt/m/n/10.95 .ascii "Los par\303\241metros ingresados no son v\303\241
 lidos.\n"[] 
  []
 
 [13]
-Overfull \hbox (134.38715pt too wide) in paragraph at lines 804--804
+Overfull \hbox (134.38715pt too wide) in paragraph at lines 844--844
 []\OT1/cmtt/m/n/10.95 .size mostrarMensajeErrorParametrosInvalidos, .-mostrarMe
 nsajeErrorParametrosInvalidos[] 
  []
 
-[14] [15] [16] [17] [18] [19]
-Overfull \hbox (19.41339pt too wide) in paragraph at lines 1145--1145
+[14] [15] [16] [17] [18] [19] [20]
+Overfull \hbox (19.41339pt too wide) in paragraph at lines 1210--1210
 []\OT1/cmtt/m/n/10.95 .ascii "Los par\303\241metros ingresados no son v\303\241
 lidos.\n"[] 
  []
 
-[20]
-Overfull \hbox (134.38715pt too wide) in paragraph at lines 1145--1145
+[21]
+Overfull \hbox (134.38715pt too wide) in paragraph at lines 1210--1210
 []\OT1/cmtt/m/n/10.95 .size mostrarMensajeErrorParametrosInvalidos, .-mostrarMe
 nsajeErrorParametrosInvalidos[] 
  []
 
-[21] [22] [23] [24] [25] [26] [27] (./inform.aux
+[22] [23] [24] [25] [26] [27] [28] [29] (inform.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ) ) 
 Here is how much of TeX's memory you used:
- 2731 strings out of 492982
- 36320 string characters out of 6134897
- 106164 words of memory out of 5000000
- 6259 multiletter control sequences out of 15000+600000
- 9840 words of font info for 35 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 41i,7n,30p,920b,359s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmtt12.pfb>
-Output written on inform.pdf (27 pages, 125484 bytes).
+ 2483 strings out of 494865
+ 35496 string characters out of 3178377
+ 106825 words of memory out of 3000000
+ 6099 multiletter control sequences out of 15000+200000
+ 9840 words of font info for 35 fonts, out of 3000000 for 9000
+ 0 hyphenation exceptions out of 8191
+ 41i,7n,31p,922b,359s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/eche/.miktex/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmbx12.pk>
+ </home/eche/.miktex/texmfs/data/fonts/pk/ljfour/public/cm/dpi657/cmtt10.pk> </
+home/eche/.miktex/texmfs/data/fonts/pk/ljfour/public/cm/dpi657/cmti10.pk> </hom
+e/eche/.miktex/texmfs/data/fonts/pk/ljfour/public/cm/dpi720/cmbx12.pk> </home/e
+che/.miktex/texmfs/data/fonts/pk/ljfour/public/cm/dpi657/cmsy10.pk> </home/eche
+/.miktex/texmfs/data/fonts/pk/ljfour/public/cm/dpi657/cmr10.pk> </home/eche/.mi
+ktex/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmtt12.pk> </home/eche/.mikte
+x/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmti12.pk> </home/eche/.miktex/t
+exmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmr12.pk> </home/eche/.miktex/texmf
+s/data/fonts/pk/ljfour/public/cm/dpi864/cmbx12.pk>
+Output written on inform.pdf (29 pages, 131057 bytes).
 PDF statistics:
- 123 PDF objects out of 1000 (max. 8388607)
- 85 compressed objects within 1 object stream
+ 422 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
