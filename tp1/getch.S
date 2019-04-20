@@ -27,7 +27,7 @@ getch:
 _lectura:
 	la a0, 0			# STDIN
 	lw a1, 44($fp)
-	li a2, 1			# (1 byte)
+	li a2, 1			# (1 acá es 1 byte)
 	li v0, SYS_read
 	syscall
 	move a1, v1
@@ -39,8 +39,8 @@ _comprobacion:
 	beq t0, v0, _return		# si no entra acá, qué tengo que hacer?
 
 _return:	
-# tengo en v0 la posición en memoria del char (leído) y ¿en v1 mi nueva posición actual?
-# lo que está en v0 me lo llevo con lb
+# tengo en v0 la posición en memoria del char (leído) y 
+# me lo llevo con lb -> mucho muy importante, porque es un char
 	lb v0, 44($fp)			# en v0 guardo el char (leído) que es lo que voy a devolver (o -1 si terminó)
 	lw ra, 32(sp)
 	lw $fp, 24(sp)
