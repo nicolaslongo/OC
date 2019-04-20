@@ -51,12 +51,18 @@ int main(int argc, char** argv)
   // Caso de recepción de al menos un archivo por parametro
   if (argc >= 3) {
     if (strcmp(argv[1], "-i") == 0) {
-      input_fileName = argv[2];
-      seIngresoArchivoDeEntrada = 1;
+      if (strcmp(argv[2], "-") != 0)
+      {
+        input_fileName = argv[2];
+        seIngresoArchivoDeEntrada = 1;
+      }
     }
     else if (strcmp(argv[1], "-o") == 0) {
-      output_fileName = argv[2];
-      seIngresoArchivoDeSalida = 1;
+      if (strcmp(argv[2], "-") != 0)
+      {
+        output_fileName = argv[2];
+        seIngresoArchivoDeSalida = 1;
+      }
     }
     else {
       // Parámetro invalido
@@ -66,8 +72,11 @@ int main(int argc, char** argv)
     if (argc > 4) {
       if (seIngresoArchivoDeEntrada) {
         if (strcmp(argv[3], "-o") == 0) {
-          output_fileName = argv[4];
-          seIngresoArchivoDeSalida = 1;
+          if (strcmp(argv[4], "-") != 0)
+          {
+            output_fileName = argv[4];
+            seIngresoArchivoDeSalida = 1;
+          }
         }
         else {
           // Si ya se ingreso el parametro "-i" el único válido que queda es "-o"
@@ -76,8 +85,11 @@ int main(int argc, char** argv)
       }
       else if (seIngresoArchivoDeSalida) {
         if (strcmp(argv[3], "-i") == 0) {
-          input_fileName = argv[4];
-          seIngresoArchivoDeEntrada = 1;
+          if (strcmp(argv[4], "-") != 0)
+          {
+            input_fileName = argv[4];
+            seIngresoArchivoDeEntrada = 1;
+          }
         }
         else {
           // Si ya se ingreso el parametro "-o" el único válido que queda es "-i"
