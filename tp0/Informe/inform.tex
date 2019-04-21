@@ -213,7 +213,8 @@ Para ejecutar los binarios creados, se deben seguir los pasos de la secci\'on de
 \section{Pruebas}
 Con el fin de probar la robustez de los programas creamos distintos archivos para convertir.
 
-Para pasar de linux a DOS hicimos el siguiente archivo:
+\begin{itemize}
+\item Para pasar de linux a DOS hicimos el siguiente archivo:
 \begin{verbatim}
 od -t c linux_prueba_2.txt 
 0000000   H  \n   H  \n   H  \n   H  \n   H  \n   H  \n   H  \n   H  \n
@@ -244,9 +245,237 @@ echo | ./unix2dos -i pruebas/linux_prueba_2.txt | od -t c
 0000260   O   P   O   P  \r  \n   O   P   O   P   O   P   O   P   O   P
 0000300  \r  \n  \r  \n   J  \r  \n  \r  \n  \r  \n
 0000313
-
 \end{verbatim}
 
+\item Para el caso de DOS a linux usamos el siguiente archivo:
+\begin{verbatim}
+od -t c windows_prueba_1.txt 
+0000000   N   i   c   o  \r  \n   E   r   t   g   w   y   g   h   q  \r
+0000020  \n   q   e   r   h   y   4   q   3   e   a   u   h   q   4   e
+0000040   3   r   u   j   q   4   a      \r  \n   3  \r  \n
+0000055
+\end{verbatim}
+
+Obteniendo como resultado:
+\begin{verbatim}
+echo | ./dos2unix -i pruebas/windows_prueba_1.txt | od -t c
+0000000   N   i   c   o  \n   E   r   t   g   w   y   g   h   q  \n   q
+0000020   e   r   h   y   4   q   3   e   a   u   h   q   4   e   3   r
+0000040   u   j   q   4   a      \n   3  \n
+0000051
+\end{verbatim}
+
+\item Luego probamos con un archivo mas grande:
+\begin{verbatim}
+od -t c windows_prueba_2.txt 
+0000000   E   s   t   a       e   s       o   t   r   a       p   r   u
+0000020   e   b   a       d   e       W   i   n   d   o   w   s  \r  \n
+0000040  \r  \n  \r  \n   E   s   t   a       e   s       o   t   r   a
+0000060       p   r   u   e   b   a       d   e       W   i   n   d   o
+0000100   w   s  \r  \n  \r  \n  \r  \n  \r  \n  \r  \n   E   s   t   a
+0000120       e   s       o   t   r   a       p   r   u   e   b   a    
+0000140   d   e       W   i   n   d   o   w   s  \r  \n  \r  \n  \r  \n
+0000160   E   s   t   a       e   s       o   t   r   a       p   r   u
+0000200   e   b   a       d   e       W   i   n   d   o   w   s  \r  \n
+0000220  \r  \n   E   s   t   a       e   s       o   t   r   a       p
+0000240   r   u   e   b   a       d   e       W   i   n   d   o   w   s
+0000260  \r  \n  \r  \n   E   s   t   a       e   s       o   t   r   a
+0000300       p   r   u   e   b   a       d   e       W   i   n   d   o
+0000320   w   s  \r  \n  \r  \n   E   s   t   a       e   s       o   t
+0000340   r   a       p   r   u   e   b   a       d   e       W   i   n
+0000360   d   o   w   s  \r  \n   E   s   t   a       e   s       o   t
+0000400   r   a       p   r   u   e   b   a       d   e       W   i   n
+0000420   d   o   w   s  \r  \n   E   s   t   a       e   s       o   t
+0000440   r   a       p   r   u   e   b   a       d   e       W   i   n
+0000460   d   o   w   s  \r  \n   E   s   t   a       e   s       o   t
+0000500   r   a       p   r   u   e   b   a       d   e       W   i   n
+0000520   d   o   w   s  \r  \n  \r  \n   E   s   t   a       e   s    
+0000540   o   t   r   a       p   r   u   e   b   a       d   e       W
+0000560   i   n   d   o   w   s   E   s   t   a       e   s       o   t
+0000600   r   a       p   r   u   e   b   a       d   e       W   i   n
+0000620   d   o   w   s   E   s   t   a       e   s       o   t   r   a
+0000640       p   r   u   e   b   a       d   e       W   i   n   d   o
+0000660   w   s   E   s   t   a       e   s       o   t   r   a       p
+0000700   r   u   e   b   a       d   e       W   i   n   d   o   w   s
+0000720   E   s   t   a       e   s       o   t   r   a       p   r   u
+0000740   e   b   a       d   e       W   i   n   d   o   w   s  \r  \n
+0000760  \r  \n  \r  \n  \r  \n   E   s   t   a       e   s       o   t
+0001000   r   a       p   r   u   e   b   a       d   e       W   i   n
+0001020   d   o   w   s  \r  \n   E   s   t   a       e   s       o   t
+0001040   r   a       p   r   u   e   b   a       d   e       W   i   n
+0001060   d   o   w   s  \r  \n   E   s   t   a       e   s       o   t
+0001100   r   a       p   r   u   e   b   a       d   e       W   i   n
+0001120   d   o   w   s   E   s   t   a       e   s       o   t   r   a
+0001140       p   r   u   e   b   a       d   e       W   i   n   d   o
+0001160   w   s  \r  \n   E   s   t   a       e   s       o   t   r   a
+0001200       p   r   u   e   b   a       d   e       W   i   n   d   o
+0001220   w   s  \r  \n  \r  \n   E   s   t   a       e   s       o   t
+0001240   r   a       p   r   u   e   b   a       d   e       W   i   n
+0001260   d   o   w   s   E   s   t   a       e   s       o   t   r   a
+0001300       p   r   u   e   b   a       d   e       W   i   n   d   o
+0001320   w   s   E   s   t   a       e   s       o   t   r   a       p
+0001340   r   u   e   b   a       d   e       W   i   n   d   o   w   s
+0001360   E   s   t   a       e   s       o   t   r   a       p   r   u
+0001400   e   b   a       d   e       W   i   n   d   o   w   s   E   s
+0001420   t   a       e   s       o   t   r   a       p   r   u   e   b
+0001440   a       d   e       W   i   n   d   o   w   s   E   s   t   a
+0001460       e   s       o   t   r   a       p   r   u   e   b   a    
+0001500   d   e       W   i   n   d   o   w   s   E   s   t   a       e
+0001520   s       o   t   r   a       p   r   u   e   b   a       d   e
+0001540       W   i   n   d   o   w   s   E   s   t   a       e   s    
+0001560   o   t   r   a       p   r   u   e   b   a       d   e       W
+0001600   i   n   d   o   w   s   E   s   t   a       e   s       o   t
+0001620   r   a       p   r   u   e   b   a       d   e       W   i   n
+0001640   d   o   w   s   E   s   t   a       e   s       o   t   r   a
+0001660       p   r   u   e   b   a       d   e       W   i   n   d   o
+0001700   w   s   E   s   t   a       e   s       o   t   r   a       p
+0001720   r   u   e   b   a       d   e       W   i   n   d   o   w   s
+0001740   E   s   t   a       e   s       o   t   r   a       p   r   u
+0001760   e   b   a       d   e       W   i   n   d   o   w   s   E   s
+0002000   t   a       e   s       o   t   r   a       p   r   u   e   b
+0002020   a       d   e       W   i   n   d   o   w   s   E   s   t   a
+0002040       e   s       o   t   r   a       p   r   u   e   b   a    
+0002060   d   e       W   i   n   d   o   w   s   E   s   t   a       e
+0002100   s       o   t   r   a       p   r   u   e   b   a       d   e
+0002120       W   i   n   d   o   w   s   E   s   t   a       e   s    
+0002140   o   t   r   a       p   r   u   e   b   a       d   e       W
+0002160   i   n   d   o   w   s   E   s   t   a       e   s       o   t
+0002200   r   a       p   r   u   e   b   a       d   e       W   i   n
+0002220   d   o   w   s   E   s   t   a       e   s       o   t   r   a
+0002240       p   r   u   e   b   a       d   e       W   i   n   d   o
+0002260   w   s   E   s   t   a       e   s       o   t   r   a       p
+0002300   r   u   e   b   a       d   e       W   i   n   d   o   w   s
+0002320   E   s   t   a       e   s       o   t   r   a       p   r   u
+0002340   e   b   a       d   e       W   i   n   d   o   w   s   E   s
+0002360   t   a       e   s       o   t   r   a       p   r   u   e   b
+0002400   a       d   e       W   i   n   d   o   w   s   E   s   t   a
+0002420       e   s       o   t   r   a       p   r   u   e   b   a    
+0002440   d   e       W   i   n   d   o   w   s  \r  \n  \r  \n   E   s
+0002460   t   a       e   s       o   t   r   a       p   r   u   e   b
+0002500   a       d   e       W   i   n   d   o   w   s  \r  \n   E   s
+0002520   t   a       e   s       o   t   r   a       p   r   u   e   b
+0002540   a       d   e       W   i   n   d   o   w   s  \r  \n  \r  \n
+0002560  \r  \n   E   s   t   a       e   s       o   t   r   a       p
+0002600   r   u   e   b   a       d   e       W   i   n   d   o   w   s
+0002620  \r  \n   E   s   t   a       e   s       o   t   r   a       p
+0002640   r   u   e   b   a       d   e       W   i   n   d   o   w   s
+0002660  \r  \n  \r  \n  \r  \n  \r  \n   E   s   t   a       e   s    
+0002700   o   t   r   a       p   r   u   e   b   a       d   e       W
+0002720   i   n   d   o   w   s  \r  \n   E   s   t   a       e   s    
+0002740   o   t   r   a       p   r   u   e   b   a       d   e       W
+0002760   i   n   d   o   w   s  \r  \n  \r  \n  \r  \n  \r  \n  \r  \n
+0003000   E   s   t   a       e   s       o   t   r   a       p   r   u
+0003020   e   b   a       d   e       W   i   n   d   o   w   s  \r  \n
+0003040   E   s   t   a       e   s       o   t   r   a       p   r   u
+0003060   e   b   a       d   e       W   i   n   d   o   w   s  \r  \n
+0003100  \r  \n  \r  \n  \r  \n  \r  \n  \r  \n  \r  \n
+0003114
+\end{verbatim}
+
+Obteniendo como resultado:
+\begin{verbatim}
+echo | ./dos2unix -i pruebas/windows_prueba_2.txt | od -t c
+0000000   E   s   t   a       e   s       o   t   r   a       p   r   u
+0000020   e   b   a       d   e       W   i   n   d   o   w   s  \n  \n
+0000040  \n   E   s   t   a       e   s       o   t   r   a       p   r
+0000060   u   e   b   a       d   e       W   i   n   d   o   w   s  \n
+0000100  \n  \n  \n  \n   E   s   t   a       e   s       o   t   r   a
+0000120       p   r   u   e   b   a       d   e       W   i   n   d   o
+0000140   w   s  \n  \n  \n   E   s   t   a       e   s       o   t   r
+0000160   a       p   r   u   e   b   a       d   e       W   i   n   d
+0000200   o   w   s  \n  \n   E   s   t   a       e   s       o   t   r
+0000220   a       p   r   u   e   b   a       d   e       W   i   n   d
+0000240   o   w   s  \n  \n   E   s   t   a       e   s       o   t   r
+0000260   a       p   r   u   e   b   a       d   e       W   i   n   d
+0000300   o   w   s  \n  \n   E   s   t   a       e   s       o   t   r
+0000320   a       p   r   u   e   b   a       d   e       W   i   n   d
+0000340   o   w   s  \n   E   s   t   a       e   s       o   t   r   a
+0000360       p   r   u   e   b   a       d   e       W   i   n   d   o
+0000400   w   s  \n   E   s   t   a       e   s       o   t   r   a    
+0000420   p   r   u   e   b   a       d   e       W   i   n   d   o   w
+0000440   s  \n   E   s   t   a       e   s       o   t   r   a       p
+0000460   r   u   e   b   a       d   e       W   i   n   d   o   w   s
+0000500  \n  \n   E   s   t   a       e   s       o   t   r   a       p
+0000520   r   u   e   b   a       d   e       W   i   n   d   o   w   s
+0000540   E   s   t   a       e   s       o   t   r   a       p   r   u
+0000560   e   b   a       d   e       W   i   n   d   o   w   s   E   s
+0000600   t   a       e   s       o   t   r   a       p   r   u   e   b
+0000620   a       d   e       W   i   n   d   o   w   s   E   s   t   a
+0000640       e   s       o   t   r   a       p   r   u   e   b   a    
+0000660   d   e       W   i   n   d   o   w   s   E   s   t   a       e
+0000700   s       o   t   r   a       p   r   u   e   b   a       d   e
+0000720       W   i   n   d   o   w   s  \n  \n  \n  \n   E   s   t   a
+0000740       e   s       o   t   r   a       p   r   u   e   b   a    
+0000760   d   e       W   i   n   d   o   w   s  \n   E   s   t   a    
+0001000   e   s       o   t   r   a       p   r   u   e   b   a       d
+0001020   e       W   i   n   d   o   w   s  \n   E   s   t   a       e
+0001040   s       o   t   r   a       p   r   u   e   b   a       d   e
+0001060       W   i   n   d   o   w   s   E   s   t   a       e   s    
+0001100   o   t   r   a       p   r   u   e   b   a       d   e       W
+0001120   i   n   d   o   w   s  \n   E   s   t   a       e   s       o
+0001140   t   r   a       p   r   u   e   b   a       d   e       W   i
+0001160   n   d   o   w   s  \n  \n   E   s   t   a       e   s       o
+0001200   t   r   a       p   r   u   e   b   a       d   e       W   i
+0001220   n   d   o   w   s   E   s   t   a       e   s       o   t   r
+0001240   a       p   r   u   e   b   a       d   e       W   i   n   d
+0001260   o   w   s   E   s   t   a       e   s       o   t   r   a    
+0001300   p   r   u   e   b   a       d   e       W   i   n   d   o   w
+0001320   s   E   s   t   a       e   s       o   t   r   a       p   r
+0001340   u   e   b   a       d   e       W   i   n   d   o   w   s   E
+0001360   s   t   a       e   s       o   t   r   a       p   r   u   e
+0001400   b   a       d   e       W   i   n   d   o   w   s   E   s   t
+0001420   a       e   s       o   t   r   a       p   r   u   e   b   a
+0001440       d   e       W   i   n   d   o   w   s   E   s   t   a    
+0001460   e   s       o   t   r   a       p   r   u   e   b   a       d
+0001500   e       W   i   n   d   o   w   s   E   s   t   a       e   s
+0001520       o   t   r   a       p   r   u   e   b   a       d   e    
+0001540   W   i   n   d   o   w   s   E   s   t   a       e   s       o
+0001560   t   r   a       p   r   u   e   b   a       d   e       W   i
+0001600   n   d   o   w   s   E   s   t   a       e   s       o   t   r
+0001620   a       p   r   u   e   b   a       d   e       W   i   n   d
+0001640   o   w   s   E   s   t   a       e   s       o   t   r   a    
+0001660   p   r   u   e   b   a       d   e       W   i   n   d   o   w
+0001700   s   E   s   t   a       e   s       o   t   r   a       p   r
+0001720   u   e   b   a       d   e       W   i   n   d   o   w   s   E
+0001740   s   t   a       e   s       o   t   r   a       p   r   u   e
+0001760   b   a       d   e       W   i   n   d   o   w   s   E   s   t
+0002000   a       e   s       o   t   r   a       p   r   u   e   b   a
+0002020       d   e       W   i   n   d   o   w   s   E   s   t   a    
+0002040   e   s       o   t   r   a       p   r   u   e   b   a       d
+0002060   e       W   i   n   d   o   w   s   E   s   t   a       e   s
+0002100       o   t   r   a       p   r   u   e   b   a       d   e    
+0002120   W   i   n   d   o   w   s   E   s   t   a       e   s       o
+0002140   t   r   a       p   r   u   e   b   a       d   e       W   i
+0002160   n   d   o   w   s   E   s   t   a       e   s       o   t   r
+0002200   a       p   r   u   e   b   a       d   e       W   i   n   d
+0002220   o   w   s   E   s   t   a       e   s       o   t   r   a    
+0002240   p   r   u   e   b   a       d   e       W   i   n   d   o   w
+0002260   s   E   s   t   a       e   s       o   t   r   a       p   r
+0002300   u   e   b   a       d   e       W   i   n   d   o   w   s   E
+0002320   s   t   a       e   s       o   t   r   a       p   r   u   e
+0002340   b   a       d   e       W   i   n   d   o   w   s   E   s   t
+0002360   a       e   s       o   t   r   a       p   r   u   e   b   a
+0002400       d   e       W   i   n   d   o   w   s  \n  \n   E   s   t
+0002420   a       e   s       o   t   r   a       p   r   u   e   b   a
+0002440       d   e       W   i   n   d   o   w   s  \n   E   s   t   a
+0002460       e   s       o   t   r   a       p   r   u   e   b   a    
+0002500   d   e       W   i   n   d   o   w   s  \n  \n  \n   E   s   t
+0002520   a       e   s       o   t   r   a       p   r   u   e   b   a
+0002540       d   e       W   i   n   d   o   w   s  \n   E   s   t   a
+0002560       e   s       o   t   r   a       p   r   u   e   b   a    
+0002600   d   e       W   i   n   d   o   w   s  \n  \n  \n  \n   E   s
+0002620   t   a       e   s       o   t   r   a       p   r   u   e   b
+0002640   a       d   e       W   i   n   d   o   w   s  \n   E   s   t
+0002660   a       e   s       o   t   r   a       p   r   u   e   b   a
+0002700       d   e       W   i   n   d   o   w   s  \n  \n  \n  \n  \n
+0002720   E   s   t   a       e   s       o   t   r   a       p   r   u
+0002740   e   b   a       d   e       W   i   n   d   o   w   s  \n   E
+0002760   s   t   a       e   s       o   t   r   a       p   r   u   e
+0003000   b   a       d   e       W   i   n   d   o   w   s  \n  \n  \n
+0003020  \n  \n  \n  \n
+0003024
+\end{verbatim}
+\end{itemize}
 
 \section{C\'odigo fuente}
 \subsection{unix2dos}
@@ -1248,6 +1477,7 @@ $L28:
 \end{verbatim}
 
 \section{Conclusiones}
+Como conclusi\'on notamos que la mayor dificultad para desarrollar los 2 programas pedidos, surgi\'o para la lectura de los archivos caracter por caracter. Como se mencion\'o anteriormente, primero usamos como condici\'on EOF. Esto nos gener\'o salidas distintas a las esperadas. Por otro lado, cuando usamos la funci\'on fgetc tomamos erroneamente que el resultado que esta funci\'on devolv\'ia era un char cuando en realidad era un int. Esto tambi\'en gener\'o que para casos m\'as especiales, las salidas no fueran las esperadas.
 
 \end{document}
 
