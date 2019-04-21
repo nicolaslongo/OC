@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6980) (preloaded format=pdflatex 2019.3.29)  20 APR 2019 12:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6980) (preloaded format=pdflatex 2019.3.29)  20 APR 2019 21:34
 entering extended mode
 **./inform.tex
 (inform.tex
@@ -587,146 +587,272 @@ Overfull \hbox (1.19832pt too wide) in paragraph at lines 202--203
 aremos de ejemplo
  []
 
+
+Overfull \hbox (48.15683pt too wide) in paragraph at lines 228--228
+[]\OT1/cmtt/m/n/10.95 0000000   H  \n   H  \n   H  \n   H  \n   H  \n   H  \n  
+ H  \n   H  \n[] 
+ []
+
+
+Overfull \hbox (48.15683pt too wide) in paragraph at lines 228--228
+[]\OT1/cmtt/m/n/10.95 0000020   H  \n  \n  \n  \n  \n   F  \n   F  \n   F  \n  
+ F  \n   F  \n[] 
+ []
+
+
+Overfull \hbox (48.15683pt too wide) in paragraph at lines 228--228
+[]\OT1/cmtt/m/n/10.95 0000040  \n   F  \n   F  \n   F  \n   F  \n  \n   F  \n  
+ F  \n   F  \n[] 
+ []
+
+
+Overfull \hbox (48.15683pt too wide) in paragraph at lines 228--228
+[]\OT1/cmtt/m/n/10.95 0000060   F  \n   F  \n   F  \n  \n   J  \n   J  \n   J  
+\n   J  \n   J[] 
+ []
+
+
+Overfull \hbox (48.15683pt too wide) in paragraph at lines 228--228
+[]\OT1/cmtt/m/n/10.95 0000100  \n   J  \n   J  \n   J  \n   J  \n   K  \n   K  
+\n   K  \n   K[] 
+ []
+
+
+Overfull \hbox (48.15683pt too wide) in paragraph at lines 228--228
+[]\OT1/cmtt/m/n/10.95 0000120  \n  \n   C  \n   F  \n   K  \n  \n  \n  \n  \n  
+ O   P   O   P[] 
+ []
+
+
+Overfull \hbox (48.15683pt too wide) in paragraph at lines 228--228
+[]\OT1/cmtt/m/n/10.95 0000140   O   P   O   P   O   P  \n   O   P   O   P   O  
+ P   O   P   O[] 
+ []
+
+
+Overfull \hbox (48.15683pt too wide) in paragraph at lines 228--228
+[]\OT1/cmtt/m/n/10.95 0000160   P  \n  \n   O   P   O   P   O   P   O   P   O  
+ P  \n   O   P[] 
+ []
+
 [6]
-Overfull \hbox (13.6647pt too wide) in paragraph at lines 347--347
+Overfull \hbox (2.16733pt too wide) in paragraph at lines 228--228
+[]\OT1/cmtt/m/n/10.95 0000200   O   P   O   P   O   P   O   P  \n  \n   J  \n  
+\n  \n[] 
+ []
+
+
+Overfull \hbox (48.15683pt too wide) in paragraph at lines 248--248
+[]\OT1/cmtt/m/n/10.95 0000000   H  \r  \n   H  \r  \n   H  \r  \n   H  \r  \n  
+ H  \r  \n   H[] 
+ []
+
+
+Overfull \hbox (48.15683pt too wide) in paragraph at lines 248--248
+[]\OT1/cmtt/m/n/10.95 0000020  \r  \n   H  \r  \n   H  \r  \n   H  \r  \n  \r  
+\n  \r  \n  \r[] 
+ []
+
+
+Overfull \hbox (48.15683pt too wide) in paragraph at lines 248--248
+[]\OT1/cmtt/m/n/10.95 0000040  \n  \r  \n   F  \r  \n   F  \r  \n   F  \r  \n  
+ F  \r  \n   F[] 
+ []
+
+
+Overfull \hbox (48.15683pt too wide) in paragraph at lines 248--248
+[]\OT1/cmtt/m/n/10.95 0000060  \r  \n  \r  \n   F  \r  \n   F  \r  \n   F  \r  
+\n   F  \r  \n[] 
+ []
+
+
+Overfull \hbox (48.15683pt too wide) in paragraph at lines 248--248
+[]\OT1/cmtt/m/n/10.95 0000100  \r  \n   F  \r  \n   F  \r  \n   F  \r  \n   F  
+\r  \n   F  \r[] 
+ []
+
+
+Overfull \hbox (48.15683pt too wide) in paragraph at lines 248--248
+[]\OT1/cmtt/m/n/10.95 0000120  \n   F  \r  \n  \r  \n   J  \r  \n   J  \r  \n  
+ J  \r  \n   J[] 
+ []
+
+
+Overfull \hbox (48.15683pt too wide) in paragraph at lines 248--248
+[]\OT1/cmtt/m/n/10.95 0000140  \r  \n   J  \r  \n   J  \r  \n   J  \r  \n   J  
+\r  \n   J  \r[] 
+ []
+
+
+Overfull \hbox (48.15683pt too wide) in paragraph at lines 248--248
+[]\OT1/cmtt/m/n/10.95 0000160  \n   K  \r  \n   K  \r  \n   K  \r  \n   K  \r  
+\n  \r  \n   C[] 
+ []
+
+
+Overfull \hbox (48.15683pt too wide) in paragraph at lines 248--248
+[]\OT1/cmtt/m/n/10.95 0000200  \r  \n   F  \r  \n   K  \r  \n  \r  \n  \r  \n  
+\r  \n  \r  \n[] 
+ []
+
+
+Overfull \hbox (48.15683pt too wide) in paragraph at lines 248--248
+[]\OT1/cmtt/m/n/10.95 0000220   O   P   O   P   O   P   O   P   O   P  \r  \n  
+ O   P   O   P[] 
+ []
+
+
+Overfull \hbox (48.15683pt too wide) in paragraph at lines 248--248
+[]\OT1/cmtt/m/n/10.95 0000240   O   P   O   P   O   P  \r  \n  \r  \n   O   P  
+ O   P   O   P[] 
+ []
+
+
+Overfull \hbox (48.15683pt too wide) in paragraph at lines 248--248
+[]\OT1/cmtt/m/n/10.95 0000260   O   P   O   P  \r  \n   O   P   O   P   O   P  
+ O   P   O   P[] 
+ []
+
+
+Overfull \hbox (13.6647pt too wide) in paragraph at lines 385--385
 []  \OT1/cmtt/m/n/10.95 fprintf(stderr, "Los parametros ingresados no son val
 idos.\n");[] 
  []
 
-
-Overfull \hbox (174.62796pt too wide) in paragraph at lines 347--347
+[7]
+Overfull \hbox (174.62796pt too wide) in paragraph at lines 385--385
 []  \OT1/cmtt/m/n/10.95 // Inicializo los valores por defecto. No se ingresaron
  archivos y estos son stdin y stdout[] 
  []
 
 
-Overfull \hbox (151.63321pt too wide) in paragraph at lines 347--347
+Overfull \hbox (151.63321pt too wide) in paragraph at lines 385--385
 []\OT1/cmtt/m/n/10.95 /* No puedo recibir mas de 5 parametros. Este es el ma
 ximo esperado. Por otro lado, puedo[] 
  []
 
 
-Overfull \hbox (140.13583pt too wide) in paragraph at lines 347--347
+Overfull \hbox (140.13583pt too wide) in paragraph at lines 385--385
 []   \OT1/cmtt/m/n/10.95 recibir 1 parametro (el nombre del programa), 3 para
 metros (se especifica archivo de[] 
  []
 
 
-Overfull \hbox (163.13058pt too wide) in paragraph at lines 347--347
+Overfull \hbox (163.13058pt too wide) in paragraph at lines 385--385
 []   \OT1/cmtt/m/n/10.95 entrada o de salida) y 5 parametros (se especifican a
 mbos). Ademas argc siempre es mayor[] 
  []
 
-[7]
-Overfull \hbox (105.6437pt too wide) in paragraph at lines 347--347
+[8]
+Overfull \hbox (105.6437pt too wide) in paragraph at lines 385--385
 []          \OT1/cmtt/m/n/10.95 // Si ya se ingreso el parametro "-i" el unico
  valido que queda es "-o"[] 
  []
 
 
-Overfull \hbox (105.6437pt too wide) in paragraph at lines 347--347
+Overfull \hbox (105.6437pt too wide) in paragraph at lines 385--385
 []          \OT1/cmtt/m/n/10.95 // Si ya se ingreso el parametro "-o" el unico
  valido que queda es "-i"[] 
  []
 
-[8]
-Overfull \hbox (25.16208pt too wide) in paragraph at lines 347--347
+[9]
+Overfull \hbox (25.16208pt too wide) in paragraph at lines 385--385
 []        \OT1/cmtt/m/n/10.95 fprintf(stderr,"No se pudo abrir el archivo de en
 trada\n");[] 
  []
 
 
-Overfull \hbox (19.41339pt too wide) in paragraph at lines 347--347
+Overfull \hbox (19.41339pt too wide) in paragraph at lines 385--385
 []        \OT1/cmtt/m/n/10.95 fprintf(stderr,"No se pudo abrir el archivo de sa
 lida\n");[] 
  []
 
-[9]
-Overfull \hbox (13.6647pt too wide) in paragraph at lines 499--499
+
+Overfull \hbox (13.6647pt too wide) in paragraph at lines 537--537
 []  \OT1/cmtt/m/n/10.95 fprintf(stderr, "Los parametros ingresados no son val
 idos.\n");[] 
  []
 
 [10]
-Overfull \hbox (174.62796pt too wide) in paragraph at lines 499--499
+Overfull \hbox (174.62796pt too wide) in paragraph at lines 537--537
 []  \OT1/cmtt/m/n/10.95 // Inicializo los valores por defecto. No se ingresaron
  archivos y estos son stdin y stdout[] 
  []
 
 
-Overfull \hbox (163.13058pt too wide) in paragraph at lines 499--499
+Overfull \hbox (163.13058pt too wide) in paragraph at lines 537--537
 []  \OT1/cmtt/m/n/10.95 /* No puedo recibir mas de 5 parametros. Este es el m
 aximo esperado. Por otro lado, puedo[] 
  []
 
 
-Overfull \hbox (140.13583pt too wide) in paragraph at lines 499--499
+Overfull \hbox (140.13583pt too wide) in paragraph at lines 537--537
 []   \OT1/cmtt/m/n/10.95 recibir 1 parametro (el nombre del programa), 3 para
 metros (se especifica archivo de[] 
  []
 
-
-Overfull \hbox (163.13058pt too wide) in paragraph at lines 499--499
+[11]
+Overfull \hbox (163.13058pt too wide) in paragraph at lines 537--537
 []   \OT1/cmtt/m/n/10.95 entrada o de salida) y 5 parametros (se especifican a
 mbos). Ademas argc siempre es mayor[] 
  []
 
-[11]
-Overfull \hbox (105.6437pt too wide) in paragraph at lines 499--499
+
+Overfull \hbox (105.6437pt too wide) in paragraph at lines 537--537
 []          \OT1/cmtt/m/n/10.95 // Si ya se ingreso el parametro "-i" el unico
  valido que queda es "-o"[] 
  []
 
-
-Overfull \hbox (105.6437pt too wide) in paragraph at lines 499--499
+[12]
+Overfull \hbox (105.6437pt too wide) in paragraph at lines 537--537
 []          \OT1/cmtt/m/n/10.95 // Si ya se ingreso el parametro "-o" el unico
  valido que queda es "-i"[] 
  []
 
 
-Overfull \hbox (25.16208pt too wide) in paragraph at lines 499--499
+Overfull \hbox (25.16208pt too wide) in paragraph at lines 537--537
 []        \OT1/cmtt/m/n/10.95 fprintf(stderr,"No se pudo abrir el archivo de en
 trada\n");[] 
  []
 
 
-Overfull \hbox (19.41339pt too wide) in paragraph at lines 499--499
+Overfull \hbox (19.41339pt too wide) in paragraph at lines 537--537
 []        \OT1/cmtt/m/n/10.95 fprintf(stderr,"No se pudo abrir el archivo de sa
 lida\n");[] 
  []
 
-[12]
-Overfull \hbox (19.41339pt too wide) in paragraph at lines 844--844
-[]\OT1/cmtt/m/n/10.95 .ascii "Los par\303\241metros ingresados no son v\303\241
-lidos.\n"[] 
- []
-
 [13]
-Overfull \hbox (134.38715pt too wide) in paragraph at lines 844--844
-[]\OT1/cmtt/m/n/10.95 .size mostrarMensajeErrorParametrosInvalidos, .-mostrarMe
-nsajeErrorParametrosInvalidos[] 
- []
-
-[14] [15] [16] [17] [18] [19] [20]
-Overfull \hbox (19.41339pt too wide) in paragraph at lines 1210--1210
+Overfull \hbox (19.41339pt too wide) in paragraph at lines 882--882
 []\OT1/cmtt/m/n/10.95 .ascii "Los par\303\241metros ingresados no son v\303\241
 lidos.\n"[] 
  []
 
-[21]
-Overfull \hbox (134.38715pt too wide) in paragraph at lines 1210--1210
+[14]
+Overfull \hbox (134.38715pt too wide) in paragraph at lines 882--882
 []\OT1/cmtt/m/n/10.95 .size mostrarMensajeErrorParametrosInvalidos, .-mostrarMe
 nsajeErrorParametrosInvalidos[] 
  []
 
-[22] [23] [24] [25] [26] [27] [28] [29] (inform.aux
+[15] [16] [17] [18] [19] [20] [21]
+Overfull \hbox (19.41339pt too wide) in paragraph at lines 1248--1248
+[]\OT1/cmtt/m/n/10.95 .ascii "Los par\303\241metros ingresados no son v\303\241
+lidos.\n"[] 
+ []
+
+
+Overfull \hbox (134.38715pt too wide) in paragraph at lines 1248--1248
+[]\OT1/cmtt/m/n/10.95 .size mostrarMensajeErrorParametrosInvalidos, .-mostrarMe
+nsajeErrorParametrosInvalidos[] 
+ []
+
+[22] [23] [24] [25] [26] [27] [28] [29] [30] (inform.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ) ) 
 Here is how much of TeX's memory you used:
  2483 strings out of 494865
  35496 string characters out of 3178377
- 106825 words of memory out of 3000000
+ 108825 words of memory out of 3000000
  6099 multiletter control sequences out of 15000+200000
  9840 words of font info for 35 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
@@ -741,9 +867,9 @@ ktex/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmtt12.pk> </home/eche/.mikte
 x/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmti12.pk> </home/eche/.miktex/t
 exmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmr12.pk> </home/eche/.miktex/texmf
 s/data/fonts/pk/ljfour/public/cm/dpi864/cmbx12.pk>
-Output written on inform.pdf (29 pages, 131057 bytes).
+Output written on inform.pdf (30 pages, 133711 bytes).
 PDF statistics:
- 422 PDF objects out of 1000 (max. 8388607)
+ 429 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

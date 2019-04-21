@@ -210,6 +210,44 @@ gcc -Wall -O0 -o unix2dos unix2dos.c
 
 Para ejecutar los binarios creados, se deben seguir los pasos de la secci\'on de Utilizaci\'on.
 
+\section{Pruebas}
+Con el fin de probar la robustez de los programas creamos distintos archivos para convertir.
+
+Para pasar de linux a DOS hicimos el siguiente archivo:
+\begin{verbatim}
+od -t c linux_prueba_2.txt 
+0000000   H  \n   H  \n   H  \n   H  \n   H  \n   H  \n   H  \n   H  \n
+0000020   H  \n  \n  \n  \n  \n   F  \n   F  \n   F  \n   F  \n   F  \n
+0000040  \n   F  \n   F  \n   F  \n   F  \n  \n   F  \n   F  \n   F  \n
+0000060   F  \n   F  \n   F  \n  \n   J  \n   J  \n   J  \n   J  \n   J
+0000100  \n   J  \n   J  \n   J  \n   J  \n   K  \n   K  \n   K  \n   K
+0000120  \n  \n   C  \n   F  \n   K  \n  \n  \n  \n  \n   O   P   O   P
+0000140   O   P   O   P   O   P  \n   O   P   O   P   O   P   O   P   O
+0000160   P  \n  \n   O   P   O   P   O   P   O   P   O   P  \n   O   P
+0000200   O   P   O   P   O   P   O   P  \n  \n   J  \n  \n  \n
+\end{verbatim}
+
+El resultado obtenido fue:
+\begin{verbatim}
+echo | ./unix2dos -i pruebas/linux_prueba_2.txt | od -t c
+0000000   H  \r  \n   H  \r  \n   H  \r  \n   H  \r  \n   H  \r  \n   H
+0000020  \r  \n   H  \r  \n   H  \r  \n   H  \r  \n  \r  \n  \r  \n  \r
+0000040  \n  \r  \n   F  \r  \n   F  \r  \n   F  \r  \n   F  \r  \n   F
+0000060  \r  \n  \r  \n   F  \r  \n   F  \r  \n   F  \r  \n   F  \r  \n
+0000100  \r  \n   F  \r  \n   F  \r  \n   F  \r  \n   F  \r  \n   F  \r
+0000120  \n   F  \r  \n  \r  \n   J  \r  \n   J  \r  \n   J  \r  \n   J
+0000140  \r  \n   J  \r  \n   J  \r  \n   J  \r  \n   J  \r  \n   J  \r
+0000160  \n   K  \r  \n   K  \r  \n   K  \r  \n   K  \r  \n  \r  \n   C
+0000200  \r  \n   F  \r  \n   K  \r  \n  \r  \n  \r  \n  \r  \n  \r  \n
+0000220   O   P   O   P   O   P   O   P   O   P  \r  \n   O   P   O   P
+0000240   O   P   O   P   O   P  \r  \n  \r  \n   O   P   O   P   O   P
+0000260   O   P   O   P  \r  \n   O   P   O   P   O   P   O   P   O   P
+0000300  \r  \n  \r  \n   J  \r  \n  \r  \n  \r  \n
+0000313
+
+\end{verbatim}
+
+
 \section{C\'odigo fuente}
 \subsection{unix2dos}
 \begin{verbatim}
