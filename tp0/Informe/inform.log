@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000) (preloaded format=pdflatex 2019.4.21)  23 APR 2019 17:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000) (preloaded format=pdflatex 2019.4.21)  23 APR 2019 17:50
 entering extended mode
 **./inform.tex
 (inform.tex
@@ -2189,7 +2189,13 @@ Overfull \hbox (134.38715pt too wide) in paragraph at lines 1533--1533
 nsajeErrorParametrosInvalidos[] 
  []
 
-[29] [30] [31] [32] [33] [34] [35] [36] (inform.aux
+[29] [30] [31] [32] [33] [34] [35]
+Overfull \hbox (19.38457pt too wide) in paragraph at lines 1536--1537
+[]\OT1/cmr/m/n/10.95 Como conclusion es necesario mencionar que la mayor dific
+ultad al desarrollar
+ []
+
+[36] (inform.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ) ) 
@@ -2211,7 +2217,7 @@ ktex/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmtt12.pk> </home/eche/.mikte
 x/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmti12.pk> </home/eche/.miktex/t
 exmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmr12.pk> </home/eche/.miktex/texmf
 s/data/fonts/pk/ljfour/public/cm/dpi864/cmbx12.pk>
-Output written on inform.pdf (36 pages, 142765 bytes).
+Output written on inform.pdf (36 pages, 143059 bytes).
 PDF statistics:
  453 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
