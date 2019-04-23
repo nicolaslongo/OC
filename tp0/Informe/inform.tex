@@ -180,7 +180,7 @@ Las primeras pruebas básicas que se hicieron, fueron convertir archivos de text
 cmp archivoDePrueba01_salidaReal.txt archivoDePrueba02_salidaEsperada.txt
 \end{verbatim}
 
-\indent El resultado es el esperado si al ejecutar esa sentencia en la shell la salida es, literalmente, ninguna. De lo contrario, el programa \textit{cmp} habrá encontrado una diferencia entre los caracteres y eso evidenciaría un problema en la salida de nuestro programa conversor.
+\indent El resultado es el esperado si al ejecutar esa sentencia en la shell la salida es, literalmente, ninguna. De lo contrario, el programa \textit{cmp} habrá encontrado una diferencia entre los caracteres y eso evidenciaría un problema en la salida de nuestro programa conversor. Más sobre esto en la sección de pruebas.
 
 %¿¿¿¿¿¿¿¿¿ Por último se generaron algunas pruebas en código que comprobasen el correcto funcionamiento de los programas desarrollados.???? Qué dice????
 
@@ -512,7 +512,26 @@ echo | ./dos2unix -i pruebas/windows_prueba_2.txt | od -t c
 \end{verbatim}
 \end{itemize}
 
-Adem\'as como se explic\'o anteriormente, creamos archivos con las salidas esperadas y luego usamos el programa \textit{cmp} para corroborar que no hab\'ia diferencias entre el archivo esperado y el real. 
+En segundo lugar, y para realizar una validación más fehaciente como se explic\'o anteriormente, creamos archivos con las salidas esperadas y luego usamos el programa \textit{cmp} para corroborar que no hab\'ia diferencias entre el archivo esperado y el real. Dichas comprobaciones se realizaron de la siguiente forma:
+
+\begin{verbatim}
+$ ./unix2dos -i linux_prueba_2.txt -o linux_prueba_2_salida_real.txt
+
+$ cmp linux_prueba_2_salida_real.txt linux_prueba_2_salida_esperada.txt
+
+$
+\end{verbatim}
+
+\begin{verbatim}
+$ ./dos2unix -i windows_prueba_2.txt -o windows_prueba_2_salida_real.txt
+
+$ cmp windows_prueba_2_salida_real.txt windows_prueba_2_salida_esperada.txt
+
+$
+\end{verbatim}
+
+En ambos casos, para ambos programas, el resultado de ésta corrida de pruebas es el indicado: al haberse realizado correctamente la conversión, la salida que genera el ejecutar cmp entre los archivos mencionados es literalmente ninguna.
+No está de más hacer especial hincapié en que los archivos de salida esperados fueron generados en el ambiente del sistema operativo correspondiente. Aquellos archivos de salida esperada de Windows, fueron realizados en un equipo corriendo Windows 10 y que consecuentemente utiliza saltos del tipo CR+LF. Análogamente, aquellos archivos de salida esperada de Linux fueron generados en un equipo corriendo Linux.
 
 \section{C\'odigo fuente}
 \subsection{unix2dos}
