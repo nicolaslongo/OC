@@ -18,7 +18,7 @@
             \normalsize{66.20 Organización de Computadoras  $-$ Práctica Martes}  \\
             \normalsize{Facultad de Ingeniería, Universidad de Buenos Aires}            \\
        }
-\date{poner la fecha correspondiente}
+\date{23/4/19}
 
 
 \begin{document}
@@ -202,7 +202,7 @@ Por ejemplo, para convertir un archivo de DOS a UNIX se ejecuta:
 Para la generaci\'on de los binarios a partir de los archivos con el c\'odigo fuente suministrado se deben seguir los siguientes pasos (usaremos de ejemplo el programa unix2dos, pero aplica para ambos programas):
 
 \begin{itemize}
-\item Posicionarse en el directorio donde se encuentren los archivos con el c\'odigo fuente.
+\item Abir la terminal y posicionarse en el directorio donde se encuentren los archivos con el c\'odigo fuente.
 \item \begin{verbatim}
 gcc -Wall -O0 -o unix2dos unix2dos.c
 \end{verbatim} 
@@ -210,11 +210,46 @@ gcc -Wall -O0 -o unix2dos unix2dos.c
 
 Para ejecutar los binarios creados, se deben seguir los pasos de la secci\'on de Utilizaci\'on.
 
+Para generar los archivos assembly de MIPS, se debe mover los archivos fuente a trav\'es del tunel ssh y ejecutar el siguiente comando:
+\begin{itemize}
+\item \begin{verbatim}
+gcc -Wall -O0 -S -mrnames unix2dos.c
+\end{verbatim}
+\end{itemize}
+
 \section{Pruebas}
 Con el fin de probar la robustez de los programas creamos distintos archivos para convertir.
 
 \begin{itemize}
-\item Para pasar de linux a DOS hicimos el siguiente archivo:
+\item Para pasar de linux a DOS hicimos los siguientes archivos:
+\begin{verbatim}
+od -t c linux_prueba_1.txt 
+0000000   A   r   c   h   i   v   o       d   e       l   i   n   u   x
+0000020  \n   Q   u   e       t   i   e   n   e  \n   M   u   c   h   o
+0000040   s       e   n   t   e   r   s  \n   F   a   l   o   p   a   s
+0000060  \n   H  \n   O  \n   L  \n   A  \n  \n   P   R   O   H   I   B
+0000100   I   D   O       T   I   R   A   R       E   N   T   E   R   S
+0000120       D   E       M   I   E   R   D   A  \n  \n   f   i   n    
+0000140   d   e   l      \n   a   r   c   h   i   v   o  \n  \n   a   h
+0000160   o   r   a       s   i
+0000166
+\end{verbatim}
+
+El resultado obtenido fue:
+\begin{verbatim}
+echo | ./unix2dos -i pruebas/linux_prueba_1.txt | od -t c
+0000000   A   r   c   h   i   v   o       d   e       l   i   n   u   x
+0000020  \r  \n   Q   u   e       t   i   e   n   e  \r  \n   M   u   c
+0000040   h   o   s       e   n   t   e   r   s  \r  \n   F   a   l   o
+0000060   p   a   s  \r  \n   H  \r  \n   O  \r  \n   L  \r  \n   A  \r
+0000100  \n  \r  \n   P   R   O   H   I   B   I   D   O       T   I   R
+0000120   A   R       E   N   T   E   R   S       D   E       M   I   E
+0000140   R   D   A  \r  \n  \r  \n   f   i   n       d   e   l      \r
+0000160  \n   a   r   c   h   i   v   o  \r  \n  \r  \n   a   h   o   r
+0000200   a       s   i
+0000204
+\end{verbatim}
+
 \begin{verbatim}
 od -t c linux_prueba_2.txt 
 0000000   H  \n   H  \n   H  \n   H  \n   H  \n   H  \n   H  \n   H  \n
@@ -476,6 +511,8 @@ echo | ./dos2unix -i pruebas/windows_prueba_2.txt | od -t c
 0003024
 \end{verbatim}
 \end{itemize}
+
+Adem\'as como se explic\'o anteriormente, creamos archivos con las salidas esperadas y luego usamos el programa \textit{cmp} para corroborar que no hab\'ia diferencias entre el archivo esperado y el real. 
 
 \section{C\'odigo fuente}
 \subsection{unix2dos}
