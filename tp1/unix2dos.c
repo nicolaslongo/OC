@@ -11,6 +11,8 @@ int getch(int fd, int8_t* c, int size);
 
 int putch(int fd, int8_t* d, int size);
 
+int isLF(int8_t* caracter); // devuelve 1 si lo es. 0 si no lo es
+
 int mostrarMensajeErrorParametrosInvalidos() {
     fprintf(stderr, "Los parámetros ingresados no son válidos.\n");
     return -1;
@@ -25,6 +27,11 @@ void linuxToWindows(FILE* input_file, FILE* output_file)
 
     res = getch(fd_input, c, 1);
     while(res != -1) {
+    	if( isLF(c) == 1 ) {
+    		fprintf(stdout, "\nEs LF, che\n");
+            // acá se haría un putch delo correspondiente para reemplazar esto 
+            // y un continue
+    	}
         putch(fd_output, c, 1);
         res = getch(fd_input, c, 1);
     }

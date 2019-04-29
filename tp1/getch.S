@@ -33,10 +33,10 @@ _lectura:
 	move a1, v1
 
 _comprobacion:
-	bltz a3, _lectura		# si a3 es -1, falló la lectura del byte
-	beqz v0, _eof			# (en a3 ya tengo un 0) si en v0  tengo un 0, entonces EOF
+	bltz a3, _lectura		# si a3 es -1, falló la lectura del byte -> acá debería haber un catch del error, probablemente
+	beqz v0, _eof			# (en a3 ya tengo un 0) si en v0 tengo un 0, entonces EOF 
 	li t0, 1
-	beq t0, v0, _return		# si no entra acá, qué tengo que hacer?
+	beq t0, v0, _return		# esto ya es obvio, en realidad
 
 _return:	
 # tengo en v0 la posición en memoria del char (leído) y 
