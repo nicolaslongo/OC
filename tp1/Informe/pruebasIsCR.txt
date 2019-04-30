@@ -1,0 +1,22 @@
+root@:~/tp1# echo -e "hola" | ./unix2dos -i - -o -
+hola
+root@:~/tp1# echo -e "hola\n" | ./unix2dos -i - -o -
+hola
+
+root@:~/tp1# echo -e "" | ./unix2dos -i - -o -
+
+root@:~/tp1# echo -e "\rchau" | ./unix2dos -i - -o -
+
+WindowsCat
+chau
+root@:~/tp1# echo -e "chau\r" | ./unix2dos -i - -o -
+chau
+WindowsCat
+
+root@:~/tp1# echo -e "Este es un texto mas largo\n. No se que opinan ustedes de esto\r. A mi me parece bien" | ./unix2dos -i - -o -
+Este es un texto mas largo
+. No se que opinan ustedes de esto
+WindowsCat
+. A mi me parece bien
+
+
