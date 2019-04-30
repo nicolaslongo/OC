@@ -4,8 +4,13 @@
 Para compilar el tp copiar todo a NetBSD y usar el comando (desde ahí):
 gcc -Wall -O0 -g unix2dos.c getch.S putch.S -o unix2dos
 
-Para correrlo, por ejemplo:
+Para correrlo SIN GDB, por ejemplo:
 echo "hola qui onda" | ./unix2dos -i - -o -
+
+Para correrlo con GDB es necesario hacerlo con un archivo txt:
+gdb ./unix2dos
+(poner los breakpoints correspondientes)
+run < input.txt
 
 Para hacer saltos de linea usando echo:  echo -e "linea1\nlinea2"
 

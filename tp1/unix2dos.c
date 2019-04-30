@@ -24,23 +24,25 @@ void linuxToWindows(FILE* input_file, FILE* output_file)
 {
     int8_t* c;
     
-    // int32_t res = -2;
-    // int fd_input = fileno(input_file);
-    // int fd_output = fileno(output_file);
-    // fprintf(stdout, "Primero voy a usar el while del .c: \n");
-    // res = getch(fd_input, c, 1);
-    // while(res != -1) {
-    // 	if( isLF(c) == 1 ) {
-    // 		fprintf(stdout, "\nEs LF, che\n");
-    //         // acá se haría un putch delo correspondiente para reemplazar esto 
-    //         // y un continue
-    // 	}
-    //     putch(fd_output, c, 1);
-    //     res = getch(fd_input, c, 1);
-    // }
+    int32_t res = -2;
+    int fd_input = fileno(input_file);
+    int fd_output = fileno(output_file);
+    fprintf(stdout, "Primero voy a usar el while del .c: \n");
+    res = getch(fd_input, c, 1);
+    while(res != -1) {
+    	if( isLF(c) == 1 ) {
+    		fprintf(stdout, "\nEs LF, che\n");
+            // acá se haría un putch delo correspondiente para reemplazar esto 
+            // y un continue
+    	}
+        else {
+            putch(fd_output, c, 1);
+        }
+        res = getch(fd_input, c, 1);
+    }
 
-    fprintf(stdout, "\n Ahora voy a usar el while del .S: \n");
-    my_while(c);
+    // fprintf(stdout, "\n Ahora voy a usar el while del .S: \n");
+    // my_while(c);
 
 }
 
