@@ -1,0 +1,154 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage[ansinew]{inputenc}
+\usepackage[utf8]{inputenx}
+
+\title{		\textbf{Informe TP1}}
+
+\author{	Cotarelo Rodrigo, \textit{Padrón Nro. 98577}                     \\
+            \texttt{ cotarelorodrigo@gmail.com }                                              \\[2.5ex]
+            Etchegaray Rodrigo, \textit{Padrón Nro. 96856}                     \\
+            \texttt{ rorroeche@gmail.com }                                              \\[2.5ex]
+			Longo Nicolás, \textit{Padrón Nro. 98271}                    
+\\
+            \texttt{ longo.gnr@hotmail.com }                                              \\[2.5ex]
+            \normalsize{1er. Cuatrimestre de 2019}                                      \\
+            \normalsize{66.20 Organización de Computadoras  $-$ Práctica Martes}  \\
+            \normalsize{Facultad de Ingeniería, Universidad de Buenos Aires}            \\
+       }
+\date{7/5/19}
+
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}   % quita el número en la primer página
+\newpage
+
+\section{Enunciado}
+
+\begin{enumerate}
+\item Objetivos \\
+Familiarizarse con el conjunto de instrucciones MIPS y el concepto de ABI,
+extendiendo un programa que resuelva el problema descripto en la secci\'on 4.
+
+\item Alcance \\
+Este trabajo p\'actico es de elaboraci\'on grupal, evaluaci\'on individual, y de
+car\'acter obligatorio para todos alumnos del curso.
+
+\item Requisitos \\
+El informe deber\'a ser entregado personalmente, por escrito, en la fecha
+estipulada, con una car\'atula que contenga los datos completos de todos los
+integrantes.
+Adem\'as, es necesario que el trabajo pr\'actico incluya (entre otras cosas,
+ver secci\'on 6), la presentaci\'on de los resultados obtenidos, explicando, cuando
+corresponda, con fundamentos reales, las causas o razones de cada caso.
+
+\item Descripci\'on \\
+En este trabajo, vamos a implementar dos programas en assembly MIPS,
+que nos permitan convertir informaci\'on almacenada en streams de texto, de
+acuerdo a lo descripto en el trabajo anterior [1]: unix2dos, para transformar
+archivos de texto de UNIX a DOS; y dos2unix para realizar la operaci\'on inversa.
+Es decir, siguiendo la l\'inea de trabajo de los pr\'acticos anteriores, buscamos
+generar dos binarios diferentes en vez de un \'unico programa que resuelva
+ambos problemas. Adem\'as, por tratarse de un TP orientado a practicar el
+conjunto de instrucciones, ambos programas deber\'an escritos completamente
+en assembly, en forma manual.
+
+\item Interfaz \\
+Por defecto, ambos programas operan exclusivamente por stdin y stdout.
+Al igual que en el trabajo anterior, al finalizar, estos programas retornar\'an
+un valor nulo en caso de no detectar ning\'un problema; y, en caso contrario,
+finalizar\'an con c\'odigo no nulo (por ejemplo 1).
+
+
+\item Ejemplos \\
+Cuando el documento de entrada es vac\'io, la salida deber\'ia serlo tambi\'en:
+\begin{verbatim}
+$ unix2dos </dev/null | wc -c
+0
+$ dos2unix </dev/null | wc -c
+0
+\end{verbatim}
+Tambi\'en se aplican todos los casos de prueba definidos para el TP anterior.
+Por ejemplo:
+\begin{verbatim}
+$ od -t c /tmp/dos.txt
+0000000 U n o \r \n D o s \r \n T r e s \r \n
+0000020
+$ dos2unix -i /tmp/dos.txt -o - | od -t c
+0000000 U n o \n D o s \n T r e s \n
+0000015
+\end{verbatim}
+Por \'ultimo, podemos usar el programa que sigue para generar secuencias de
+datos aleatorias, pasarlas a hexa, reconvertirlas al dominio original, y verificar
+que la operaci\'on no haya alterado la informaci\'on:
+\begin{verbatim}
+$ n=0; while :; do
+> n="‘expr $n + 1‘";
+> head -c 100 </dev/urandom >/tmp/test.$n.u;
+> unix2dos </tmp/test.$n.u >/tmp/test.$n.d || break;
+> dos2unix </tmp/test.$n.d >/tmp/test.$n.2.u || break;
+> diff -q /tmp/test.$n.u /tmp/test.$n.2.u || break;
+> rm -f /tmp/test.$n.*;
+> echo Ok: $n;
+> done; echo Error: $n
+Ok: 1
+Ok: 2
+Ok: 3
+...
+\end{verbatim}
+
+\item Implementaci\'on \\
+El programa a implementar deber\'a satisfacer algunos requerimientos m\'inimos,
+que detallamos a continuaci\'on:
+
+
+\begin{enumerate}
+\item ABI \\
+Ser\'a necesario que el c\'odigo presentado utilice la ABI explicada en la clase:
+los argumentos correspondientes a los registros $a0-$a3 ser\'an almacenados
+por el callee, siempre, en los 16 bytes dedicados de la secci\'on “function call
+argument area” [2].
+
+\item Casos de prueba\\
+Es necesario que la implementaci\'on propuesta pase todos los casos incluidos
+tanto en este enunciado como en el conjunto pruebas suministrado en el
+informe del trabajo, los cuales deber\'an estar debidamente documentados y
+justificados.
+
+\item Documentaci\'on \\
+El informe deber\'a incluir una descripci\'on detallada de las t\'ecnicas y procesos
+de medici\'on empleados, y de todos los pasos involucrados en el desarrollo
+del mismo, ya que forman parte de los objetivos principales del trabajo.
+\end{enumerate}
+
+\item Informe\\
+El informe deber\'a incluir:
+\begin{itemize}
+\item Este enunciado;
+
+\item Documentaci\'on relevante al disenio, implementaci\'on y medici\'on de las
+caracter\'isticas del programa;
+
+\item Las corridas de prueba, (secci\'on 5.2) con los comentarios pertinentes;
+
+\item El c\'odigo fuente completo, en dos formatos: digitalizado1 e impreso en
+papel. 
+\end{itemize}
+
+\item Fechas \\
+Fecha de vencimiento: 7/5.
+
+\item Referencias
+Enunciado del primer trabajo pr\'actico, primer cuatrimestre de 2019.
+http://groups.yahoo.com/groups/orga-comp/.
+
+\end{enumerate}
+\newpage
+
+\section{Implementaci\'on}
+
+\end{document}
