@@ -13,6 +13,8 @@ int putch(int fd, int8_t* d, int size);
 
 int isLF(int8_t* caracter); // devuelve 1 si lo es. 0 si no lo es
 
+void my_while(int8_t* caracter);
+
 int mostrarMensajeErrorParametrosInvalidos() {
     fprintf(stderr, "Los parámetros ingresados no son válidos.\n");
     return -1;
@@ -21,20 +23,25 @@ int mostrarMensajeErrorParametrosInvalidos() {
 void linuxToWindows(FILE* input_file, FILE* output_file)
 {
     int8_t* c;
-    int32_t res = -2;
-    int fd_input = fileno(input_file);
-    int fd_output = fileno(output_file);
+    
+    // int32_t res = -2;
+    // int fd_input = fileno(input_file);
+    // int fd_output = fileno(output_file);
+    // fprintf(stdout, "Primero voy a usar el while del .c: \n");
+    // res = getch(fd_input, c, 1);
+    // while(res != -1) {
+    // 	if( isLF(c) == 1 ) {
+    // 		fprintf(stdout, "\nEs LF, che\n");
+    //         // acá se haría un putch delo correspondiente para reemplazar esto 
+    //         // y un continue
+    // 	}
+    //     putch(fd_output, c, 1);
+    //     res = getch(fd_input, c, 1);
+    // }
 
-    res = getch(fd_input, c, 1);
-    while(res != -1) {
-    	if( isLF(c) == 1 ) {
-    		fprintf(stdout, "\nEs LF, che\n");
-            // acá se haría un putch delo correspondiente para reemplazar esto 
-            // y un continue
-    	}
-        putch(fd_output, c, 1);
-        res = getch(fd_input, c, 1);
-    }
+    fprintf(stdout, "\n Ahora voy a usar el while del .S: \n");
+    my_while(c);
+
 }
 
 
