@@ -23,16 +23,16 @@ int mostrarMensajeErrorParametrosInvalidos() {
 void linuxToWindows(FILE* input_file, FILE* output_file)
 {
     int8_t* c;
-    
+
     int32_t res = -2;
     int fd_input = fileno(input_file);
     int fd_output = fileno(output_file);
     fprintf(stdout, "Primero voy a usar el while del .c: \n");
     res = getch(fd_input, c, 1);
-    while(res != -1) {
+    while(res != -1) { //-1 da cuando es EOF
     	if( isLF(c) == 1 ) {
     		fprintf(stdout, "\nEs LF, che\n");
-            // acá se haría un putch delo correspondiente para reemplazar esto 
+            // acá se haría un putch delo correspondiente para reemplazar esto
             // y un continue
     	}
         else {
@@ -54,7 +54,7 @@ int main(int argc, char** argv)
     int seIngresoArchivoDeSalida = 0;
     char *input_fileName = NULL;
     char *output_fileName = NULL;
-    
+
     // Caso de recepción de al menos un archivo por parametro
     if (argc >= 3) {
         if (strcmp(argv[1], "-i") == 0) {
@@ -121,7 +121,7 @@ int main(int argc, char** argv)
     }
     else
         output_file = stdout;
-    
+
     linuxToWindows(input_file, output_file);
     fclose(input_file);
     fclose(output_file);

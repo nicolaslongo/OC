@@ -12,9 +12,9 @@ putch:
 	.set reorder
 
 	subu sp, sp, 40 	# pido espacio para mi Stack Frame
-	.cprestore 28		# guardo gp en 20
-	sw $fp, 24(sp)		# guardo fp en 16
-	sw ra, 32(sp)		# guardo ra en 24
+	.cprestore 28		# guardo gp en 28
+	sw $fp, 24(sp)		# guardo fp en 24
+	sw ra, 32(sp)		# guardo ra en 32
 	move $fp, sp		# a partir de acá trabajo con fp
 
 # me guardo los parámetros que no guardo la caller (por convención de ABI)
@@ -31,7 +31,7 @@ _escritura:
 	li v0, SYS_write
 	syscall
 
-	bnez a3, _escritura
+	bnez a3, _escritura 		# Si da error intentamos de nuevo
 
 _return:
 	lw ra, 32(sp)
@@ -41,5 +41,3 @@ _return:
 	jr ra
 
 .end putch
-
-
