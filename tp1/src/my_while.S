@@ -29,6 +29,13 @@ _lectura:
 	li t0, -1
 	beq v0, t0, _eof
 
+	# me fijo si tengo un LF
+	la a0, BUFFER
+	jal isLF
+
+	li t0, 1
+	beq v0, t0, _replace_LF
+
 	li a0, 1			# STDOUT
 	la a1, BUFFER		
 	li a2, 1			# 1 byte de nuevo
@@ -45,8 +52,21 @@ _return:
 	addu sp, sp, 40
 	jr	ra
 
+_replace_LF:
+	li a0, 1			# STDOUT
+	la a1, CR		# acá en realidad va CR
+	li a2, 1
+	jal putch
+
+	li a0, 1			# STDOUT
+	la a1, BUFFER		# acá sigo teniendo LF
+	li a2, 1
+	jal putch
+
+	b _lectura
+
 .end my_while
 
 .data 
 BUFFER: .space 1
-
+CR: .byte 13
