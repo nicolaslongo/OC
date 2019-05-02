@@ -20,9 +20,11 @@ my_while:
 # hago una lectura:
 _lectura:
 
-	li a0, 0			# STDIN
+	la t0, STDIN
+	lw a0, 0(t0)		# STDIN
 	la a1, BUFFER
-	li a2, 1			# 1 byte
+	la t0, BYTE
+	lw a2, 0(t0)		# 1 byte
 	jal getch
 
 	# en v0 me devuelve el byte leído
@@ -36,15 +38,16 @@ _lectura:
 	li t0, 1
 	beq v0, t0, _replace_LF
 
-	li a0, 1			# STDOUT
+	la t0, STDOUT
+	lw a0, 0(t0)		# STDOUT
 	la a1, BUFFER		
-	li a2, 1			# 1 byte de nuevo
+	la t0, BYTE
+	lw a2, 0(t0)		# 1 byte
 	jal putch
 
 	b _lectura
 
 _eof:
-
 _return:
 	lw ra, 32(sp)
 	lw $fp, 24(sp)
@@ -53,14 +56,18 @@ _return:
 	jr	ra
 
 _replace_LF:
-	li a0, 1			# STDOUT
-	la a1, CR		# acá en realidad va CR
-	li a2, 1
+	la t0, STDOUT
+	lw a0, 0(t0)		# STDOUT
+	la a1, CR			
+	la t0, BYTE
+	lw a2, 0(t0)		# 1 byte
 	jal putch
 
-	li a0, 1			# STDOUT
+	la t0, STDOUT
+	lw a0, 0(t0)		# STDOUT
 	la a1, BUFFER		# acá sigo teniendo LF
-	li a2, 1
+	la t0, BYTE
+	lw a2, 0(t0)		# 1 byte
 	jal putch
 
 	b _lectura
@@ -70,3 +77,6 @@ _replace_LF:
 .data 
 BUFFER: .space 1
 CR: .byte 13
+STDIN: .word 0
+STDOUT: .word 1
+BYTE: .byte 1

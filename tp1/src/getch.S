@@ -26,7 +26,7 @@ getch:
 # hago la lectura propiamente dicha:
 _lectura:
 	la a0, 0			# STDIN
-	lw a1, 44($fp) # buffer de lo leido
+	lw a1, 44($fp) 		# buffer de lo leido
 	li a2, 1			# (1 acá es 1 byte)
 	li v0, SYS_read
 	syscall

@@ -23,8 +23,8 @@ int mostrarMensajeErrorParametrosInvalidos() {
 
 void linuxToWindows(FILE* input_file, FILE* output_file)
 {
+    
     //int8_t* c;
-
     // int32_t res = -2;
     // int fd_input = fileno(input_file);
     // int fd_output = fileno(output_file);
