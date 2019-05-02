@@ -22,14 +22,14 @@ my_while:
 
 _lectura:
 	li a0, 1			# cargo en a0 el valor de STDIN
-	lb a1, BYTE_ACTUAL	# acá voy a guardar el byte leído --> guardo la POSICION de memoria
+	la a1, BYTE_ACTUAL	# acá voy a guardar el byte leído --> guardo la POSICION de memoria
 	#la t0, CANT_BYTES
 	#lw a2, 0(t0)		# cargo en a2 la cantidad de bytes (1)
 	li a2, 1
 	jal getch
 	la t0, BYTE_ACTUAL	# en byte actual tengo el byte leído
-	lb t0, 0(t0)		# lo saco de memoria y lo cargo
-	sb t0, 16($fp)		# me lo guardo a 16 de fp -> para después
+	sb v0, 0(t0)		# lo saco de memoria y lo cargo
+	# t0, 16($fp)		# me lo guardo a 16 de fp -> para después
 
 _check_eof:
 	li t0, -1
@@ -62,4 +62,4 @@ _eof:
 	STDERR: .word 2
 
 	CANT_BYTES: .word 1
-	BYTE_ACTUAL: .byte
+	BYTE_ACTUAL: .byte 0

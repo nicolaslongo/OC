@@ -30,7 +30,7 @@ _lectura:
 	li a2, 1			# (1 acá es 1 byte)
 	li v0, SYS_read
 	syscall
-	move a1, v1
+	#move a1, v1
 
 _comprobacion:
 	bltz a3, _lectura		# si a3 es -1, falló la lectura del byte -> acá debería haber un catch del error, probablemente
