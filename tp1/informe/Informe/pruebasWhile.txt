@@ -1,0 +1,20 @@
+root@:~/tp1# echo -e "Hola chau" | ./unix2dos -i - -o -
+
+ Ahora voy a usar el while del .S: 
+Hola chau
+root@:~/tp1# echo -e "Hola\nchau" | ./unix2dos -i - -o -
+
+ Ahora voy a usar el while del .S: 
+Hola
+chau
+root@:~/tp1# echo -e "Hola\r\nchau" | ./unix2dos -i - -o -
+
+ Ahora voy a usar el while del .S: 
+Hola
+chau
+root@:~/tp1# echo -e "Prueba suuuuuuuuuuuuuuuuuuuuuper larga con muuuuuuuuuuuuuuuuuchos                          espacios" | ./unix2dos -i - -o -
+
+ Ahora voy a usar el while del .S: 
+Prueba suuuuuuuuuuuuuuuuuuuuuper larga con muuuuuuuuuuuuuuuuuchos                          espacios
+root@:~/tp1# 
+
