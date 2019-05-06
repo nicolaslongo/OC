@@ -23,7 +23,7 @@ int mostrarMensajeErrorParametrosInvalidos() {
 
 void linuxToWindows(FILE* input_file, FILE* output_file)
 {
-    
+
     //int8_t* c;
     // int32_t res = -2;
     // int fd_input = fileno(input_file);
@@ -42,7 +42,7 @@ void linuxToWindows(FILE* input_file, FILE* output_file)
     //     res = getch(fd_input, c, 1);
     // }
 
-    fprintf(stdout, "\n Ahora voy a usar el while del .S: \n");
+    // fprintf(stdout, "\n Ahora voy a usar el while del .S: \n");
     my_while();
 
 }

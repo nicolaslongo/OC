@@ -17,7 +17,7 @@ int mostrarMensajeErrorParametrosInvalidos()
 
 void windowsToLinux(FILE* input_file, FILE* output_file)
 {
-	int c, d;
+	// int c, d;
 
   /*
 	while((c = fgetc(input_file)) != -1)
