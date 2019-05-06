@@ -48,6 +48,7 @@ void windowsToLinux(FILE* input_file, FILE* output_file)
   	}
 
 	}*/
+  
   while_cota();
 
 }

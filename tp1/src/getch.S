@@ -33,7 +33,7 @@ _lectura:
 	#move a1, v1
 
 _comprobacion:
-	bltz a3, _lectura		# si a3 es -1, falló la lectura del byte -> acá debería haber un catch del error, probablemente
+	bltz a3, _error		# si a3 es -1, falló la lectura del byte -> acá debería haber un catch del error, probablemente
 	beqz v0, _eof			# (en a3 ya tengo un 0) si en v0 tengo un 0, entonces EOF
 	li t0, 1
 	beq t0, v0, _return		# esto ya es obvio, en realidad
@@ -53,5 +53,11 @@ _eof:
 	li t0, -1
 	sw t0, 44($fp)
 	b _return
+
+_error:		# en caso de error, aborto el programa con código 1
+	li a0, 1
+	li v0 SYS_exit
+	syscall
+
 
 .end getch

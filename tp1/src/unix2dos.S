@@ -2,10 +2,10 @@
 #include <sys/syscall.h>
 .text
 .abicalls
-.globl my_while
-.ent my_while
+.globl main
+.ent main
 
-my_while:
+main:
 	.frame $fp, 40, ra
 	.set noreorder
 	.cpload t9
@@ -53,7 +53,9 @@ _return:
 	lw $fp, 24(sp)
 	lw gp, 28(sp)
 	addu sp, sp, 40
-	jr	ra
+	li v0, SYS_exit
+	li a0, 0
+	syscall
 
 _replace_LF:
 	la t0, STDOUT
@@ -72,7 +74,7 @@ _replace_LF:
 
 	b _lectura
 
-.end my_while
+.end main
 
 .data 
 BUFFER: .space 1
