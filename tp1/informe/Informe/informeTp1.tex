@@ -184,6 +184,43 @@ echo -e -n "Prueba que \r\nincluye algunos \r\nenters" | ./dos2unix
 \end{verbatim}
 
 \section{Pruebas}
+\subsection{unix2dos}
+Primero probamos que con entrada vac\'ia, la salida deb\'ia serlo tambi\'en.
+\begin{verbatim}
+root@:~/tp1# ./unix2dos </dev/null | wc -c
+       0
+\end{verbatim}
+
+Luego hicimos una prueba con contenido chequeando que la salida fuera la misma pero con la transformaci\'on correspondiente.
+\begin{verbatim}
+root@:~/tp1# echo -n -e "Uno \n Dos \n Tres \n" | od -t c
+0000000    U   n   o      \n       D   o   s      \n       T   r   e   s
+0000020       \n                                                        
+0000022
+root@:~/tp1# echo -n -e "Uno \n Dos \n Tres \n" |./unix2dos |od -t c
+0000000    U   n   o      \r  \n       D   o   s      \r  \n       T   r
+0000020    e   s      \r  \n                                            
+0000025
+\end{verbatim}
+
+\subsection{dos2unix}
+Primero probamos que con entrada vac\'ia, la salida deb\'ia serlo tambi\'en.
+\begin{verbatim}
+root@:~/tp1# ./dos2unix </dev/null | wc -c
+       0
+\end{verbatim}
+
+Luego hicimos una prueba con contenido chequeando que la salida fuera la misma pero con la transformaci\'on correspondiente.
+\begin{verbatim}
+root@:~/tp1# echo -n -e "Uno \r\n Dos \r\n Tres \r\n" | od -t c
+0000000    U   n   o      \r  \n       D   o   s      \r  \n       T   r
+0000020    e   s      \r  \n                                            
+0000025
+root@:~/tp1# echo -n -e "Uno \r\n Dos \r\n Tres \r\n" |./dos2unix| od -t c
+0000000    U   n   o      \n       D   o   s      \n       T   r   e   s
+0000020       \n                                                        
+0000022
+\end{verbatim}
 
 \section{C\'odigo fuente}
 \subsection{getch}

@@ -1,0 +1,12 @@
+root@:~/tp1# ./dos2unix </dev/null | wc -c
+       0
+
+root@:~/tp1# echo -n -e "Uno \r\n Dos \r\n Tres \r\n" | od -t c
+0000000    U   n   o      \r  \n       D   o   s      \r  \n       T   r
+0000020    e   s      \r  \n                                            
+0000025
+root@:~/tp1# echo -n -e "Uno \r\n Dos \r\n Tres \r\n" |./dos2unix| od -t c
+0000000    U   n   o      \n       D   o   s      \n       T   r   e   s
+0000020       \n                                                        
+0000022
+
