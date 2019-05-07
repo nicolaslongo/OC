@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000) (preloaded format=pdflatex 2019.4.21)  6 MAY 2019 15:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000) (preloaded format=pdflatex 2019.4.21)  7 MAY 2019 16:14
 entering extended mode
 **./informeTp1.tex
 (informeTp1.tex
@@ -555,10 +555,10 @@ LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ) ) 
 Here is how much of TeX's memory you used:
- 2465 strings out of 494864
- 35260 string characters out of 3178363
+ 2466 strings out of 494864
+ 35268 string characters out of 3178363
  104801 words of memory out of 3000000
- 6085 multiletter control sequences out of 15000+200000
+ 6086 multiletter control sequences out of 15000+200000
  9840 words of font info for 35 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
  41i,7n,31p,429b,359s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -573,9 +573,9 @@ x/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmtt12.pk> </home/eche/.miktex/t
 exmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmti12.pk> </home/eche/.miktex/texm
 fs/data/fonts/pk/ljfour/public/cm/dpi600/cmr12.pk> </home/eche/.miktex/texmfs/d
 ata/fonts/pk/ljfour/public/cm/dpi864/cmbx12.pk>
-Output written on informeTp1.pdf (5 pages, 89416 bytes).
+Output written on informeTp1.pdf (5 pages, 90619 bytes).
 PDF statistics:
- 294 PDF objects out of 1000 (max. 8388607)
+ 296 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
