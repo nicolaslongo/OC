@@ -730,5 +730,17 @@ BYTE: .byte 1
 
 \section{Conclusiones}
 
+Como este trabajo práctico fue una réplica del trabajo práctico anterior (TP0), migrando la funcionalidad desde código C a código Assembly (de MIPS32), una de las claves del mismo fue su desarrollo en pequeños pasos incrementales.
+
+\indent
+Utilizando los programas unix2dos.c y dos2unix.c que resultaron de la entrega del TP0, fuimos migrando la funcionalidad hacia MIPS empezando por las funciones getch (en getch.S) y putch (en putch.S). Estas reemplazaron las llamadas a getchar() y putchar() en las funciones de C. Luego, se implementó la detección de bytes que correspondieran a CR o LF: cada uno de estos programas se almaceno en isCR.S e isLF.S, correspondientemente. Una vez que pudimos identificarlos, procedimos a su correcto reemplazo.
+Por último se implementó el ciclo while desde Assembly para finalmente desligarse por completo de la utilización de un main de C. Para ello, la función que implementó el while debió llamarse main y así GCC la seteó como punto de entrada del programa.
+
+\indent
+Algunas de las complicaciones más importantes que se presentaron fueron las de diferenciar cuándo lidiábamos con una dirección de memoria (lo que regularmente, y en más alto nivel, llamamos puntero) y cuándo con un dato en sí. De la misma manera, tuvimos que ser sumamente cuidadosos a la hora de manipular estos últimos conociendo su tamaño: si se está manejando un byte las operaciones son unas y si se está manejando un word, son otras distintas.
+
+\indent
+Finalmente, es necesario destacar la relevancia de contar con un programa como gdb que permite realizar tareas de Debugging de manera muy completa y brindando muchísimas facilidades.
+
 
 \end{document}
