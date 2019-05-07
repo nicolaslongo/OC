@@ -10,3 +10,26 @@ root@:~/tp1# echo -n -e "Uno \n Dos \n Tres \n" |./unix2dos |od -t c
 0000020    e   s      \r  \n                                            
 0000025
 
+root@:~/tp1# echo -n -e "Archivo mas \n lardo      con varios espacios y varios  \n\n\n enters para tratart de marear \n al programa. Meto un \n\n enter al final \n" | od -t c
+0000000    A   r   c   h   i   v   o       m   a   s      \n       l   a
+0000020    r   d   o                           c   o   n       v   a   r
+0000040    i   o   s       e   s   p   a   c   i   o   s       y       v
+0000060    a   r   i   o   s          \n  \n  \n       e   n   t   e   r
+0000100    s       p   a   r   a       t   r   a   t   a   r   t       d
+0000120    e       m   a   r   e   a   r      \n       a   l       p   r
+0000140    o   g   r   a   m   a   .       M   e   t   o       u   n    
+0000160   \n  \n       e   n   t   e   r       a   l       f   i   n   a
+0000200    l      \n                                                    
+0000203
+root@:~/tp1# echo -n -e "Archivo mas \n lardo      con varios espacios y varios  \n\n\n enters para tratart de marear \n al programa. Meto un \n\n enter al final \n" |./unix2dos |od -t c
+0000000    A   r   c   h   i   v   o       m   a   s      \r  \n       l
+0000020    a   r   d   o                           c   o   n       v   a
+0000040    r   i   o   s       e   s   p   a   c   i   o   s       y    
+0000060    v   a   r   i   o   s          \r  \n  \r  \n  \r  \n       e
+0000100    n   t   e   r   s       p   a   r   a       t   r   a   t   a
+0000120    r   t       d   e       m   a   r   e   a   r      \r  \n    
+0000140    a   l       p   r   o   g   r   a   m   a   .       M   e   t
+0000160    o       u   n      \r  \n  \r  \n       e   n   t   e   r    
+0000200    a   l       f   i   n   a   l      \r  \n                    
+0000213
+

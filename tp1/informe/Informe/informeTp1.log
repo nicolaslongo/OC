@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000) (preloaded format=pdflatex 2019.4.21)  7 MAY 2019 17:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000) (preloaded format=pdflatex 2019.4.21)  7 MAY 2019 17:26
 entering extended mode
 **./informeTp1.tex
 (informeTp1.tex
@@ -587,97 +587,301 @@ Overfull \hbox (53.90552pt too wide) in paragraph at lines 204--204
  []
 
 
-Overfull \hbox (2.16733pt too wide) in paragraph at lines 223--223
+Overfull \hbox (25.16208pt too wide) in paragraph at lines 236--236
+[]\OT1/cmtt/m/n/10.95 de marear \n al programa. Meto un \n\n enter al final \n"
+ | od -t c[] 
+ []
+
+
+Overfull \hbox (53.90552pt too wide) in paragraph at lines 236--236
+[]\OT1/cmtt/m/n/10.95 0000000    A   r   c   h   i   v   o       m   a   s     
+ \n       l   a[] 
+ []
+
+
+Overfull \hbox (53.90552pt too wide) in paragraph at lines 236--236
+[]\OT1/cmtt/m/n/10.95 0000020    r   d   o                           c   o   n 
+      v   a   r[] 
+ []
+
+
+Overfull \hbox (53.90552pt too wide) in paragraph at lines 236--236
+[]\OT1/cmtt/m/n/10.95 0000040    i   o   s       e   s   p   a   c   i   o   s 
+      y       v[] 
+ []
+
+
+Overfull \hbox (53.90552pt too wide) in paragraph at lines 236--236
+[]\OT1/cmtt/m/n/10.95 0000060    a   r   i   o   s          \n  \n  \n       e 
+  n   t   e   r[] 
+ []
+
+
+Overfull \hbox (53.90552pt too wide) in paragraph at lines 236--236
+[]\OT1/cmtt/m/n/10.95 0000100    s       p   a   r   a       t   r   a   t   a 
+  r   t       d[] 
+ []
+
+
+Overfull \hbox (53.90552pt too wide) in paragraph at lines 236--236
+[]\OT1/cmtt/m/n/10.95 0000120    e       m   a   r   e   a   r      \n       a 
+  l       p   r[] 
+ []
+
+
+Overfull \hbox (30.91077pt too wide) in paragraph at lines 236--236
+[]\OT1/cmtt/m/n/10.95 0000140    o   g   r   a   m   a   .       M   e   t   o 
+      u   n[] 
+ []
+
+
+Overfull \hbox (53.90552pt too wide) in paragraph at lines 236--236
+[]\OT1/cmtt/m/n/10.95 0000160   \n  \n       e   n   t   e   r       a   l     
+  f   i   n   a[] 
+ []
+
+
+Overfull \hbox (53.90552pt too wide) in paragraph at lines 236--236
+[]\OT1/cmtt/m/n/10.95 0000000    A   r   c   h   i   v   o       m   a   s     
+ \r  \n       l[] 
+ []
+
+
+Overfull \hbox (53.90552pt too wide) in paragraph at lines 236--236
+[]\OT1/cmtt/m/n/10.95 0000020    a   r   d   o                           c   o 
+  n       v   a[] 
+ []
+
+
+Overfull \hbox (30.91077pt too wide) in paragraph at lines 236--236
+[]\OT1/cmtt/m/n/10.95 0000040    r   i   o   s       e   s   p   a   c   i   o 
+  s       y[] 
+ []
+
+
+Overfull \hbox (53.90552pt too wide) in paragraph at lines 236--236
+[]\OT1/cmtt/m/n/10.95 0000060    v   a   r   i   o   s          \r  \n  \r  \n 
+ \r  \n       e[] 
+ []
+
+
+Overfull \hbox (53.90552pt too wide) in paragraph at lines 236--236
+[]\OT1/cmtt/m/n/10.95 0000100    n   t   e   r   s       p   a   r   a       t 
+  r   a   t   a[] 
+ []
+
+[6]
+Overfull \hbox (30.91077pt too wide) in paragraph at lines 236--236
+[]\OT1/cmtt/m/n/10.95 0000120    r   t       d   e       m   a   r   e   a   r 
+     \r  \n[] 
+ []
+
+
+Overfull \hbox (53.90552pt too wide) in paragraph at lines 236--236
+[]\OT1/cmtt/m/n/10.95 0000140    a   l       p   r   o   g   r   a   m   a   . 
+      M   e   t[] 
+ []
+
+
+Overfull \hbox (30.91077pt too wide) in paragraph at lines 236--236
+[]\OT1/cmtt/m/n/10.95 0000160    o       u   n      \r  \n  \r  \n       e   n 
+  t   e   r[] 
+ []
+
+
+Overfull \hbox (2.16733pt too wide) in paragraph at lines 255--255
 []\OT1/cmtt/m/n/10.95 root@:~/tp1# echo -n -e "Uno \r\n Dos \r\n Tres \r\n" | o
 d -t c[] 
  []
 
 
-Overfull \hbox (53.90552pt too wide) in paragraph at lines 223--223
+Overfull \hbox (53.90552pt too wide) in paragraph at lines 255--255
 []\OT1/cmtt/m/n/10.95 0000000    U   n   o      \r  \n       D   o   s      \r 
  \n       T   r[] 
  []
 
 
-Overfull \hbox (65.4029pt too wide) in paragraph at lines 223--223
+Overfull \hbox (65.4029pt too wide) in paragraph at lines 255--255
 []\OT1/cmtt/m/n/10.95 root@:~/tp1# echo -n -e "Uno \r\n Dos \r\n Tres \r\n" |./
 dos2unix| od -t c[] 
  []
 
 
-Overfull \hbox (53.90552pt too wide) in paragraph at lines 223--223
+Overfull \hbox (53.90552pt too wide) in paragraph at lines 255--255
 []\OT1/cmtt/m/n/10.95 0000000    U   n   o      \n       D   o   s      \n     
   T   r   e   s[] 
  []
 
-[6]
-Overfull \hbox (65.4029pt too wide) in paragraph at lines 292--292
+
+Overfull \hbox (53.90552pt too wide) in paragraph at lines 288--288
+[]\OT1/cmtt/m/n/10.95 0000000    A   r   c   h   i   v   o       m   a   s     
+ \r  \n       l[] 
+ []
+
+
+Overfull \hbox (53.90552pt too wide) in paragraph at lines 288--288
+[]\OT1/cmtt/m/n/10.95 0000020    a   r   d   o                           c   o 
+  n       v   a[] 
+ []
+
+
+Overfull \hbox (30.91077pt too wide) in paragraph at lines 288--288
+[]\OT1/cmtt/m/n/10.95 0000040    r   i   o   s       e   s   p   a   c   i   o 
+  s       y[] 
+ []
+
+
+Overfull \hbox (53.90552pt too wide) in paragraph at lines 288--288
+[]\OT1/cmtt/m/n/10.95 0000060    v   a   r   i   o   s          \r  \n  \r  \n 
+ \r  \n       e[] 
+ []
+
+
+Overfull \hbox (53.90552pt too wide) in paragraph at lines 288--288
+[]\OT1/cmtt/m/n/10.95 0000100    n   t   e   r   s       p   a   r   a       t 
+  r   a   t   a[] 
+ []
+
+
+Overfull \hbox (30.91077pt too wide) in paragraph at lines 288--288
+[]\OT1/cmtt/m/n/10.95 0000120    r   t       d   e       m   a   r   e   a   r 
+     \r  \n[] 
+ []
+
+
+Overfull \hbox (53.90552pt too wide) in paragraph at lines 288--288
+[]\OT1/cmtt/m/n/10.95 0000140    a   l       p   r   o   g   r   a   m   a   . 
+      M   e   t[] 
+ []
+
+
+Overfull \hbox (30.91077pt too wide) in paragraph at lines 288--288
+[]\OT1/cmtt/m/n/10.95 0000160    o       u   n      \r  \n  \r  \n       e   n 
+  t   e   r[] 
+ []
+
+
+Overfull \hbox (19.41339pt too wide) in paragraph at lines 288--288
+[]        \OT1/cmtt/m/n/10.95 Meto un \r\n\r\n enter al final \r\n" |./dos2unix
+ |od -t c[] 
+ []
+
+[7]
+Overfull \hbox (53.90552pt too wide) in paragraph at lines 288--288
+[]\OT1/cmtt/m/n/10.95 0000000    A   r   c   h   i   v   o       m   a   s     
+ \n       l   a[] 
+ []
+
+
+Overfull \hbox (53.90552pt too wide) in paragraph at lines 288--288
+[]\OT1/cmtt/m/n/10.95 0000020    r   d   o                           c   o   n 
+      v   a   r[] 
+ []
+
+
+Overfull \hbox (53.90552pt too wide) in paragraph at lines 288--288
+[]\OT1/cmtt/m/n/10.95 0000040    i   o   s       e   s   p   a   c   i   o   s 
+      y       v[] 
+ []
+
+
+Overfull \hbox (53.90552pt too wide) in paragraph at lines 288--288
+[]\OT1/cmtt/m/n/10.95 0000060    a   r   i   o   s          \n  \n  \n       e 
+  n   t   e   r[] 
+ []
+
+
+Overfull \hbox (53.90552pt too wide) in paragraph at lines 288--288
+[]\OT1/cmtt/m/n/10.95 0000100    s       p   a   r   a       t   r   a   t   a 
+  r   t       d[] 
+ []
+
+
+Overfull \hbox (53.90552pt too wide) in paragraph at lines 288--288
+[]\OT1/cmtt/m/n/10.95 0000120    e       m   a   r   e   a   r      \n       a 
+  l       p   r[] 
+ []
+
+
+Overfull \hbox (30.91077pt too wide) in paragraph at lines 288--288
+[]\OT1/cmtt/m/n/10.95 0000140    o   g   r   a   m   a   .       M   e   t   o 
+      u   n[] 
+ []
+
+
+Overfull \hbox (53.90552pt too wide) in paragraph at lines 288--288
+[]\OT1/cmtt/m/n/10.95 0000160   \n  \n       e   n   t   e   r       a   l     
+  f   i   n   a[] 
+ []
+
+
+Overfull \hbox (65.4029pt too wide) in paragraph at lines 357--357
 []\OT1/cmtt/m/n/10.95 # me guardo los parametros que no guardo la caller (por 
 convencion de ABI)[] 
  []
 
 
-Overfull \hbox (76.90027pt too wide) in paragraph at lines 292--292
+Overfull \hbox (76.90027pt too wide) in paragraph at lines 357--357
 []\OT1/cmtt/m/n/10.95 sw a1, 44($fp) # salvo el buffer adonde va lo ledo (en 
 este caso es un int)[] 
  []
 
 
-Overfull \hbox (71.15158pt too wide) in paragraph at lines 292--292
+Overfull \hbox (71.15158pt too wide) in paragraph at lines 357--357
 []\OT1/cmtt/m/n/10.95 # Se supone que el file descriptor es STDIN (0) y la cant
 idad de bytes es 1[] 
  []
 
-
-Overfull \hbox (48.15683pt too wide) in paragraph at lines 292--292
+[8]
+Overfull \hbox (48.15683pt too wide) in paragraph at lines 357--357
 []\OT1/cmtt/m/n/10.95 beqz v0, _eof # (en a3 ya tengo un 0) si en v0 tengo un 0
 , entonces EOF[] 
  []
 
 
-Overfull \hbox (2.16733pt too wide) in paragraph at lines 292--292
+Overfull \hbox (2.16733pt too wide) in paragraph at lines 357--357
 []\OT1/cmtt/m/n/10.95 # me lo llevo con lb -> mucho muy importante, porque es u
 n char[] 
  []
 
 
-Overfull \hbox (65.4029pt too wide) in paragraph at lines 292--292
+Overfull \hbox (65.4029pt too wide) in paragraph at lines 357--357
 []\OT1/cmtt/m/n/10.95 lb v0, 44($fp) # en v0 guardo el char (ledo) que es lo 
 que voy a devolver[] 
  []
 
-[7]
-Overfull \hbox (65.4029pt too wide) in paragraph at lines 339--339
+[9]
+Overfull \hbox (65.4029pt too wide) in paragraph at lines 404--404
 []\OT1/cmtt/m/n/10.95 # me guardo los parametros que no guardo la caller (por 
 convencion de ABI)[] 
  []
 
 
-Overfull \hbox (82.64896pt too wide) in paragraph at lines 339--339
+Overfull \hbox (82.64896pt too wide) in paragraph at lines 404--404
 []\OT1/cmtt/m/n/10.95 # EL CHAR QUE LLEGA A []ESTA ALTURA TIENE QUE HABER SIDO 
 CARGADO CON lb !!!!!!![] 
  []
 
-[8]
-Overfull \hbox (99.89502pt too wide) in paragraph at lines 393--393
+[10]
+Overfull \hbox (99.89502pt too wide) in paragraph at lines 458--458
 []\OT1/cmtt/m/n/10.95 sw a0, 40($fp) # me guardo el char a comparar a 40 de fp,
  aunque sea innecesario[] 
  []
 
-[9] [10]
-Overfull \hbox (99.89502pt too wide) in paragraph at lines 447--447
+[11]
+Overfull \hbox (99.89502pt too wide) in paragraph at lines 512--512
 []\OT1/cmtt/m/n/10.95 sw a0, 40($fp) # me guardo el char a comparar a 40 de fp,
  aunque sea innecesario[] 
  []
 
-[11] [12] [13] [14] [15] [16] (informeTp1.aux
+[12] [13] [14] [15] [16] [17] [18] (informeTp1.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ) ) 
 Here is how much of TeX's memory you used:
  2467 strings out of 494864
  35276 string characters out of 3178363
- 106801 words of memory out of 3000000
+ 111801 words of memory out of 3000000
  6087 multiletter control sequences out of 15000+200000
  9840 words of font info for 35 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
@@ -693,9 +897,9 @@ x/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmtt12.pk> </home/eche/.miktex/t
 exmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmti12.pk> </home/eche/.miktex/texm
 fs/data/fonts/pk/ljfour/public/cm/dpi600/cmr12.pk> </home/eche/.miktex/texmfs/d
 ata/fonts/pk/ljfour/public/cm/dpi864/cmbx12.pk>
-Output written on informeTp1.pdf (16 pages, 122708 bytes).
+Output written on informeTp1.pdf (18 pages, 125145 bytes).
 PDF statistics:
- 393 PDF objects out of 1000 (max. 8388607)
+ 399 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
