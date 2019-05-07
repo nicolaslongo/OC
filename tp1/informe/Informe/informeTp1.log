@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000) (preloaded format=pdflatex 2019.4.21)  7 MAY 2019 16:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000) (preloaded format=pdflatex 2019.4.21)  7 MAY 2019 16:29
 entering extended mode
 **./informeTp1.tex
 (informeTp1.tex
@@ -550,15 +550,75 @@ Overfull \hbox (2.35422pt too wide) in paragraph at lines 145--148
  cuatrimestre
  []
 
-[4] [5] (informeTp1.aux
+[4] [5]
+Overfull \hbox (65.4029pt too wide) in paragraph at lines 239--239
+[]\OT1/cmtt/m/n/10.95 # me guardo los parametros que no guardo la caller (por 
+convencion de ABI)[] 
+ []
+
+
+Overfull \hbox (76.90027pt too wide) in paragraph at lines 239--239
+[]\OT1/cmtt/m/n/10.95 sw a1, 44($fp) # salvo el buffer adonde va lo ledo (en 
+este caso es un int)[] 
+ []
+
+
+Overfull \hbox (71.15158pt too wide) in paragraph at lines 239--239
+[]\OT1/cmtt/m/n/10.95 # Se supone que el file descriptor es STDIN (0) y la cant
+idad de bytes es 1[] 
+ []
+
+
+Overfull \hbox (48.15683pt too wide) in paragraph at lines 239--239
+[]\OT1/cmtt/m/n/10.95 beqz v0, _eof # (en a3 ya tengo un 0) si en v0 tengo un 0
+, entonces EOF[] 
+ []
+
+
+Overfull \hbox (2.16733pt too wide) in paragraph at lines 239--239
+[]\OT1/cmtt/m/n/10.95 # me lo llevo con lb -> mucho muy importante, porque es u
+n char[] 
+ []
+
+
+Overfull \hbox (65.4029pt too wide) in paragraph at lines 239--239
+[]\OT1/cmtt/m/n/10.95 lb v0, 44($fp) # en v0 guardo el char (ledo) que es lo 
+que voy a devolver[] 
+ []
+
+[6]
+Overfull \hbox (65.4029pt too wide) in paragraph at lines 286--286
+[]\OT1/cmtt/m/n/10.95 # me guardo los parametros que no guardo la caller (por 
+convencion de ABI)[] 
+ []
+
+
+Overfull \hbox (82.64896pt too wide) in paragraph at lines 286--286
+[]\OT1/cmtt/m/n/10.95 # EL CHAR QUE LLEGA A []ESTA ALTURA TIENE QUE HABER SIDO 
+CARGADO CON lb !!!!!!![] 
+ []
+
+[7]
+Overfull \hbox (99.89502pt too wide) in paragraph at lines 340--340
+[]\OT1/cmtt/m/n/10.95 sw a0, 40($fp) # me guardo el char a comparar a 40 de fp,
+ aunque sea innecesario[] 
+ []
+
+[8]
+Overfull \hbox (99.89502pt too wide) in paragraph at lines 394--394
+[]\OT1/cmtt/m/n/10.95 sw a0, 40($fp) # me guardo el char a comparar a 40 de fp,
+ aunque sea innecesario[] 
+ []
+
+[9] [10] [11] [12] [13] [14] [15] (informeTp1.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ) ) 
 Here is how much of TeX's memory you used:
- 2466 strings out of 494864
- 35268 string characters out of 3178363
- 104801 words of memory out of 3000000
- 6086 multiletter control sequences out of 15000+200000
+ 2467 strings out of 494864
+ 35276 string characters out of 3178363
+ 105801 words of memory out of 3000000
+ 6087 multiletter control sequences out of 15000+200000
  9840 words of font info for 35 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
  41i,7n,31p,429b,359s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -573,9 +633,9 @@ x/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmtt12.pk> </home/eche/.miktex/t
 exmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmti12.pk> </home/eche/.miktex/texm
 fs/data/fonts/pk/ljfour/public/cm/dpi600/cmr12.pk> </home/eche/.miktex/texmfs/d
 ata/fonts/pk/ljfour/public/cm/dpi864/cmbx12.pk>
-Output written on informeTp1.pdf (5 pages, 90619 bytes).
+Output written on informeTp1.pdf (15 pages, 114623 bytes).
 PDF statistics:
- 296 PDF objects out of 1000 (max. 8388607)
+ 372 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

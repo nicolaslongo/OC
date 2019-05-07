@@ -2,8 +2,8 @@
 #include <sys/syscall.h>
 .text #Lo que viene es codigo
 .abicalls #Voy a usar la convencion abi
-.globl main #la funciona while_cota va a poder llamar afuera del .S
-.ent main #la etiqueta while_cota va a ser una funcion
+.globl main 
+.ent main
 
 
 main:
