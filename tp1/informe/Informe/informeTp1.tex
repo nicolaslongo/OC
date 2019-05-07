@@ -163,9 +163,25 @@ Para lograr esto, decidimos dividir los programas en pequeñas funciones.Esto no
 \item isCR: devuelve 1 si el caracter es CR y 0 si no lo es.
 \end{itemize}
 
-\section{Utilización}
-
 \section{Generaci\'on de binarios}
+Para la generaci\'on de los binarios es necesario utilizar la consola de Linux corriendo sobre la imagen de NetBSD que nos brinda la cátedra. Se levanta el túnel, se copian los archivos desde el HostOS hacia el GuestOS, y finalmente desde este último se realiza la compilación. Para ello se debe utilizar gcc de la siguiente forma (usaremos de ejemplo el programa unix2dos, pero aplica para ambos programas):
+
+\begin{itemize}
+\item Abir la terminal y posicionarse en el directorio donde se encuentren los archivos con el c\'odigo fuente. Siguiendo la lógica de nuestro repositorio sería en \textit{.../tp1/src/}
+\item \begin{verbatim}
+gcc -Wall -O0 -o unix2dos getch.S putch.S isLF.S isCR.S unix2dos.S
+\end{verbatim} 
+\end{itemize}
+
+\section{Utilización}
+Para ejecutar los programas se debe utilizar la consola o shell del GuestOS (es decir, de nuestra instancia de Linux corriendo en NetBSD). Dependiendo de qué tipo de conversión de archivo se desee, se usará alguno de los dos programas. La ejecución de cualquiera de estos utiliza la entrada estándar (\textit{stdin}) para la lectura de los caracteres y la salida estándar (\textit{stdout}) para imprimir los resultados obtenidos.
+
+\indent	
+Por ejemplo, para convertir un archivo de DOS a UNIX se ejecuta: 
+
+\begin{verbatim}
+echo -e -n "Prueba que \r\nincluye algunos \r\nenters" | ./dos2unix 
+\end{verbatim}
 
 \section{Pruebas}
 
