@@ -56,7 +56,7 @@ _eof:
 
 _error:		# en caso de error, aborto el programa con código 1
 	li a0, 1
-	li v0 SYS_exit
+	li v0, SYS_exit
 	syscall
 
 
