@@ -4,13 +4,13 @@
 
 ### Correciones
  - Es demasiado dedicar una función a comparar un byte con CR o LR (isCR, isLF)
- - documentar al menos los prototipos de las funciones, para hacer más fácil su
+ - [x] documentar al menos los prototipos de las funciones, para hacer más fácil su
    interpretación (ej: getch)
- - documentar los stack frames
- - por qué getch tiene 3 argumentos? sólo necesita 1 por ser stdin y leer 1
+ - [ ] documentar los stack frames
+ - [x] por qué getch tiene 3 argumentos? sólo necesita 1 por ser stdin y leer 1
    byte. Los almacena en la ABA del caller, pero luego no los usa (??), hardcodea
    los argumentos del syscall, excepto por el buffer. Lo mismo con putch.
- - No pasa el script de pruebas del enunciado. Aquí se ve una secuencia de bytes
+ - [ ] No pasa el script de pruebas del enunciado. Aquí se ve una secuencia de bytes
    que entran a unix2dos (archivo in), luego su salida alimenta a dos2unix, y la
    salida final (out) no es igual a la entrada.
    ```
