@@ -19,13 +19,11 @@ putch:
 
 # me guardo los parámetros que no guardo la caller (por convención de ABI)
 # EL CHAR QUE LLEGA A ÉSTA ALTURA TIENE QUE HABER SIDO CARGADO CON lb !!!!!!!
-	sw a0, 40($fp)		# guardo FD (que debería ser 1, stdout)
-	sw a1, 44($fp)		# guardo el char a escribir
-	sw a2, 48($fp)		# guardo size a escribir (va a ser 1)
+	sw a0, 40($fp)		# guardo el char a escribir
 
 _escritura:
 	la a0, 1			# stdout
-	lw t0, 44($fp)
+	lw t0, 40($fp)
 	la a1, 0(t0)
 	li a2, 1			# cantidad de bytes
 	li v0, SYS_write

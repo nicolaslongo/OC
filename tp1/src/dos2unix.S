@@ -37,11 +37,7 @@ _lectura:
 	li t0, 1
 	beq v0, t0, _checkNextIsEOF
 
-	la t0, STDOUT
-	lw a0, 0(t0)		# STDOUT
-	la a1, BUFFER
-	la t0, BYTE
-	lw a2, 0(t0)		# 1 byte
+	la a0, BUFFER
 	jal putch
 
 	b _lectura
@@ -72,38 +68,23 @@ _checkNextIsEOF:
 	li t0, 1
 	beq v0, t0, _putLF
 
-	la t0, STDOUT
-	lw a0, 0(t0)		# STDOUT
-	la a1, CR
-	la t0, BYTE
-	lw a2, 0(t0)		# 1 byte
+	la a0, CR
 	jal putch
 
-	la t0, STDOUT
-	lw a0, 0(t0)		# STDOUT
-	la a1, BUFFER
-	la t0, BYTE
-	lw a2, 0(t0)		# 1 byte
+
+	la a0, BUFFER
 	jal putch
 
 	b _lectura
 
 _putCRandBreak:
-	la t0, STDOUT
-	lw a0, 0(t0)		# STDOUT
-	la a1, CR
-	la t0, BYTE
-	lw a2, 0(t0)		# 1 byte
+	la a0, CR
 	jal putch
 
 	b _eof # break;
 
 _putLF:
-	la t0, STDOUT
-	lw a0, 0(t0)		# STDOUT
-	la a1, LF
-	la t0, BYTE
-	lw a2, 0(t0)		# 1 byte
+	la a0, LF
 	jal putch
 
 	b _lectura
@@ -114,6 +95,3 @@ _putLF:
 BUFFER: .space 1
 CR: .byte 13
 LF: .byte 10
-STDIN: .word 0
-STDOUT: .word 1
-BYTE: .byte 1
