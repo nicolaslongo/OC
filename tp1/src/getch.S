@@ -18,15 +18,13 @@ getch:
 	move $fp, sp		# a partir de acá trabajo con fp
 
 # me guardo los parámetros que no guardo la caller (por convención de ABI)
-	sw a0, 40($fp)		# salvo el file descriptor
-	sw a1, 44($fp)		# salvo el buffer adonde va lo leído (en este caso es un int)
-	sw a2, 48($fp)		# salvo la cantidad de bytes a leer (es 1)
+	sw a0, 40($fp)		# salvo el buffer adonde va lo leído (en este caso es un int)
 
 # Se supone que el file descriptor es STDIN (0) y la cantidad de bytes es 1
 # hago la lectura propiamente dicha:
 _lectura:
 	la a0, 0			# STDIN
-	lw a1, 44($fp) 		# buffer de lo leido
+	lw a1, 40($fp) 		# buffer de lo leido
 	li a2, 1			# (1 acá es 1 byte)
 	li v0, SYS_read
 	syscall
@@ -41,7 +39,7 @@ _comprobacion:
 _return:
 # tengo en v0 la posición en memoria del char (leído) y
 # me lo llevo con lb -> mucho muy importante, porque es un char
-	lb v0, 44($fp)			# en v0 guardo el char (leído) que es lo que voy a devolver (o -1 si terminó)
+	lb v0, 40($fp)			# en v0 guardo el char (leído) que es lo que voy a devolver (o -1 si terminó)
 # Devolvemos las cosas a su lugar
 	lw ra, 32(sp)
 	lw $fp, 24(sp)
@@ -51,7 +49,7 @@ _return:
 
 _eof:
 	li t0, -1
-	sw t0, 44($fp)
+	sw t0, 40($fp)
 	b _return
 
 _error:		# en caso de error, aborto el programa con código 1

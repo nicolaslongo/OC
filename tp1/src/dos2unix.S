@@ -2,7 +2,7 @@
 #include <sys/syscall.h>
 .text #Lo que viene es codigo
 .abicalls #Voy a usar la convencion abi
-.globl main 
+.globl main
 .ent main
 
 
@@ -22,13 +22,7 @@ main:
 _lectura:
 
 	# Cargo el primer argumento
-	la t0, STDIN	#Cargo STDIN(0) en el registro t0
-	lw a0, 0(t0)	#Cargo t0 en el registro a0
-	# Cargo el segundo argumento
-	la a1, BUFFER
-	# Cargo el tercer argumento
-	la t0, BYTE
-	lw a2, 0(t0)		# 1 byte
+	la a0, BUFFER
 
 	# Llamo a getch
 	jal getch # en v0 me devuelve el byte leído

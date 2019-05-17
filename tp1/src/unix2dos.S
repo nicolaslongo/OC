@@ -20,11 +20,7 @@ main:
 # hago una lectura:
 _lectura:
 
-	la t0, STDIN
-	lw a0, 0(t0)		# STDIN
-	la a1, BUFFER
-	la t0, BYTE
-	lw a2, 0(t0)		# 1 byte
+	la a0, BUFFER
 	jal getch
 
 	# en v0 me devuelve el byte leído
@@ -40,7 +36,7 @@ _lectura:
 
 	la t0, STDOUT
 	lw a0, 0(t0)		# STDOUT
-	la a1, BUFFER		
+	la a1, BUFFER
 	la t0, BYTE
 	lw a2, 0(t0)		# 1 byte
 	jal putch
@@ -60,7 +56,7 @@ _return:
 _replace_LF:
 	la t0, STDOUT
 	lw a0, 0(t0)		# STDOUT
-	la a1, CR			
+	la a1, CR
 	la t0, BYTE
 	lw a2, 0(t0)		# 1 byte
 	jal putch
@@ -76,7 +72,7 @@ _replace_LF:
 
 .end main
 
-.data 
+.data
 BUFFER: .space 1
 CR: .byte 13
 STDIN: .word 0
