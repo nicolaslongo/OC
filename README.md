@@ -1,6 +1,28 @@
 # Organizacion de computadoras
 
 ## Tp1
+
+### Correciones
+ - Es demasiado dedicar una función a comparar un byte con CR o LR (isCR, isLF)
+ - documentar al menos los prototipos de las funciones, para hacer más fácil su
+   interpretación (ej: getch)
+ - documentar los stack frames
+ - por qué getch tiene 3 argumentos? sólo necesita 1 por ser stdin y leer 1
+   byte. Los almacena en la ABA del caller, pero luego no los usa (??), hardcodea
+   los argumentos del syscall, excepto por el buffer. Lo mismo con putch.
+ - No pasa el script de pruebas del enunciado. Aquí se ve una secuencia de bytes
+   que entran a unix2dos (archivo in), luego su salida alimenta a dos2unix, y la
+   salida final (out) no es igual a la entrada.
+   ```
+   diff <(hexdump -C in|grep 240) <(hexdump -C out|grep 240)
+     1c1
+     < 00000240  8c b3 fa 75 4f 18 d8 ee  cf 0d 0a b3 03 98 28 4c  |...uO.........(L|
+     ---
+     > 00000240  8c b3 fa 75 4f 18 d8 ee  cf 0d 0d 0a b3 03 98 28  |...uO..........(|
+     ```
+     
+### Instrucciones     
+
 Para compilar el tp copiar todo a NetBSD y usar el comando (desde ahí):
 gcc -Wall -O0 -g unix2dos.c getch.S putch.S -o unix2dos
 
