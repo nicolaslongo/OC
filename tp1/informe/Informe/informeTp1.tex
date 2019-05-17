@@ -151,16 +151,17 @@ http://groups.yahoo.com/groups/orga-comp/.
 
 \section{Implementaci\'on}
 Se implementaron dos funciones para poder convertir un archivo de DOS a UNIX y viceversa. La implementaci\'on se basó en un ciclo while que recorre el archivo byte por byte mientras consulta si está parado sobre un '$\backslash$r' o '$\backslash$n'. En caso de ser alguno de estos caracteres, se efectua la modificación correspondiente y sino, simplemente se escribe el mismo caracter en la salida.
-Para lograr esto, decidimos dividir los programas en pequeñas funciones.Esto nos permiti\'o por un lado reducir la complejidad e ir teniendo seguridad de que las cosas que desarroll\'abamos funcionaban de la manera correcta. Y por otro lado, reutilizar funciones que aplicaban tanto a unix2dos como a dos2unix. Las funciones desarroladas fueron:
+Para lograr esto, decidimos dividir los programas en pequeñas funciones.Esto nos permiti\'o por un lado reducir la complejidad e ir teniendo seguridad de que las cosas que desarroll\'abamos funcionaban de la manera correcta. Y por otro lado, reutilizar funciones que aplicaban tanto a unix2dos como a dos2unix.
 
+\subsection{Prototipos}
 \begin{itemize}
-\item getch: devuelve el caracter le\'ido por stdin y en caso de ser EOF devuelve -1.
+\item getch: recibe como \'unico par\'ametro el buffer. La lectura siempre es de a 1 byte y por stdin. Como resultado devuelve el caracter le\'ido por stdin y en caso de ser EOF devuelve -1.
 
-\item putch: escribe el caracter que recibe por stdout.
+\item putch: recibe como \'unico par\'ametro el byte a escribir. La escritura siempre es de a 1 byte y por stdout. Como resultado escribe el byte que recibe por stdout.
 
-\item isLF: devuelve 1 si el caracter es LF y 0 si no lo es.
+\item isLF: recibe como \'unico par\'ametro el byte a analizar. Devuelve 1 si el caracter es LF y 0 si no lo es.
 
-\item isCR: devuelve 1 si el caracter es CR y 0 si no lo es.
+\item isCR: recibe como \'unico par\'ametro el byte a analizar. Devuelve 1 si el caracter es CR y 0 si no lo es.
 \end{itemize}
 
 \section{Generaci\'on de binarios}
