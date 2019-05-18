@@ -6,18 +6,18 @@
 .ent isCR
 
 isCR:
-	.frame $fp, 40, ra
+	.frame $fp, 16, ra
 	.set noreorder
 	.cpload t9
 	.set reorder
 
-	subu sp, sp, 40 	# pido espacio para mi Stack Frame
-	.cprestore 28		# guardo gp en 20
-	sw $fp, 24(sp)		# guardo fp en 16
-	sw ra, 32(sp)		# guardo ra en 24
+	subu sp, sp, 16 	# pido espacio para mi Stack Frame
+	.cprestore 12		# guardo gp en 20
+	sw $fp, 8(sp)		# guardo fp en 16
+	#sw ra, 32(sp)		# guardo ra en 24
 	move $fp, sp		# a partir de acá trabajo con fp
 
-	sw a0, 40($fp)		# me guardo el char a comparar a 40 de fp, aunque sea innecesario
+	sw a0, 16($fp)		# me guardo el char a comparar a 40 de fp, aunque sea innecesario
 	lb t1, 0(a0)		# cargo el char en sí ES UN BYTE
 	la t0, CR			
 	lb t2, 0(t0)		# cargo el valor de CR según código ASCII
@@ -27,20 +27,20 @@ isCR:
 
 _true:
 	li t0, 1
-	sb t0, 16($fp)
+	sb t0, 0($fp)
 	b _end
 
 _false:
 	li v0, 0
-	sb t0, 16($fp)
+	sb t0, 0($fp)
 
 _end:
 	# cargo en v0 el vaLor del booleano
-	lb v0, 16($fp)
-	lw ra, 32(sp)
-	lw $fp, 24(sp)
-	lw gp, 28(sp)
-	addu sp, sp, 40
+	lb v0, 0($fp)
+	#lw ra, 32(sp)
+	lw $fp, 8(sp)
+	lw gp, 12(sp)
+	addu sp, sp, 16
 	jr	ra
 
 .end isCR

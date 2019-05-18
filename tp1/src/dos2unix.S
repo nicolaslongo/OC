@@ -7,15 +7,15 @@
 
 
 main:
-	.frame $fp, 40, ra
+	.frame $fp, 32, ra
 	.set noreorder #RECETA magica no explicada
 	.cpload t9 #RECETA magica no explicada
 	.set reorder #RECETA magica no explicada
 
-	subu sp, sp, 40 	# pido espacio para mi Stack Frame
-	.cprestore 28		# guardo gp en 28
-	sw $fp, 24(sp)		# guardo fp en 24
-	sw ra, 32(sp)		# guardo ra en 32
+	subu sp, sp, 32 	# pido espacio para mi Stack Frame
+	.cprestore 20		# guardo gp en 20
+	sw $fp, 16(sp)		# guardo fp en 16
+	sw ra, 24(sp)		# guardo ra en 32
 	move $fp, sp		# a partir de acá trabajo con fp
 
 # hago una lectura:
@@ -44,10 +44,10 @@ _lectura:
 
 _eof:
 _return:
-	lw ra, 32(sp)
-	lw $fp, 24(sp)
-	lw gp, 28(sp)
-	addu sp, sp, 40
+	lw ra, 24(sp)
+	lw $fp, 16(sp)
+	lw gp, 20(sp)
+	addu sp, sp, 32
 	li a0, 0
 	li v0, SYS_exit
 	syscall
