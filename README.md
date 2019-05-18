@@ -6,7 +6,7 @@
  - Es demasiado dedicar una función a comparar un byte con CR o LR (isCR, isLF)
  - [x] documentar al menos los prototipos de las funciones, para hacer más fácil su
    interpretación (ej: getch)
- - [ ] documentar los stack frames
+ - [x] documentar los stack frames
  - [x] por qué getch tiene 3 argumentos? sólo necesita 1 por ser stdin y leer 1
    byte. Los almacena en la ABA del caller, pero luego no los usa (??), hardcodea
    los argumentos del syscall, excepto por el buffer. Lo mismo con putch.
