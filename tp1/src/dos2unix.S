@@ -30,12 +30,13 @@ _lectura:
 	li t0, -1
 	beq v0, t0, _eof
 
+continue:
 	# me fijo si tengo un CR
 	la a0, BUFFER
 	jal isCR
 
 	li t0, 1
-	beq v0, t0, _checkNextIsEOF
+	beq v0, t0, _checkNextIsLF
 
 	la a0, BUFFER
 	jal putch
@@ -52,14 +53,12 @@ _return:
 	li v0, SYS_exit
 	syscall
 
-_checkNextIsEOF:
-	# Llamo a getch
+_checkNextIsLF:
+	# Llamo a getch pero antes, guardo el byte anterior en t3
 	jal getch # en v0 me devuelve el byte leído
-
 
 	li t0, -1
 	beq v0, t0, _putCRandBreak
-
 
 	# me fijo si tengo un LF
 	la a0, BUFFER
@@ -71,11 +70,8 @@ _checkNextIsEOF:
 	la a0, CR
 	jal putch
 
+	b continue
 
-	la a0, BUFFER
-	jal putch
-
-	b _lectura
 
 _putCRandBreak:
 	la a0, CR
